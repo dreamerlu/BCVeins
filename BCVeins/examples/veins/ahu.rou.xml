@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 12/16/20 10:51:24 by SUMO duarouter Version 0.30.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="ahu.net.xml"/>
+        <trip-files value="trips.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="ahu.rou.xml"/>
+    </output>
+
+    <processing>
+        <ignore-errors value="true"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+        <end value="1.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes>
+   <vType id="vtype0" accel="10" decel="4.5" sigma="0" length="4" minGap="2" maxSpeed="5" guiShape="delivery" color="1,1,0"/>
+   <route id="route0" edges="512460877#1 512460877#2 512460877#3 303060222#4 303060222#5 303060222#6 -87475934#8 -87475934#7 87494445#1"/>
+   <flow id="flow0" type="vtype0" route="route0" begin="0" period="0.2" number="20"/>
+</routes>
+
