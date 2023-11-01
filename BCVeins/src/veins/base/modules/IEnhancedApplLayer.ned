@@ -20,4 +20,7 @@ moduleinterface IEnhancedApplLayer extends IBaseApplLayer
         // add the "in" and "out" gates for RSU communications
         input gateIn[]; // dynamic array of input gates
         output gateOut[]; // dynamic array of output gates
+        //add the gates for blockchain communications
+        input inFromBC;
+        output outToBC;
 }

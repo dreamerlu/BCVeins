@@ -24,6 +24,7 @@ package org.car2x.veins.nodes;
 
 import org.car2x.veins.base.modules.*;
 import org.car2x.veins.modules.nic.Nic80211p;
+import org.car2x.veins.modules.application.blockchain.PoWModule;
 
 module RSU
 {
@@ -53,6 +54,11 @@ module RSU
                 @display("p=130,172;i=block/cogwheel");
         }
         
+        powModule: PoWModule {
+        	parameters:
+                @display("p=150,50;i=misc/globe");
+        }
+        
     connections:
         nic.upperLayerOut --> appl.lowerLayerIn;
         nic.upperLayerIn <-- appl.lowerLayerOut;
@@ -61,9 +67,13 @@ module RSU
 
         veinsradioIn --> nic.radioIn;
         
-        //Weilu: connect RSU gates to its Appl gates
+        //Weilu: connect RSU gates to its Appl gates for communciations with Switch
         gateIn++ --> appl.gateIn++;
         appl.gateOut++ --> gateOut++;
+        
+        //Weilu: connect RSU gates to blockchain
+        appl.outToBC --> powModule.inFromAppl;
+        appl.inFromBC <-- powModule.outToAppl;
         
         
 }

@@ -27,4 +27,5 @@ simple TraCIDemoRSU11p extends MyRSUApplLayer
 {
     @class(veins::TraCIDemoRSU11p);
     @display("i=block/app2");
+    
 }

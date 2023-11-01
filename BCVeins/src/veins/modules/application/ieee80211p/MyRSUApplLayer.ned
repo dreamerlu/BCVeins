@@ -33,6 +33,7 @@ import org.car2x.veins.base.modules.IEnhancedApplLayer;
 // @see Mac1609_4
 // @see PhyLayer80211p
 //
+//注意：以前这个模块定义为simple，现在为了增加区块链改成了module
 simple MyRSUApplLayer like IEnhancedApplLayer
 {
     parameters:
@@ -54,6 +55,8 @@ simple MyRSUApplLayer like IEnhancedApplLayer
         int wsaLengthBits = default(250bit) @unit(bit);
         double wsaInterval =  default(1s) @unit(s);
         
+        
+        
 
     gates:
         input lowerLayerIn; // from mac layer
@@ -64,4 +67,8 @@ simple MyRSUApplLayer like IEnhancedApplLayer
         //added for my test
         input gateIn[]; // dynamic array of input gates
         output gateOut[]; // dynamic array of output gates
+        //add the gates for blockchain communications
+        input inFromBC;
+        output outToBC;
+
 }

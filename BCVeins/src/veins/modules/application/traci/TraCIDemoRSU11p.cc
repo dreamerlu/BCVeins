@@ -20,11 +20,13 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
+#include <veins/modules/application/blockchain/SHA256.h>
 #include "veins/modules/application/traci/TraCIDemoRSU11p.h"
 
 #include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
-#include "veins/modules/application/traci/Block_m.h"
-#include "SHA256.h"
+#include "veins/modules/application/blockchain/Block_m.h"
+#include "veins/modules/application/blockchain/PoWRequest_m.h"
+#include "veins/modules/application/blockchain/PoWModule.h"
 #include <string>
 
 using namespace veins;
@@ -35,16 +37,18 @@ void TraCIDemoRSU11p::initialize(int stage)
 {
     DemoBaseApplLayer::initialize(stage);
     if (stage == 0) {
+        //initial setting for sadistically counting
         senderAddresses.setName("senderAddresses");
         i2vDelayVector.setName("I2VDelay");
         processDelay= getModuleByPath("rsu[0]")->par("processDelay");
+
         // just for SHA256 testing
         SHA256 sha;
         sha.update("hello world");
         std::array<uint8_t, 32> digest = sha.digest();
         EV << "SHA information:"<<SHA256::toString(digest)<<std::endl;
         // end
-        // just for direct communications between RSUs
+        /*// just for direct communications between RSUs
         // Sending direct message to all other RSUs
         Block *blockMsg= new Block();
         blockMsg->setMiner("test miner");
@@ -56,7 +60,17 @@ void TraCIDemoRSU11p::initialize(int stage)
             send(copy, "gateOut", i);
         }
         // delete the original message
-        delete blockMsg;
+        delete blockMsg;*/
+
+        //test PoW
+        powModule = getParentModule()->getSubmodule("powModule");
+        if (!powModule) {
+            EV << "Error: No PoWModule found";
+        } else {
+            PoWRequest* req = new PoWRequest();
+            req->setData("hello");
+            send(req, "outToBC");
+        }
     }
 }
 
@@ -87,9 +101,15 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
 
 void TraCIDemoRSU11p::handleMessage(cMessage *msg)
 {
-    Block *blockMsg= dynamic_cast<Block *>(msg);
-    if (blockMsg) {
-        EV <<"Arriving! From gate: "<< blockMsg->getArrivalGate()<<", miner message: " << blockMsg->getMiner() <<std::endl;
+    if (Block *blockMsg= dynamic_cast<Block *>(msg)) {
+        EV <<"Arriving! From gate: "<< blockMsg->getArrivalGate() << ", miner message: " << blockMsg->getMiner() << std::endl;
+        delete msg;
+    } else if (PoWResponse* resp = dynamic_cast<PoWResponse*>(msg)) {
+        // Handle PoWResponse
+        EV << "Received PoWResponse: data=" << resp->getData() <<", nonce=" << resp->getNonce() << std::endl;
+        delete msg;
+    } else {
+        //do nothing currently
     }
 }
 
@@ -110,4 +130,12 @@ int TraCIDemoRSU11p::getRSUNum()
         }
     }
     return numberOfRSUs;
+}
+
+void TraCIDemoRSU11p::testMethods() {
+
+}
+
+void TraCIDemoRSU11p::finish() {
+    DemoBaseApplLayer::finish();
 }

@@ -41,8 +41,12 @@ protected:
     void onWSA(DemoServiceAdvertisment* wsa) override;
     void handleSelfMsg(cMessage* msg) override;
     void handleMessage(cMessage *msg) override;
+    void finish() override;
     // My tool function: get the current number of RSUs
     int getRSUNum();
+    void testMethods();//only for tests
+private:
+    cModule* powModule;
 };
 
 } // namespace veins
