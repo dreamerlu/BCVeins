@@ -1,4 +1,4 @@
-#!/bin/bash
++#!/bin/bash
 
 #
 # Copyright (C) 2020 Christoph Sommer <sommer@cms-labs.org>

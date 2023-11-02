@@ -23,20 +23,19 @@
 import org.car2x.veins.nodes.RSU;
 import org.car2x.veins.nodes.Scenario;
 import org.car2x.veins.base.modules.Switch;
+import org.car2x.veins.modules.application.blockchain.Controller;
 
 
 network RSUExampleScenario extends Scenario
 {
-    types:
-        channel myChannel extends ned.DelayChannel {
-            delay = 100ms;
-        };
     submodules:
         rsu[3]: RSU {
             @display("p=150,140;i=veins/sign/yellowdiamond;is=vs");
         }
         switch: Switch;
+        controller: Controller;
     connections allowunconnected:
+        //herein we set up the gate connections between switch and RSUs
         rsu[0].gateOut++ --> switch.gateIn++;
         switch.gateOut++ --> rsu[0].gateIn++;
 
@@ -45,5 +44,9 @@ network RSUExampleScenario extends Scenario
 
         rsu[2].gateOut++ --> switch.gateIn++;
         switch.gateOut++ --> rsu[2].gateIn++;
+        
+        //herein we set up the gate connections between switch and controller
+        controller.out --> switch.gateIn++;
+        controller.in <-- switch.gateOut++;
 
 }

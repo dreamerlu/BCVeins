@@ -16,13 +16,11 @@ import veins.modules.messages.BaseFrame1609_4;
 namespace veins;
 packet Block extends BaseFrame1609_4
 {
-    // 区块头
-    string previousBlockHash;  // 前一个区块的哈希值
-    simtime_t timestamp;       // 时间戳
-    int difficultyLevel;       // 难度等级
-    string miner;              // 挖矿者
-    int nonce;                 // Nonce（随机数）
+    string previousBlockHash;
+    simtime_t timestamp;       
+    int difficultyLevel;       
+    string miner;              
+    int nonce;                 
 
-    // 区块体
-    string transactionData;    // 包含交易数据
+    string transactionData;   
 }

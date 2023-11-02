@@ -27,6 +27,8 @@
 #include "veins/modules/application/blockchain/Block_m.h"
 #include "veins/modules/application/blockchain/PoWRequest_m.h"
 #include "veins/modules/application/blockchain/PoWModule.h"
+#include "veins/base/modules/UnicastMessage_m.h"
+#include "veins/base/modules/BroadcastMessage_m.h"
 #include <string>
 
 using namespace veins;
@@ -48,9 +50,9 @@ void TraCIDemoRSU11p::initialize(int stage)
         std::array<uint8_t, 32> digest = sha.digest();
         EV << "SHA information:"<<SHA256::toString(digest)<<std::endl;
         // end
-        /*// just for direct communications between RSUs
+        // just for direct communications between RSUs
         // Sending direct message to all other RSUs
-        Block *blockMsg= new Block();
+        /*Block *blockMsg= new Block();
         blockMsg->setMiner("test miner");
         int numOutGates = gateSize("gateOut");
         for (int i = 0; i < numOutGates; ++i) {
@@ -61,7 +63,11 @@ void TraCIDemoRSU11p::initialize(int stage)
         }
         // delete the original message
         delete blockMsg;*/
-
+        BroadcastMessage *broadMsg = new BroadcastMessage();
+        send(broadMsg,"gateOut",0);
+        UnicastMessage *uniMsg = new UnicastMessage();
+        uniMsg->setTargetRSUId(1);
+        send(uniMsg,"gateOut",0);
         //test PoW
         powModule = getParentModule()->getSubmodule("powModule");
         if (!powModule) {
@@ -106,7 +112,8 @@ void TraCIDemoRSU11p::handleMessage(cMessage *msg)
         delete msg;
     } else if (PoWResponse* resp = dynamic_cast<PoWResponse*>(msg)) {
         // Handle PoWResponse
-        EV << "Received PoWResponse: data=" << resp->getData() <<", nonce=" << resp->getNonce() << std::endl;
+        EV <<"Current time: "<< simTime() << ", Received PoWResponse: data=" << resp->getData() <<", nonce=" << resp->getNonce() << std::endl;
+
         delete msg;
     } else {
         //do nothing currently
