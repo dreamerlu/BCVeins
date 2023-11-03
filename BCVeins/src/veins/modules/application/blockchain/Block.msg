@@ -13,6 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 import veins.modules.messages.BaseFrame1609_4;
+import veins.base.modules.UnicastMessage;
 namespace veins;
 packet Block extends BaseFrame1609_4
 {
