@@ -44,6 +44,7 @@ namespace veins {
  *     int rsuId;    // The ID of the RSU that is allowed to pack the block
  *     string hash;  // The hash for packing
  *     int nonce;    // The nonce for packing
+ *     string blockData; //The blockdata for storing the data of the block
  * }
  * </pre>
  */
@@ -53,6 +54,7 @@ class VEINS_API PoWPackingPermission : public ::omnetpp::cMessage
     int rsuId = 0;
     omnetpp::opp_string hash;
     int nonce = 0;
+    omnetpp::opp_string blockData;
 
   private:
     void copy(const PoWPackingPermission& other);
@@ -76,6 +78,8 @@ class VEINS_API PoWPackingPermission : public ::omnetpp::cMessage
     virtual void setHash(const char * hash);
     virtual int getNonce() const;
     virtual void setNonce(int nonce);
+    virtual const char * getBlockData() const;
+    virtual void setBlockData(const char * blockData);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const PoWPackingPermission& obj) {obj.parsimPack(b);}

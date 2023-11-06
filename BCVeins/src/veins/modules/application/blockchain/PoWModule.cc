@@ -1,8 +1,9 @@
 /*
  * PoWModule.cc
  *
- *  Created on: 2023��11��1��
+ *  Created on: 2023.11.1
  *      Author: Administrator
+ *      In the version@2023.11.6, multiple PoWRequests are supported.
  */
 
 // PoWModule.cc
@@ -10,27 +11,46 @@
 #include "SHA256.h"
 #include "PoWRequest_m.h"
 #include "PoWResponse_m.h"
+#include "PoWPackingPermission_m.h"
 
 Define_Module(PoWModule);
 using namespace veins;
 
 void PoWModule::initialize()
 {
+    isProcessing = false;
     nonce = 0;
-    startSignal=new cMessage("start");
+//    startSignal=new cMessage("start");
     continueSignal = new cMessage("continue");
-    scheduleAt(simTime() + par("PoWInterval").doubleValue(), startSignal);
+//    scheduleAt(simTime() + par("PoWInterval").doubleValue(), startSignal);
 }
 
 void PoWModule::handleMessage(cMessage *msg)
 {
     if (msg->isSelfMessage()) {
+        //For handling the scheduleAt-type PoW calculating request, i.e., mainly for con
+        startPoW();
+    } else if (PoWRequest* req = dynamic_cast<PoWRequest*>(msg)) {
+        EV << "receving PoWRequest"<<std::endl;
+        requestQueue.push(req);
+        if (!isProcessing) {
+            startNextPoW();
+        }
+    }
+}
+
+void PoWModule::startNextPoW()
+{
+    // Start the PoW for the request at the front of the queue
+    if (!requestQueue.empty()) {
+        isProcessing = true;
+        PoWRequest* req = requestQueue.front();
+        requestQueue.pop();
+        data = req->getData();
+        nonce = 0;
         startPoW();
     } else {
-        PoWRequest* req = check_and_cast<PoWRequest*>(msg);
-        data = req->getData();
-        nonce=0;
-        startPoW();
+        isProcessing = false;
     }
 }
 
@@ -46,6 +66,7 @@ void PoWModule::startPoW()
         resp->setHash(hash.c_str());
         resp->setNonce(nonce);
         send(resp, "outToAppl");
+        startNextPoW();
     } else {
         nonce=intuniform(0,INT32_MAX);
 //      continueSignal = new cMessage("continue");
@@ -70,7 +91,7 @@ bool PoWModule::isHashValid(const std::string& hash)
 
 PoWModule::~PoWModule()
 {
-    cancelAndDelete(startSignal);
+//    cancelAndDelete(startSignal);
     cancelAndDelete(continueSignal);
 }
 

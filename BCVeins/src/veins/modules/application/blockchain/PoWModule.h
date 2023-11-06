@@ -1,7 +1,7 @@
 /*
  * PoWModule.h
  *
- *  Created on: 2023Äê11ÔÂ1ÈÕ
+ *  Created on: 2023ï¿½ï¿½11ï¿½ï¿½1ï¿½ï¿½
  *      Author: Administrator
  */
 
@@ -11,8 +11,10 @@
 #include <omnetpp.h>
 #include "PoWRequest_m.h"
 #include "PoWResponse_m.h"
+#include <queue>
 
 using namespace omnetpp;
+using namespace veins;
 
 class PoWModule : public cSimpleModule
 {
@@ -21,6 +23,9 @@ class PoWModule : public cSimpleModule
     uint64_t nonce;
     cMessage * startSignal;
     cMessage * continueSignal;
+    bool isProcessing;
+    // Queue for PoW requests
+    std::queue<PoWRequest *> requestQueue;
 
   public:
     virtual void initialize() override;
@@ -28,6 +33,7 @@ class PoWModule : public cSimpleModule
     virtual ~PoWModule() override;
 
     void startPoW();
+    void startNextPoW();
     bool isHashValid(const std::string& hash);
 };
 

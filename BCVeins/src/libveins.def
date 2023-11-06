@@ -502,1096 +502,1098 @@ EXPORTS
     _ZN5veins20NetwToMacControlInfo14setControlInfoEPN7omnetpp8cMessageERKl @501
     _ZN5veins20NetwToMacControlInfo22getDestFromControlInfoEPKN7omnetpp7cObjectE @502
     _ZN5veins20PoWPackingPermission12parsimUnpackEPN7omnetpp11cCommBufferE @503
-    _ZN5veins20PoWPackingPermission4copyERKS0_ @504
-    _ZN5veins20PoWPackingPermission7setHashEPKc @505
-    _ZN5veins20PoWPackingPermission8setNonceEi @506
-    _ZN5veins20PoWPackingPermission8setRsuIdEi @507
-    _ZN5veins20PoWPackingPermissionC1EPKcs @508
-    _ZN5veins20PoWPackingPermissionC1ERKS0_ @509
-    _ZN5veins20PoWPackingPermissionC2EPKcs @510
-    _ZN5veins20PoWPackingPermissionC2ERKS0_ @511
-    _ZN5veins20PoWPackingPermissionD0Ev @512
-    _ZN5veins20PoWPackingPermissionD1Ev @513
-    _ZN5veins20PoWPackingPermissionD2Ev @514
-    _ZN5veins20PoWPackingPermissionaSERKS0_ @515
-    _ZN5veins20TraCIScenarioManager10init_traciEv @516
-    _ZN5veins20TraCIScenarioManager10initializeEi @517
-    _ZN5veins20TraCIScenarioManager13handleMessageEPN7omnetpp8cMessageE @518
-    _ZN5veins20TraCIScenarioManager13handleSelfMsgEPN7omnetpp8cMessageE @519
-    _ZN5veins20TraCIScenarioManager13parseMappingsENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_b @520
-    _ZN5veins20TraCIScenarioManager14lifecycleEventEN7omnetpp28SimulationLifecycleEventTypeEPNS1_7cObjectE @521
-    _ZN5veins20TraCIScenarioManager15listenerRemovedEv @522
-    _ZN5veins20TraCIScenarioManager16getManagedModuleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @523
-    _ZN5veins20TraCIScenarioManager16parseModuleTypesEv @524
-    _ZN5veins20TraCIScenarioManager16preNetworkFinishEv @525
-    _ZN5veins20TraCIScenarioManager18executeOneTimestepEv @526
-    _ZN5veins20TraCIScenarioManager18isModuleUnequippedENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @527
-    _ZN5veins20TraCIScenarioManager19deleteManagedModuleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @528
-    _ZN5veins20TraCIScenarioManager19preInitializeModuleEPN7omnetpp7cModuleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS_5CoordESB_dNS_7HeadingENS_10EnumBitsetINS_13VehicleSignalEEE @529
-    _ZN5veins20TraCIScenarioManager20updateModulePositionEPN7omnetpp7cModuleERKNS_5CoordERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEdNS_7HeadingENS_10EnumBitsetINS_13VehicleSignalEEE @530
-    _ZN5veins20TraCIScenarioManager22processSimSubscriptionENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERNS_11TraCIBufferE @531
-    _ZN5veins20TraCIScenarioManager22traciInitializedSignalE @532 DATA
-    _ZN5veins20TraCIScenarioManager22traciModuleAddedSignalE @533 DATA
-    _ZN5veins20TraCIScenarioManager22traciTimestepEndSignalE @534 DATA
-    _ZN5veins20TraCIScenarioManager24processSubcriptionResultERNS_11TraCIBufferE @535
-    _ZN5veins20TraCIScenarioManager24traciModulePreInitSignalE @536 DATA
-    _ZN5veins20TraCIScenarioManager24traciModuleRemovedSignalE @537 DATA
-    _ZN5veins20TraCIScenarioManager24traciTimestepBeginSignalE @538 DATA
-    _ZN5veins20TraCIScenarioManager26processVehicleSubscriptionENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERNS_11TraCIBufferE @539
-    _ZN5veins20TraCIScenarioManager27subscribeToVehicleVariablesENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @540
-    _ZN5veins20TraCIScenarioManager31processTrafficLightSubscriptionENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERNS_11TraCIBufferE @541
-    _ZN5veins20TraCIScenarioManager31unsubscribeFromVehicleVariablesENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @542
-    _ZN5veins20TraCIScenarioManager32subscribeToTrafficLightVariablesENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @543
-    _ZN5veins20TraCIScenarioManager36unsubscribeFromTrafficLightVariablesENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @544
-    _ZN5veins20TraCIScenarioManager6finishEv @545
-    _ZN5veins20TraCIScenarioManager9addModuleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_S6_S6_RKNS_5CoordES6_dNS_7HeadingENS_10EnumBitsetINS_13VehicleSignalEEEddd @546
-    _ZN5veins20TraCIScenarioManagerC1Ev @547
-    _ZN5veins20TraCIScenarioManagerC2Ev @548
-    _ZN5veins20TraCIScenarioManagerD0Ev @549
-    _ZN5veins20TraCIScenarioManagerD1Ev @550
-    _ZN5veins20TraCIScenarioManagerD2Ev @551
-    _ZN5veins20TraCIVehicleInserter10initializeEi @552
-    _ZN5veins20TraCIVehicleInserter13handleMessageEPN7omnetpp8cMessageE @553
-    _ZN5veins20TraCIVehicleInserter13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @554
-    _ZN5veins20TraCIVehicleInserter13receiveSignalEPN7omnetpp10cComponentEiRKNS1_7SimTimeEPNS1_7cObjectE @555
-    _ZN5veins20TraCIVehicleInserter14insertVehiclesEv @556
-    _ZN5veins20TraCIVehicleInserter16insertNewVehicleEv @557
-    _ZN5veins20TraCIVehicleInserter6finishEPN7omnetpp10cComponentEi @558
-    _ZN5veins20TraCIVehicleInserter6finishEv @559
-    _ZN5veins20TraCIVehicleInserterC1Ev @560
-    _ZN5veins20TraCIVehicleInserterC2Ev @561
-    _ZN5veins20TraCIVehicleInserterD0Ev @562
-    _ZN5veins20TraCIVehicleInserterD1Ev @563
-    _ZN5veins20TraCIVehicleInserterD2Ev @564
-    _ZN5veins21BaseConnectionManager10initializeEi @565
-    _ZN5veins21BaseConnectionManager11registerNicEPN7omnetpp7cModuleEPNS_13ChannelAccessENS_5CoordENS_7HeadingE @566
-    _ZN5veins21BaseConnectionManager11wrapIfTorusEii @567
-    _ZN5veins21BaseConnectionManager12updateNicPosEiNS_5CoordENS_7HeadingE @568
-    _ZN5veins21BaseConnectionManager13unregisterNicEPN7omnetpp7cModuleE @569
-    _ZN5veins21BaseConnectionManager14getCellEntriesERNS0_9GridCoordE @570
-    _ZN5veins21BaseConnectionManager14registerNicExtEi @571
-    _ZN5veins21BaseConnectionManager17updateConnectionsEiNS_5CoordES1_ @572
-    _ZN5veins21BaseConnectionManager20getCellForCoordinateERKNS_5CoordE @573
-    _ZN5veins21BaseConnectionManager20updateNicConnectionsERSt3mapIiPNS_8NicEntryESt4lessIiESaISt4pairIKiS3_EEES3_ @574
-    _ZN5veins21BaseConnectionManager22fillUnionWithNeighborsERNS0_8CoordSetENS0_9GridCoordE @575
-    _ZN5veins21BaseConnectionManager9checkGridERNS0_9GridCoordES2_i @576
-    _ZN5veins21BaseConnectionManager9isInRangeEPNS_8NicEntryES2_ @577
-    _ZN5veins21BaseConnectionManagerD0Ev @578
-    _ZN5veins21BaseConnectionManagerD1Ev @579
-    _ZN5veins21BaseConnectionManagerD2Ev @580
-    _ZN5veins21RoadsCanvasVisualizer10createLineERKNSt7__cxx114listINS_5CoordESaIS3_EEEN7omnetpp7cFigure5ColorEdb @581
-    _ZN5veins21RoadsCanvasVisualizer10initializeEi @582
-    _ZN5veins21RoadsCanvasVisualizer13handleMessageEPN7omnetpp8cMessageE @583
-    _ZN5veins21RoadsCanvasVisualizer6finishEv @584
-    _ZN5veins21TraCICommandInterface10addPolygonENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_RKNS_10TraCIColorEbiRKNS1_4listINS_5CoordESaISB_EEE @585
-    _ZN5veins21TraCICommandInterface10addVehicleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_S6_N7omnetpp7SimTimeEdda @586
-    _ZN5veins21TraCICommandInterface10getLaneIdsB5cxx11Ev @587
-    _ZN5veins21TraCICommandInterface10getRoadIdsB5cxx11Ev @588
-    _ZN5veins21TraCICommandInterface10getVersionB5cxx11Ev @589
-    _ZN5veins21TraCICommandInterface11getDistanceERKNS_5CoordES3_b @590
-    _ZN5veins21TraCICommandInterface11getRouteIdsB5cxx11Ev @591
-    _ZN5veins21TraCICommandInterface12Trafficlight10setProgramENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @592
-    _ZN5veins21TraCICommandInterface12Trafficlight13setPhaseIndexEi @593
-    _ZN5veins21TraCICommandInterface12Trafficlight16setPhaseDurationEN7omnetpp7SimTimeE @594
-    _ZN5veins21TraCICommandInterface12Trafficlight20setProgramDefinitionENS_24TraCITrafficLightProgram5LogicEi @595
-    _ZN5veins21TraCICommandInterface12Trafficlight8setStateENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @596
-    _ZN5veins21TraCICommandInterface13genericGetIntEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @597
-    _ZN5veins21TraCICommandInterface13getGuiViewIdsB5cxx11Ev @598
-    _ZN5veins21TraCICommandInterface13getPolygonIdsB5cxx11Ev @599
-    _ZN5veins21TraCICommandInterface13getRoadMapPosB5cxx11ERKNS_5CoordE @600
-    _ZN5veins21TraCICommandInterface13setApiVersionEj @601
-    _ZN5veins21TraCICommandInterface14genericGetTimeEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @602
-    _ZN5veins21TraCICommandInterface14getJunctionIdsB5cxx11Ev @603
-    _ZN5veins21TraCICommandInterface14versionConfigsE @604 DATA
-    _ZN5veins21TraCICommandInterface15genericGetCoordEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @605
-    _ZN5veins21TraCICommandInterface16LaneAreaDetector24getLastStepVehicleNumberEv @606
-    _ZN5veins21TraCICommandInterface16genericGetDoubleEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @607
-    _ZN5veins21TraCICommandInterface16genericGetStringEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @608
-    _ZN5veins21TraCICommandInterface16genericSetDoubleEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhd @609
-    _ZN5veins21TraCICommandInterface17getVehicleTypeIdsB5cxx11Ev @610
-    _ZN5veins21TraCICommandInterface18getTrafficlightIdsB5cxx11Ev @611
-    _ZN5veins21TraCICommandInterface19genericGetCoordListEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @612
-    _ZN5veins21TraCICommandInterface20genericGetStringListEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @613
-    _ZN5veins21TraCICommandInterface21initNetworkBoundariesEi @614
-    _ZN5veins21TraCICommandInterface21isIgnoringGuiCommandsEv @615
-    _ZN5veins21TraCICommandInterface22genericGetUnsignedByteEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @616
-    _ZN5veins21TraCICommandInterface22getLaneAreaDetectorIdsB5cxx11Ev @617
-    _ZN5veins21TraCICommandInterface22getVehicleTypeMaxSpeedENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @618
-    _ZN5veins21TraCICommandInterface22setVehicleTypeMaxSpeedENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEd @619
-    _ZN5veins21TraCICommandInterface3Poi11getPositionEv @620
-    _ZN5veins21TraCICommandInterface3Poi6removeEi @621
-    _ZN5veins21TraCICommandInterface4Lane11getMaxSpeedEv @622
-    _ZN5veins21TraCICommandInterface4Lane12getMeanSpeedEv @623
-    _ZN5veins21TraCICommandInterface4Lane13setDisallowedENSt7__cxx114listINS2_12basic_stringIcSt11char_traitsIcESaIcEEESaIS8_EEE @624
-    _ZN5veins21TraCICommandInterface4Lane8getShapeB5cxx11Ev @625
-    _ZN5veins21TraCICommandInterface4Lane8getWidthEv @626
-    _ZN5veins21TraCICommandInterface4Lane9getLengthEv @627
-    _ZN5veins21TraCICommandInterface4Lane9getRoadIdB5cxx11Ev @628
-    _ZN5veins21TraCICommandInterface4Road12getMeanSpeedEv @629
-    _ZN5veins21TraCICommandInterface4Road20getCurrentTravelTimeEv @630
-    _ZN5veins21TraCICommandInterface4Road7getNameB5cxx11Ev @631
-    _ZN5veins21TraCICommandInterface5Route10getRoadIdsB5cxx11Ev @632
-    _ZN5veins21TraCICommandInterface6addPoiENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_RKNS_10TraCIColorEiRKNS_5CoordE @633
-    _ZN5veins21TraCICommandInterface7GuiView11setBoundaryENS_5CoordES2_ @634
-    _ZN5veins21TraCICommandInterface7GuiView12trackVehicleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @635
-    _ZN5veins21TraCICommandInterface7GuiView14takeScreenshotENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEii @636
-    _ZN5veins21TraCICommandInterface7GuiView7getZoomEv @637
-    _ZN5veins21TraCICommandInterface7GuiView7setZoomEd @638
-    _ZN5veins21TraCICommandInterface7GuiView9getSchemeB5cxx11Ev @639
-    _ZN5veins21TraCICommandInterface7GuiView9setSchemeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @640
-    _ZN5veins21TraCICommandInterface7Polygon6removeEi @641
-    _ZN5veins21TraCICommandInterface7Polygon8getShapeB5cxx11Ev @642
-    _ZN5veins21TraCICommandInterface7Polygon8setShapeERKNSt7__cxx114listINS_5CoordESaIS4_EEE @643
-    _ZN5veins21TraCICommandInterface7Polygon9getTypeIdB5cxx11Ev @644
-    _ZN5veins21TraCICommandInterface7Vehicle10getNextTlsB5cxx11Ev @645
-    _ZN5veins21TraCICommandInterface7Vehicle10getRouteIdB5cxx11Ev @646
-    _ZN5veins21TraCICommandInterface7Vehicle10setParkingEv @647
-    _ZN5veins21TraCICommandInterface7Vehicle11changeRouteENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEN7omnetpp7SimTimeE @648
-    _ZN5veins21TraCICommandInterface7Vehicle11getMaxSpeedEv @649
-    _ZN5veins21TraCICommandInterface7Vehicle11setMaxSpeedEd @650
-    _ZN5veins21TraCICommandInterface7Vehicle12getLaneIndexEv @651
-    _ZN5veins21TraCICommandInterface7Vehicle12getParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERS7_ @652
-    _ZN5veins21TraCICommandInterface7Vehicle12getParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERd @653
-    _ZN5veins21TraCICommandInterface7Vehicle12getParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERi @654
-    _ZN5veins21TraCICommandInterface7Vehicle12setParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES9_ @655
-    _ZN5veins21TraCICommandInterface7Vehicle12setParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEd @656
-    _ZN5veins21TraCICommandInterface7Vehicle12setParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi @657
-    _ZN5veins21TraCICommandInterface7Vehicle12setSpeedModeEi @658
-    _ZN5veins21TraCICommandInterface7Vehicle15getAccelerationEv @659
-    _ZN5veins21TraCICommandInterface7Vehicle15getLanePositionEv @660
-    _ZN5veins21TraCICommandInterface7Vehicle17getPlannedRoadIdsB5cxx11Ev @661
-    _ZN5veins21TraCICommandInterface7Vehicle18changeVehicleRouteERKNSt7__cxx114listINS2_12basic_stringIcSt11char_traitsIcESaIcEEESaIS8_EEE @662
-    _ZN5veins21TraCICommandInterface7Vehicle20getDistanceTravelledEv @663
-    _ZN5veins21TraCICommandInterface7Vehicle6stopAtENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEdhdN7omnetpp7SimTimeE @664
-    _ZN5veins21TraCICommandInterface7Vehicle8getAccelEv @665
-    _ZN5veins21TraCICommandInterface7Vehicle8getAngleEv @666
-    _ZN5veins21TraCICommandInterface7Vehicle8getColorEv @667
-    _ZN5veins21TraCICommandInterface7Vehicle8getSpeedEv @668
-    _ZN5veins21TraCICommandInterface7Vehicle8getVTypeB5cxx11Ev @669
-    _ZN5veins21TraCICommandInterface7Vehicle8getWidthEv @670
-    _ZN5veins21TraCICommandInterface7Vehicle8newRouteENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @671
-    _ZN5veins21TraCICommandInterface7Vehicle8setColorERKNS_10TraCIColorE @672
-    _ZN5veins21TraCICommandInterface7Vehicle8setSpeedEd @673
-    _ZN5veins21TraCICommandInterface7Vehicle8slowDownEdN7omnetpp7SimTimeE @674
-    _ZN5veins21TraCICommandInterface7Vehicle9getDeccelEv @675
-    _ZN5veins21TraCICommandInterface7Vehicle9getHeightEv @676
-    _ZN5veins21TraCICommandInterface7Vehicle9getLaneIdB5cxx11Ev @677
-    _ZN5veins21TraCICommandInterface7Vehicle9getLeaderB5cxx11Ed @678
-    _ZN5veins21TraCICommandInterface7Vehicle9getLengthEv @679
-    _ZN5veins21TraCICommandInterface7Vehicle9getRoadIdB5cxx11Ev @680
-    _ZN5veins21TraCICommandInterface7Vehicle9getTypeIdB5cxx11Ev @681
-    _ZN5veins21TraCICommandInterface8Junction11getPositionEv @682
-    _ZN5veins21TraCICommandInterface8Junction8getShapeB5cxx11Ev @683
-    _ZN5veins21TraCICommandInterface8addRouteENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS1_4listIS6_SaIS6_EEE @684
-    _ZN5veins21TraCICommandInterface9getLonLatERKNS_5CoordE @685
-    _ZN5veins21TraCICommandInterface9getPoiIdsB5cxx11Ev @686
-    _ZN5veins21TraCICommandInterfaceC1EPN7omnetpp10cComponentERNS_15TraCIConnectionEb @687
-    _ZN5veins21TraCICommandInterfaceC2EPN7omnetpp10cComponentERNS_15TraCIConnectionEb @688
-    _ZN5veins21TraCIRegionOfInterest13addRectanglesERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @689
-    _ZN5veins21TraCIRegionOfInterest5clearEv @690
-    _ZN5veins21TraCIRegionOfInterest8addRoadsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @691
-    _ZN5veins21TraCIRegionOfInterestC1Ev @692
-    _ZN5veins21TraCIRegionOfInterestC2Ev @693
-    _ZN5veins22VehicleObstacleControl10initializeEi @694
-    _ZN5veins22VehicleObstacleControl13handleMessageEPN7omnetpp8cMessageE @695
-    _ZN5veins22VehicleObstacleControl13handleSelfMsgEPN7omnetpp8cMessageE @696
-    _ZN5veins22VehicleObstacleControl23getVehicleAttenuationDZERKSt6vectorISt4pairIddESaIS3_EENS_6SignalE @697
-    _ZN5veins22VehicleObstacleControl27getVehicleAttenuationSingleEdddddNS_6SignalE @698
-    _ZN5veins22VehicleObstacleControl3addENS_18MobileHostObstacleE @699
-    _ZN5veins22VehicleObstacleControl5eraseEPKNS_18MobileHostObstacleE @700
-    _ZN5veins22VehicleObstacleControl6finishEv @701
-    _ZN5veins22VehicleObstacleControlD0Ev @702
-    _ZN5veins22VehicleObstacleControlD1Ev @703
-    _ZN5veins22VehicleObstacleControlD2Ev @704
-    _ZN5veins23BreakpointPathlossModel12filterSignalEPNS_6SignalE @705
-    _ZN5veins23DemoServiceAdvertisment12parsimUnpackEPN7omnetpp11cCommBufferE @706
-    _ZN5veins23DemoServiceAdvertisment16setTargetChannelEi @707
-    _ZN5veins23DemoServiceAdvertisment21setServiceDescriptionEPKc @708
-    _ZN5veins23DemoServiceAdvertisment4copyERKS0_ @709
-    _ZN5veins23DemoServiceAdvertismentC1EPKcs @710
-    _ZN5veins23DemoServiceAdvertismentC1ERKS0_ @711
-    _ZN5veins23DemoServiceAdvertismentC2EPKcs @712
-    _ZN5veins23DemoServiceAdvertismentC2ERKS0_ @713
-    _ZN5veins23DemoServiceAdvertismentD0Ev @714
-    _ZN5veins23DemoServiceAdvertismentD1Ev @715
-    _ZN5veins23DemoServiceAdvertismentD2Ev @716
-    _ZN5veins23DemoServiceAdvertismentaSERKS0_ @717
-    _ZN5veins23SimpleObstacleShadowing12filterSignalEPNS_6SignalE @718
-    _ZN5veins23SimpleObstacleShadowingC1EPN7omnetpp10cComponentERNS_15ObstacleControlEbRKNS_5CoordE @719
-    _ZN5veins23SimpleObstacleShadowingC2EPN7omnetpp10cComponentERNS_15ObstacleControlEbRKNS_5CoordE @720
-    _ZN5veins23TwoRayInterferenceModel12filterSignalEPNS_6SignalE @721
-    _ZN5veins24TraCITrafficLightMessage11setNewValueEPKc @722
-    _ZN5veins24TraCITrafficLightMessage11setOldValueEPKc @723
-    _ZN5veins24TraCITrafficLightMessage12parsimUnpackEPN7omnetpp11cCommBufferE @724
-    _ZN5veins24TraCITrafficLightMessage15setChangeSourceEi @725
-    _ZN5veins24TraCITrafficLightMessage19setChangedAttributeEi @726
-    _ZN5veins24TraCITrafficLightMessage4copyERKS0_ @727
-    _ZN5veins24TraCITrafficLightMessage7setTlIdEPKc @728
-    _ZN5veins24TraCITrafficLightMessageC1EPKcs @729
-    _ZN5veins24TraCITrafficLightMessageC1ERKS0_ @730
-    _ZN5veins24TraCITrafficLightMessageC2EPKcs @731
-    _ZN5veins24TraCITrafficLightMessageC2ERKS0_ @732
-    _ZN5veins24TraCITrafficLightMessageD0Ev @733
-    _ZN5veins24TraCITrafficLightMessageD1Ev @734
-    _ZN5veins24TraCITrafficLightMessageD2Ev @735
-    _ZN5veins24TraCITrafficLightMessageaSERKS0_ @736
-    _ZN5veins24TraCITrafficLightProgram8addLogicERKNS0_5LogicE @737
-    _ZN5veins24TraCITrafficLightProgramC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @738
-    _ZN5veins24TraCITrafficLightProgramC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @739
-    _ZN5veins24VehicleObstacleShadowing12filterSignalEPNS_6SignalE @740
-    _ZN5veins24VehicleObstacleShadowingC1EPN7omnetpp10cComponentERNS_22VehicleObstacleControlEbRKNS_5CoordE @741
-    _ZN5veins24VehicleObstacleShadowingC2EPN7omnetpp10cComponentERNS_22VehicleObstacleControlEbRKNS_5CoordE @742
-    _ZN5veins26TraCIScenarioManagerForker10initializeEi @743
-    _ZN5veins26TraCIScenarioManagerForker10killServerEv @744
-    _ZN5veins26TraCIScenarioManagerForker11startServerEv @745
-    _ZN5veins26TraCIScenarioManagerForker6finishEv @746
-    _ZN5veins26TraCIScenarioManagerForkerC1Ev @747
-    _ZN5veins26TraCIScenarioManagerForkerC2Ev @748
-    _ZN5veins26TraCIScenarioManagerForkerD0Ev @749
-    _ZN5veins26TraCIScenarioManagerForkerD1Ev @750
-    _ZN5veins26TraCIScenarioManagerForkerD2Ev @751
-    _ZN5veins26TraCITrafficLightInterface10initializeEv @752
-    _ZN5veins26TraCITrafficLightInterface13handleMessageEPN7omnetpp8cMessageE @753
-    _ZN5veins26TraCITrafficLightInterface13preInitializeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS_5CoordERKN7omnetpp7SimTimeE @754
-    _ZN5veins26TraCITrafficLightInterface13sendChangeMsgEiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_ @755
-    _ZN5veins26TraCITrafficLightInterface13setNextSwitchERKN7omnetpp7SimTimeEb @756
-    _ZN5veins26TraCITrafficLightInterface15setCurrentStateERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb @757
-    _ZN5veins26TraCITrafficLightInterface18getControlledLinksB5cxx11Ev @758
-    _ZN5veins26TraCITrafficLightInterface18setControlledLinksERKNSt7__cxx114listINS2_INS_21TraCITrafficLightLinkESaIS3_EEESaIS5_EEE @759
-    _ZN5veins26TraCITrafficLightInterface19setCurrentLogicByIdERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb @760
-    _ZN5veins26TraCITrafficLightInterface19setCurrentPhaseByNrEjb @761
-    _ZN5veins26TraCITrafficLightInterface20setProgramDefinitionERKNS_24TraCITrafficLightProgramE @762
-    _ZN5veins26TraCITrafficLightInterface20setRemainingDurationERKN7omnetpp7SimTimeEb @763
-    _ZN5veins26TraCITrafficLightInterface26handleChangeCommandMessageEPN7omnetpp8cMessageE @764
-    _ZN5veins26TraCITrafficLightInterfaceC1Ev @765
-    _ZN5veins26TraCITrafficLightInterfaceC2Ev @766
-    _ZN5veins26TraCITrafficLightInterfaceD0Ev @767
-    _ZN5veins26TraCITrafficLightInterfaceD1Ev @768
-    _ZN5veins26TraCITrafficLightInterfaceD2Ev @769
-    _ZN5veins27TraCIScenarioManagerLaunchd10init_traciEv @770
-    _ZN5veins27TraCIScenarioManagerLaunchd10initializeEi @771
-    _ZN5veins27TraCIScenarioManagerLaunchd6finishEv @772
-    _ZN5veins27TraCIScenarioManagerLaunchdD0Ev @773
-    _ZN5veins27TraCIScenarioManagerLaunchdD1Ev @774
-    _ZN5veins27TraCIScenarioManagerLaunchdD2Ev @775
-    _ZN5veins28TraCITrafficLightSimpleLogic13handleApplMsgEPN7omnetpp8cMessageE @776
-    _ZN5veins28TraCITrafficLightSimpleLogic13handleTlIfMsgEPNS_24TraCITrafficLightMessageE @777
-    _ZN5veins28TraCITrafficLightSimpleLogic20handlePossibleSwitchEv @778
-    _ZN5veins29TraCICoordinateTransformationC1ENS_10TraCICoordES1_f @779
-    _ZN5veins29TraCICoordinateTransformationC2ENS_10TraCICoordES1_f @780
-    _ZN5veins30TraCITrafficLightAbstractLogic10initializeEv @781
-    _ZN5veins30TraCITrafficLightAbstractLogic13handleMessageEPN7omnetpp8cMessageE @782
-    _ZN5veins30TraCITrafficLightAbstractLogic13handleSelfMsgEPN7omnetpp8cMessageE @783
-    _ZN5veins30TraCITrafficLightAbstractLogicC2Ev @784
-    _ZN5veins30TraCITrafficLightAbstractLogicD0Ev @785
-    _ZN5veins30TraCITrafficLightAbstractLogicD1Ev @786
-    _ZN5veins30TraCITrafficLightAbstractLogicD2Ev @787
-    _ZN5veins5Block12parsimUnpackEPN7omnetpp11cCommBufferE @788
-    _ZN5veins5Block12setTimestampEN7omnetpp7SimTimeE @789
-    _ZN5veins5Block18setDifficultyLevelEi @790
-    _ZN5veins5Block18setTransactionDataEPKc @791
-    _ZN5veins5Block20setPreviousBlockHashEPKc @792
-    _ZN5veins5Block4copyERKS0_ @793
-    _ZN5veins5Block8setMinerEPKc @794
-    _ZN5veins5Block8setNonceEi @795
-    _ZN5veins5BlockC1EPKcs @796
-    _ZN5veins5BlockC1ERKS0_ @797
-    _ZN5veins5BlockC2EPKcs @798
-    _ZN5veins5BlockC2ERKS0_ @799
-    _ZN5veins5BlockD0Ev @800
-    _ZN5veins5BlockD1Ev @801
-    _ZN5veins5BlockD2Ev @802
-    _ZN5veins5BlockaSERKS0_ @803
-    _ZN5veins5Coord4ZEROE @804 DATA
-    _ZN5veins5Radio13setSwitchTimeEiiRKN7omnetpp7SimTimeE @805
-    _ZN5veins5Radio8switchToEiRKN7omnetpp7SimTimeE @806
-    _ZN5veins5Radio9endSwitchERKN7omnetpp7SimTimeE @807
-    _ZN5veins5RadioC1Eibiii @808
-    _ZN5veins5RadioC2Eibiii @809
-    _ZN5veins5RadioD0Ev @810
-    _ZN5veins5RadioD1Ev @811
-    _ZN5veins5RadioD2Ev @812
-    _ZN5veins6MacPkt10setSrcAddrERKl @813
-    _ZN5veins6MacPkt11setDestAddrERKl @814
-    _ZN5veins6MacPkt12parsimUnpackEPN7omnetpp11cCommBufferE @815
-    _ZN5veins6MacPkt13setSequenceIdEl @816
-    _ZN5veins6MacPkt4copyERKS0_ @817
-    _ZN5veins6MacPktC1EPKcs @818
-    _ZN5veins6MacPktC1ERKS0_ @819
-    _ZN5veins6MacPktC2EPKcs @820
-    _ZN5veins6MacPktC2ERKS0_ @821
-    _ZN5veins6MacPktD0Ev @822
-    _ZN5veins6MacPktD1Ev @823
-    _ZN5veins6MacPktD2Ev @824
-    _ZN5veins6MacPktaSERKS0_ @825
-    _ZN5veins6Signal10setDataEndEy @826
-    _ZN5veins6Signal11atFrequencyEd @827
-    _ZN5veins6Signal12setDataStartEy @828
-    _ZN5veins6Signal12setSenderPoaERKNS_3POAE @829
-    _ZN5veins6Signal13getDataValuesEv @830
-    _ZN5veins6Signal14setReceiverPoaERKNS_3POAE @831
-    _ZN5veins6Signal16setDataNumValuesEy @832
-    _ZN5veins6Signal18applyAnalogueModelEt @833
-    _ZN5veins6Signal19setPropagationDelayERKN7omnetpp7SimTimeE @834
-    _ZN5veins6Signal20setAnalogueModelListEPSt6vectorISt10unique_ptrINS_13AnalogueModelESt14default_deleteIS3_EESaIS6_EE @835
-    _ZN5veins6Signal22applyAllAnalogueModelsEv @836
-    _ZN5veins6Signal23setCenterFrequencyIndexEy @837
-    _ZN5veins6Signal24greaterAtCenterFrequencyEd @838
-    _ZN5veins6Signal24smallerAtCenterFrequencyEd @839
-    _ZN5veins6Signal2atEy @840
-    _ZN5veins6Signal6dataAtEy @841
-    _ZN5veins6Signal9getValuesEv @842
-    _ZN5veins6Signal9setTimingEN7omnetpp7SimTimeES2_ @843
-    _ZN5veins6SignalC1ENS_8SpectrumE @844
-    _ZN5veins6SignalC1ENS_8SpectrumEN7omnetpp7SimTimeES3_ @845
-    _ZN5veins6SignalC1ERKS0_ @846
-    _ZN5veins6SignalC2ENS_8SpectrumE @847
-    _ZN5veins6SignalC2ENS_8SpectrumEN7omnetpp7SimTimeES3_ @848
-    _ZN5veins6SignalC2ERKS0_ @849
-    _ZN5veins6SignalaSERKS0_ @850
-    _ZN5veins6SignalaSEd @851
-    _ZN5veins6SignaldVERKS0_ @852
-    _ZN5veins6SignaldVEd @853
-    _ZN5veins6SignalmIERKS0_ @854
-    _ZN5veins6SignalmIEd @855
-    _ZN5veins6SignalmLERKS0_ @856
-    _ZN5veins6SignalmLEd @857
-    _ZN5veins6SignalpLERKS0_ @858
-    _ZN5veins6SignalpLEd @859
-    _ZN5veins7Antenna7getGainENS_5CoordES1_S1_ @860
-    _ZN5veins7Decider13processSignalEPNS_8AirFrameE @861
-    _ZN5veins7DeciderC1EPN7omnetpp10cComponentEPNS_21DeciderToPhyInterfaceE @862
-    _ZN5veins7DeciderC2EPN7omnetpp10cComponentEPNS_21DeciderToPhyInterfaceE @863
-    _ZN5veins7Heading3nanE @864 DATA
-    _ZN5veins8AirFrame10setChannelEi @865
-    _ZN5veins8AirFrame11setDurationEN7omnetpp7SimTimeE @866
-    _ZN5veins8AirFrame12parsimUnpackEPN7omnetpp11cCommBufferE @867
-    _ZN5veins8AirFrame13setProtocolIdEi @868
-    _ZN5veins8AirFrame4copyERKS0_ @869
-    _ZN5veins8AirFrame5setIdEl @870
-    _ZN5veins8AirFrame6setMcsEi @871
-    _ZN5veins8AirFrame6setPoaERKNS_3POAE @872
-    _ZN5veins8AirFrame7setTypeEi @873
-    _ZN5veins8AirFrame8setStateEi @874
-    _ZN5veins8AirFrame9setSignalERKNS_6SignalE @875
-    _ZN5veins8AirFrameC1EPKcs @876
-    _ZN5veins8AirFrameC1ERKS0_ @877
-    _ZN5veins8AirFrameC2EPKcs @878
-    _ZN5veins8AirFrameC2ERKS0_ @879
-    _ZN5veins8AirFrameD0Ev @880
-    _ZN5veins8AirFrameD1Ev @881
-    _ZN5veins8AirFrameD2Ev @882
-    _ZN5veins8AirFrameaSERKS0_ @883
-    _ZN5veins8Obstacle8setShapeESt6vectorINS_5CoordESaIS2_EE @884
-    _ZN5veins8ObstacleC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_dd @885
-    _ZN5veins8ObstacleC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_dd @886
-    _ZN5veins8PERModel12filterSignalEPNS_6SignalE @887
-    _ZN5veins8SpectrumC1ESt6vectorIdSaIdEE @888
-    _ZN5veins8SpectrumC2ESt6vectorIdSaIdEE @889
-    _ZN5veins9BaseLayer10initializeEi @890
-    _ZN5veins9BaseLayer12recordPacketENS_13PassedMessage11direction_tENS1_7gates_tEPKN7omnetpp8cMessageE @891
-    _ZN5veins9BaseLayer13handleMessageEPN7omnetpp8cMessageE @892
-    _ZN5veins9BaseLayer13sendControlUpEPN7omnetpp8cMessageE @893
-    _ZN5veins9BaseLayer15catPacketSignalE @894 DATA
-    _ZN5veins9BaseLayer15sendControlDownEPN7omnetpp8cMessageE @895
-    _ZN5veins9BaseLayer18catPassedMsgSignalE @896 DATA
-    _ZN5veins9BaseLayer22catDroppedPacketSignalE @897 DATA
-    _ZN5veins9BaseLayer6finishEv @898
-    _ZN5veins9BaseLayer6sendUpEPN7omnetpp8cMessageE @899
-    _ZN5veins9BaseLayer8sendDownEPN7omnetpp8cMessageE @900
-    _ZN5veins9BaseLayerD0Ev @901
-    _ZN5veins9BaseLayerD1Ev @902
-    _ZN5veins9BaseLayerD2Ev @903
-    _ZN5veins9BorderMsg11setStartPosERKNS_5CoordE @904
-    _ZN5veins9BorderMsg12parsimUnpackEPN7omnetpp11cCommBufferE @905
-    _ZN5veins9BorderMsg12setDirectionERKNS_5CoordE @906
-    _ZN5veins9BorderMsg4copyERKS0_ @907
-    _ZN5veins9BorderMsg9setPolicyEi @908
-    _ZN5veins9BorderMsgC1EPKcs @909
-    _ZN5veins9BorderMsgC1ERKS0_ @910
-    _ZN5veins9BorderMsgC2EPKcs @911
-    _ZN5veins9BorderMsgC2ERKS0_ @912
-    _ZN5veins9BorderMsgD0Ev @913
-    _ZN5veins9BorderMsgD1Ev @914
-    _ZN5veins9BorderMsgD2Ev @915
-    _ZN5veins9BorderMsgaSERKS0_ @916
-    _ZN5veins9Mac1609_410initializeEi @917
-    _ZN5veins9Mac1609_410setTxPowerEd @918
-    _ZN5veins9Mac1609_410sigSentAckE @919 DATA
-    _ZN5veins9Mac1609_411channelBusyEv @920
-    _ZN5veins9Mac1609_411channelIdleEb @921
-    _ZN5veins9Mac1609_412sigCollisionE @922 DATA
-    _ZN5veins9Mac1609_413handleSelfMsgEPN7omnetpp8cMessageE @923
-    _ZN5veins9Mac1609_413handleUnicastElSt10unique_ptrINS_15BaseFrame1609_4ESt14default_deleteIS2_EE @924
-    _ZN5veins9Mac1609_413sigSentPacketE @925 DATA
-    _ZN5veins9Mac1609_414handleLowerMsgEPN7omnetpp8cMessageE @926
-    _ZN5veins9Mac1609_414handleUpperMsgEPN7omnetpp8cMessageE @927
-    _ZN5veins9Mac1609_414sigChannelBusyE @928 DATA
-    _ZN5veins9Mac1609_415channelBusySelfEb @929
-    _ZN5veins9Mac1609_415handleBroadcastEPNS_11Mac80211PktEPNS_18DeciderResult80211E @930
-    _ZN5veins9Mac1609_415mapUserPriorityEi @931
-    _ZN5veins9Mac1609_415setCCAThresholdEd @932
-    _ZN5veins9Mac1609_416handleAckTimeOutEPNS_17AckTimeOutMessageE @933
-    _ZN5veins9Mac1609_416handleRetransmitENS0_17t_access_categoryE @934
-    _ZN5veins9Mac1609_416setActiveChannelENS_11ChannelTypeE @935
-    _ZN5veins9Mac1609_417attachControlInfoEPNS_11Mac80211PktENS_7ChannelENS_3MCSEd @936
-    _ZN5veins9Mac1609_418handleLowerControlEPN7omnetpp8cMessageE @937
-    _ZN5veins9Mac1609_418handleUpperControlEPN7omnetpp8cMessageE @938
-    _ZN5veins9Mac1609_418sigRetriesExceededE @939 DATA
-    _ZN5veins9Mac1609_419isCurrentChannelCCHEv @940
-    _ZN5veins9Mac1609_420changeServiceChannelENS_7ChannelE @941
-    _ZN5veins9Mac1609_420getSwitchingIntervalEv @942
-    _ZN5veins9Mac1609_423setParametersForBitrateEy @943
-    _ZN5veins9Mac1609_424isChannelSwitchingActiveEv @944
-    _ZN5veins9Mac1609_44EDCA11createQueueEiiiNS0_17t_access_categoryE @945
-    _ZN5veins9Mac1609_44EDCA11queuePacketENS0_17t_access_categoryEPNS_15BaseFrame1609_4E @946
-    _ZN5veins9Mac1609_44EDCA11revokeTxOPsEv @947
-    _ZN5veins9Mac1609_44EDCA11stopContentEbb @948
-    _ZN5veins9Mac1609_44EDCA12postTransmitENS0_17t_access_categoryEPNS_15BaseFrame1609_4Eb @949
-    _ZN5veins9Mac1609_44EDCA12startContentEN7omnetpp7SimTimeEb @950
-    _ZN5veins9Mac1609_44EDCA16initiateTransmitEN7omnetpp7SimTimeE @951
-    _ZN5veins9Mac1609_44EDCA7backoffENS0_17t_access_categoryE @952
-    _ZN5veins9Mac1609_44EDCA9EDCAQueueC1EiiiNS0_17t_access_categoryE @953
-    _ZN5veins9Mac1609_44EDCA9EDCAQueueC2EiiiNS0_17t_access_categoryE @954
-    _ZN5veins9Mac1609_44EDCA9EDCAQueueD1Ev @955
-    _ZN5veins9Mac1609_44EDCA9EDCAQueueD2Ev @956
-    _ZN5veins9Mac1609_44EDCAC1EPN7omnetpp13cSimpleModuleENS_11ChannelTypeEi @957
-    _ZN5veins9Mac1609_44EDCAC2EPN7omnetpp13cSimpleModuleENS_11ChannelTypeEi @958
-    _ZN5veins9Mac1609_44EDCAD1Ev @959
-    _ZN5veins9Mac1609_44EDCAD2Ev @960
-    _ZN5veins9Mac1609_46finishEv @961
-    _ZN5veins9Mac1609_46setMCSENS_3MCSE @962
-    _ZN5veins9Mac1609_47sendAckElm @963
-    _ZN5veins9Mac1609_49handleAckEPKNS_11Mac80211AckE @964
-    _ZN5veins9Mac1609_49sendFrameEPNS_11Mac80211PktEN7omnetpp7SimTimeENS_7ChannelENS_3MCSEd @965
-    _ZN5veins9Mac1609_4D0Ev @966
-    _ZN5veins9Mac1609_4D1Ev @967
-    _ZN5veins9Mac1609_4D2Ev @968
-    _ZN5veins9PoWResult12parsimUnpackEPN7omnetpp11cCommBufferE @969
-    _ZN5veins9PoWResult12setBlockDataEPKc @970
-    _ZN5veins9PoWResult4copyERKS0_ @971
-    _ZN5veins9PoWResult7setHashEPKc @972
-    _ZN5veins9PoWResult8setNonceEi @973
-    _ZN5veins9PoWResult8setRsuIdEi @974
-    _ZN5veins9PoWResultC1EPKcs @975
-    _ZN5veins9PoWResultC1ERKS0_ @976
-    _ZN5veins9PoWResultC2EPKcs @977
-    _ZN5veins9PoWResultC2ERKS0_ @978
-    _ZN5veins9PoWResultD0Ev @979
-    _ZN5veins9PoWResultD1Ev @980
-    _ZN5veins9PoWResultD2Ev @981
-    _ZN5veins9PoWResultaSERKS0_ @982
-    _ZN5veinsdvERKNS_6SignalES2_ @983
-    _ZN5veinsdvERKNS_6SignalEd @984
-    _ZN5veinsdvEdRKNS_6SignalE @985
-    _ZN5veinseqERKNS_8SpectrumES2_ @986
-    _ZN5veinslsERSoRKNS_8SpectrumE @987
-    _ZN5veinsmiERKNS_6SignalES2_ @988
-    _ZN5veinsmiERKNS_6SignalEd @989
-    _ZN5veinsmiEdRKNS_6SignalE @990
-    _ZN5veinsmlERKNS_6SignalES2_ @991
-    _ZN5veinsmlERKNS_6SignalEd @992
-    _ZN5veinsmlEdRKNS_6SignalE @993
-    _ZN5veinsplERKNS_6SignalES2_ @994
-    _ZN5veinsplERKNS_6SignalEd @995
-    _ZN5veinsplEdRKNS_6SignalE @996
-    _ZNK5veins10BBoxLookup15findOverlappingENS0_5PointES1_ @997
-    _ZNK5veins10BaseModule7logNameB5cxx11Ev @998
-    _ZNK5veins10BaseModule8findHostEv @999
-    _ZNK5veins10PoWRequest10parsimPackEPN7omnetpp11cCommBufferE @1000
-    _ZNK5veins10PoWRequest7getDataEv @1001
-    _ZNK5veins11AirFrame11p10parsimPackEPN7omnetpp11cCommBufferE @1002
-    _ZNK5veins11AirFrame11p18getWasTransmittingEv @1003
-    _ZNK5veins11AirFrame11p21getUnderMinPowerLevelEv @1004
-    _ZNK5veins11ChannelInfo12getAirFramesERKN7omnetpp7SimTimeES4_RNSt7__cxx114listIPNS_8AirFrameESaIS8_EEE @1005
-    _ZNK5veins11ChannelInfo14isIntersectingERKSt3mapIN7omnetpp7SimTimeENSt7__cxx114listISt4pairIS3_PNS_8AirFrameEESaIS9_EEESt4lessIS3_ESaIS6_IKS3_SB_EEERSE_SK_ @1006
-    _ZNK5veins11ChannelInfo16getIntersectionsERKSt3mapIN7omnetpp7SimTimeENSt7__cxx114listISt4pairIS3_PNS_8AirFrameEESaIS9_EEESt4lessIS3_ESaIS6_IKS3_SB_EEERSE_SK_RNS5_IS8_SaIS8_EEE @1007
-    _ZNK5veins11HasLogProxy10getThisPtrEv @1008
-    _ZNK5veins11Mac80211Ack10parsimPackEPN7omnetpp11cCommBufferE @1009
-    _ZNK5veins11Mac80211Ack12getMessageIdEv @1010
-    _ZNK5veins11Mac80211Pkt10parsimPackEPN7omnetpp11cCommBufferE @1011
-    _ZNK5veins11Mac80211Pkt11getAddress3Ev @1012
-    _ZNK5veins11Mac80211Pkt11getAddress4Ev @1013
-    _ZNK5veins11Mac80211Pkt11getDurationEv @1014
-    _ZNK5veins11Mac80211Pkt16getFragmentationEv @1015
-    _ZNK5veins11Mac80211Pkt16getInformationDSEv @1016
-    _ZNK5veins11Mac80211Pkt18getSequenceControlEv @1017
-    _ZNK5veins11Mac80211Pkt8getRetryEv @1018
-    _ZNK5veins11PoWResponse10parsimPackEPN7omnetpp11cCommBufferE @1019
-    _ZNK5veins11PoWResponse7getDataEv @1020
-    _ZNK5veins11PoWResponse7getHashEv @1021
-    _ZNK5veins11PoWResponse8getNonceEv @1022
-    _ZNK5veins11TraCIBuffer3eofEv @1023
-    _ZNK5veins11TraCIBuffer3strB5cxx11Ev @1024
-    _ZNK5veins11TraCIBuffer6hexStrB5cxx11Ev @1025
-    _ZNK5veins13DeciderResult15isSignalCorrectEv @1026
-    _ZNK5veins13TraCIMobility20calculateCO2emissionEdd @1027
-    _ZNK5veins13TraCIMobility21calculateHostPositionERKNS_5CoordE @1028
-    _ZNK5veins14PhyLayer80211p16getFrameDurationEiNS_3MCSE @1029
-    _ZNK5veins14UnicastMessage10parsimPackEPN7omnetpp11cCommBufferE @1030
-    _ZNK5veins14UnicastMessage14getTargetRSUIdEv @1031
-    _ZNK5veins14UnicastMessage7getDataEv @1032
-    _ZNK5veins14UnicastMessage9getDescrpEv @1033
-    _ZNK5veins15BaseFrame1609_410parsimPackEPN7omnetpp11cCommBufferE @1034
-    _ZNK5veins15BaseFrame1609_415getUserPriorityEv @1035
-    _ZNK5veins15BaseFrame1609_416getChannelNumberEv @1036
-    _ZNK5veins15BaseFrame1609_419getRecipientAddressEv @1037
-    _ZNK5veins15BaseFrame1609_47getPsidEv @1038
-    _ZNK5veins15ObstacleControl16getIntersectionsERKNS_5CoordES3_ @1039
-    _ZNK5veins15ObstacleControl20calculateAttenuationERKNS_5CoordES3_ @1040
-    _ZNK5veins15RSUBasicMessage10parsimPackEPN7omnetpp11cCommBufferE @1041
-    _ZNK5veins15RSUBasicMessage7getInfoEv @1042
-    _ZNK5veins15TraCIConnection11omnet2traciENS_5CoordE @1043
-    _ZNK5veins15TraCIConnection11omnet2traciERKNSt7__cxx114listINS_5CoordESaIS3_EEE @1044
-    _ZNK5veins15TraCIConnection11traci2omnetENS_10TraCICoordE @1045
-    _ZNK5veins15TraCIConnection11traci2omnetERKNSt7__cxx114listINS_10TraCICoordESaIS3_EEE @1046
-    _ZNK5veins15TraCIConnection18omnet2traciHeadingENS_7HeadingE @1047
-    _ZNK5veins15TraCIConnection18traci2omnetHeadingEd @1048
-    _ZNK5veins16BroadcastMessage10parsimPackEPN7omnetpp11cCommBufferE @1049
-    _ZNK5veins16BroadcastMessage9getDescrpEv @1050
-    _ZNK5veins17AckTimeOutMessage10parsimPackEPN7omnetpp11cCommBufferE @1051
-    _ZNK5veins17AckTimeOutMessage5getAcEv @1052
-    _ZNK5veins17AckTimeOutMessage8getWsmIdEv @1053
-    _ZNK5veins17DemoSafetyMessage10parsimPackEPN7omnetpp11cCommBufferE @1054
-    _ZNK5veins17DemoSafetyMessage12getSenderPosEv @1055
-    _ZNK5veins17DemoSafetyMessage14getSenderSpeedEv @1056
-    _ZNK5veins17PhyControlMessage10parsimPackEPN7omnetpp11cCommBufferE @1057
-    _ZNK5veins17PhyControlMessage13getTxPower_mWEv @1058
-    _ZNK5veins17PhyControlMessage6getMcsEv @1059
-    _ZNK5veins18MobileHostObstacle13maybeInBoundsEddddN7omnetpp7SimTimeE @1060
-    _ZNK5veins18MobileHostObstacle20getIntersectionPointERKNS_5CoordES3_N7omnetpp7SimTimeE @1061
-    _ZNK5veins18MobileHostObstacle8getShapeEN7omnetpp7SimTimeE @1062
-    _ZNK5veins18TimerSpecification14validOccurenceEN7omnetpp7SimTimeE @1063
-    _ZNK5veins19TraCIDemo11pMessage10parsimPackEPN7omnetpp11cCommBufferE @1064
-    _ZNK5veins19TraCIDemo11pMessage11getDemoDataEv @1065
-    _ZNK5veins19TraCIDemo11pMessage16getSenderAddressEv @1066
-    _ZNK5veins19TraCIDemo11pMessage9getSerialEv @1067
-    _ZNK5veins20PoWPackingPermission10parsimPackEPN7omnetpp11cCommBufferE @1068
-    _ZNK5veins20PoWPackingPermission7getHashEv @1069
-    _ZNK5veins20PoWPackingPermission8getNonceEv @1070
-    _ZNK5veins20PoWPackingPermission8getRsuIdEv @1071
-    _ZNK5veins20TraCIScenarioManager13getPortNumberEv @1072
-    _ZNK5veins20TraCIVehicleInserter13numInitStagesEv @1073
-    _ZNK5veins21BaseConnectionManager11getGateListEi @1074
-    _ZNK5veins21BaseConnectionManager12getOutGateToEPKNS_8NicEntryES3_ @1075
-    _ZNK5veins21TraCICommandInterface12Trafficlight15getCurrentStateB5cxx11Ev @1076
-    _ZNK5veins21TraCICommandInterface12Trafficlight18getControlledLanesB5cxx11Ev @1077
-    _ZNK5veins21TraCICommandInterface12Trafficlight18getControlledLinksB5cxx11Ev @1078
-    _ZNK5veins21TraCICommandInterface12Trafficlight19getCurrentProgramIDB5cxx11Ev @1079
-    _ZNK5veins21TraCICommandInterface12Trafficlight20getCurrentPhaseIndexEv @1080
-    _ZNK5veins21TraCICommandInterface12Trafficlight20getProgramDefinitionEv @1081
-    _ZNK5veins21TraCICommandInterface12Trafficlight24getAssumedNextSwitchTimeEv @1082
-    _ZNK5veins21TraCICommandInterface12Trafficlight30getDefaultCurrentPhaseDurationEv @1083
-    _ZNK5veins21TraCICommandInterface7Vehicle12changeTargetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @1084
-    _ZNK5veins21TraCICommandInterface7Vehicle12getStopStateEv @1085
-    _ZNK5veins21TraCICommandInterface7Vehicle13isStopReachedEv @1086
-    _ZNK5veins21TraCICommandInterface7Vehicle14getCOEmissionsEv @1087
-    _ZNK5veins21TraCICommandInterface7Vehicle14getHCEmissionsEv @1088
-    _ZNK5veins21TraCICommandInterface7Vehicle14getWaitingTimeEv @1089
-    _ZNK5veins21TraCICommandInterface7Vehicle15getCO2EmissionsEv @1090
-    _ZNK5veins21TraCICommandInterface7Vehicle15getNOxEmissionsEv @1091
-    _ZNK5veins21TraCICommandInterface7Vehicle15getPMxEmissionsEv @1092
-    _ZNK5veins21TraCICommandInterface7Vehicle16getNoiseEmissionEv @1093
-    _ZNK5veins21TraCICommandInterface7Vehicle18getFuelConsumptionEv @1094
-    _ZNK5veins21TraCICommandInterface7Vehicle25getAccumulatedWaitingTimeEv @1095
-    _ZNK5veins21TraCICommandInterface7Vehicle25getElectricityConsumptionEv @1096
-    _ZNK5veins21TraCIRegionOfInterest11partOfRoadsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @1097
-    _ZNK5veins21TraCIRegionOfInterest13getRectanglesB5cxx11Ev @1098
-    _ZNK5veins21TraCIRegionOfInterest14hasConstraintsEv @1099
-    _ZNK5veins21TraCIRegionOfInterest14onAnyRectangleERKNS_10TraCICoordE @1100
-    _ZNK5veins22VehicleObstacleControl20drawVehicleObstaclesERKN7omnetpp7SimTimeE @1101
-    _ZNK5veins22VehicleObstacleControl21getPotentialObstaclesERKNS_15AntennaPositionES3_RKNS_6SignalE @1102
-    _ZNK5veins23DemoServiceAdvertisment10parsimPackEPN7omnetpp11cCommBufferE @1103
-    _ZNK5veins23DemoServiceAdvertisment16getTargetChannelEv @1104
-    _ZNK5veins23DemoServiceAdvertisment21getServiceDescriptionEv @1105
-    _ZNK5veins24TraCITrafficLightMessage10parsimPackEPN7omnetpp11cCommBufferE @1106
-    _ZNK5veins24TraCITrafficLightMessage11getNewValueEv @1107
-    _ZNK5veins24TraCITrafficLightMessage11getOldValueEv @1108
-    _ZNK5veins24TraCITrafficLightMessage15getChangeSourceEv @1109
-    _ZNK5veins24TraCITrafficLightMessage19getChangedAttributeEv @1110
-    _ZNK5veins24TraCITrafficLightMessage7getTlIdEv @1111
-    _ZNK5veins24TraCITrafficLightProgram8getLogicERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @1112
-    _ZNK5veins24TraCITrafficLightProgram8hasLogicERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @1113
-    _ZNK5veins26TraCIScenarioManagerForker13getPortNumberEv @1114
-    _ZNK5veins26TraCITrafficLightInterface11getPositionEv @1115
-    _ZNK5veins26TraCITrafficLightInterface15getCurrentLogicEv @1116
-    _ZNK5veins26TraCITrafficLightInterface15getCurrentPhaseEv @1117
-    _ZNK5veins26TraCITrafficLightInterface15getCurrentStateB5cxx11Ev @1118
-    _ZNK5veins26TraCITrafficLightInterface17getCurrentLogicIdB5cxx11Ev @1119
-    _ZNK5veins26TraCITrafficLightInterface17getCurrentPhaseIdEv @1120
-    _ZNK5veins26TraCITrafficLightInterface20getAssumedNextSwitchEv @1121
-    _ZNK5veins26TraCITrafficLightInterface20getRemainingDurationEv @1122
-    _ZNK5veins26TraCITrafficLightInterface21isInOnlineSignalStateEv @1123
-    _ZNK5veins29TraCICoordinateTransformation11omnet2traciERKNS_5CoordE @1124
-    _ZNK5veins29TraCICoordinateTransformation11omnet2traciERKNSt7__cxx114listINS_5CoordESaIS3_EEE @1125
-    _ZNK5veins29TraCICoordinateTransformation11traci2omnetERKNS_10TraCICoordE @1126
-    _ZNK5veins29TraCICoordinateTransformation11traci2omnetERKNSt7__cxx114listINS_10TraCICoordESaIS3_EEE @1127
-    _ZNK5veins29TraCICoordinateTransformation18omnet2traciHeadingENS_7HeadingE @1128
-    _ZNK5veins29TraCICoordinateTransformation18traci2omnetHeadingEd @1129
-    _ZNK5veins5Block10parsimPackEPN7omnetpp11cCommBufferE @1130
-    _ZNK5veins5Block12getTimestampEv @1131
-    _ZNK5veins5Block18getDifficultyLevelEv @1132
-    _ZNK5veins5Block18getTransactionDataEv @1133
-    _ZNK5veins5Block20getPreviousBlockHashEv @1134
-    _ZNK5veins5Block8getMinerEv @1135
-    _ZNK5veins5Block8getNonceEv @1136
-    _ZNK5veins5Coord12sqrTorusDistERKS0_S2_ @1137
-    _ZNK5veins5Coord4infoB5cxx11Ev @1138
-    _ZNK5veins6MacPkt10getSrcAddrEv @1139
-    _ZNK5veins6MacPkt10parsimPackEPN7omnetpp11cCommBufferE @1140
-    _ZNK5veins6MacPkt11getDestAddrEv @1141
-    _ZNK5veins6MacPkt13getSequenceIdEv @1142
-    _ZNK5veins6Signal10getDataEndEv @1143
-    _ZNK5veins6Signal10getDataMaxEv @1144
-    _ZNK5veins6Signal10getDataMinEv @1145
-    _ZNK5veins6Signal11atFrequencyEd @1146
-    _ZNK5veins6Signal11getDurationEv @1147
-    _ZNK5veins6Signal11getSpectrumEv @1148
-    _ZNK5veins6Signal12getDataStartEv @1149
-    _ZNK5veins6Signal12getNumValuesEv @1150
-    _ZNK5veins6Signal12getSenderPoaEv @1151
-    _ZNK5veins6Signal13getDataOffsetEv @1152
-    _ZNK5veins6Signal13getMaxInRangeEyy @1153
-    _ZNK5veins6Signal13getMinInRangeEyy @1154
-    _ZNK5veins6Signal13getSendingEndEv @1155
-    _ZNK5veins6Signal14getReceiverPoaEv @1156
-    _ZNK5veins6Signal15getReceptionEndEv @1157
-    _ZNK5veins6Signal15getSendingStartEv @1158
-    _ZNK5veins6Signal16getNumDataValuesEv @1159
-    _ZNK5veins6Signal17getReceptionStartEv @1160
-    _ZNK5veins6Signal19getPropagationDelayEv @1161
-    _ZNK5veins6Signal20getAnalogueModelListEv @1162
-    _ZNK5veins6Signal20getAtCenterFrequencyEv @1163
-    _ZNK5veins6Signal23getCenterFrequencyIndexEv @1164
-    _ZNK5veins6Signal27getNumAnalogueModelsAppliedEv @1165
-    _ZNK5veins6Signal2atEy @1166
-    _ZNK5veins6Signal6dataAtEy @1167
-    _ZNK5veins6Signal6getMaxEv @1168
-    _ZNK5veins6Signal9hasTimingEv @1169
-    _ZNK5veins8AirFrame10getChannelEv @1170
-    _ZNK5veins8AirFrame10parsimPackEPN7omnetpp11cCommBufferE @1171
-    _ZNK5veins8AirFrame11getConstPoaEv @1172
-    _ZNK5veins8AirFrame11getDurationEv @1173
-    _ZNK5veins8AirFrame13getProtocolIdEv @1174
-    _ZNK5veins8AirFrame14getConstSignalEv @1175
-    _ZNK5veins8AirFrame5getIdEv @1176
-    _ZNK5veins8AirFrame6getMcsEv @1177
-    _ZNK5veins8AirFrame7getTypeEv @1178
-    _ZNK5veins8AirFrame8getStateEv @1179
-    _ZNK5veins8Obstacle13containsPointENS_5CoordE @1180
-    _ZNK5veins8Obstacle16getIntersectionsERKNS_5CoordES3_ @1181
-    _ZNK5veins8Obstacle20getAttenuationPerCutEv @1182
-    _ZNK5veins8Obstacle22getAttenuationPerMeterEv @1183
-    _ZNK5veins8Obstacle5getIdB5cxx11Ev @1184
-    _ZNK5veins8Obstacle7getTypeB5cxx11Ev @1185
-    _ZNK5veins8Obstacle8getShapeEv @1186
-    _ZNK5veins8Obstacle9getBboxP1Ev @1187
-    _ZNK5veins8Obstacle9getBboxP2Ev @1188
-    _ZNK5veins8Spectrum11getNumFreqsEv @1189
-    _ZNK5veins8Spectrum6freqAtEy @1190
-    _ZNK5veins8Spectrum7indexOfEd @1191
-    _ZNK5veins8SpectrumixEy @1192
-    _ZNK5veins9BorderMsg10parsimPackEPN7omnetpp11cCommBufferE @1193
-    _ZNK5veins9BorderMsg11getStartPosEv @1194
-    _ZNK5veins9BorderMsg12getDirectionEv @1195
-    _ZNK5veins9BorderMsg9getPolicyEv @1196
-    _ZNK5veins9Mac1609_411guardActiveEv @1197
-    _ZNK5veins9Mac1609_414timeLeftInSlotEv @1198
-    _ZNK5veins9Mac1609_421timeLeftTillGuardOverEv @1199
-    _ZNK5veins9PoWResult10parsimPackEPN7omnetpp11cCommBufferE @1200
-    _ZNK5veins9PoWResult12getBlockDataEv @1201
-    _ZNK5veins9PoWResult7getHashEv @1202
-    _ZNK5veins9PoWResult8getNonceEv @1203
-    _ZNK5veins9PoWResult8getRsuIdEv @1204
-    _ZTI10Controller @1205 DATA
-    _ZTI6Switch @1206 DATA
-    _ZTI9PoWModule @1207 DATA
-    _ZTIN3osg10BufferDataE @1208 DATA
-    _ZTIN3osg10ReferencedE @1209 DATA
-    _ZTIN3osg11MixinVectorINS_5Vec3fEEE @1210 DATA
-    _ZTIN3osg13TemplateArrayINS_5Vec3fELNS_5Array4TypeE28ELi3ELi5126EEE @1211 DATA
-    _ZTIN3osg4NodeE @1212 DATA
-    _ZTIN3osg5ArrayE @1213 DATA
-    _ZTIN3osg5GroupE @1214 DATA
-    _ZTIN3osg6ObjectE @1215 DATA
-    _ZTIN5veins10BaseModuleE @1216 DATA
-    _ZTIN5veins10DrawAmountE @1217 DATA
-    _ZTIN5veins10MyVeinsAppE @1218 DATA
-    _ZTIN5veins10PoWRequestE @1219 DATA
-    _ZTIN5veins11AirFrame11pE @1220 DATA
-    _ZTIN5veins11BaseBatteryE @1221 DATA
-    _ZTIN5veins11BaseDeciderE @1222 DATA
-    _ZTIN5veins11ChannelInfoE @1223 DATA
-    _ZTIN5veins11HasLogProxyE @1224 DATA
-    _ZTIN5veins11Mac80211AckE @1225 DATA
-    _ZTIN5veins11Mac80211PktE @1226 DATA
-    _ZTIN5veins11PoWResponseE @1227 DATA
-    _ZTIN5veins12BaseMacLayerE @1228 DATA
-    _ZTIN5veins12BaseMobilityE @1229 DATA
-    _ZTIN5veins12BasePhyLayerE @1230 DATA
-    _ZTIN5veins12TimerMessageE @1231 DATA
-    _ZTIN5veins12TraCIDemo11pE @1232 DATA
-    _ZTIN5veins13AnalogueModelE @1233 DATA
-    _ZTIN5veins13BaseApplLayerE @1234 DATA
-    _ZTIN5veins13BatteryAccessE @1235 DATA
-    _ZTIN5veins13ChannelAccessE @1236 DATA
-    _ZTIN5veins13Decider80211pE @1237 DATA
-    _ZTIN5veins13DeciderResultE @1238 DATA
-    _ZTIN5veins13NicEntryDebugE @1239 DATA
-    _ZTIN5veins13PassedMessageE @1240 DATA
-    _ZTIN5veins13TraCIMobilityE @1241 DATA
-    _ZTIN5veins14LinearMobilityE @1242 DATA
-    _ZTIN5veins14NakagamiFadingE @1243 DATA
-    _ZTIN5veins14NicEntryDirectE @1244 DATA
-    _ZTIN5veins14PhyLayer80211pE @1245 DATA
-    _ZTIN5veins14UnicastMessageE @1246 DATA
-    _ZTIN5veins15AnnotationDummyE @1247 DATA
-    _ZTIN5veins15BaseFrame1609_4E @1248 DATA
-    _ZTIN5veins15BlockDescriptorE @1249 DATA
-    _ZTIN5veins15ObstacleControlE @1250 DATA
-    _ZTIN5veins15RSUBasicMessageE @1251 DATA
-    _ZTIN5veins15TraCIDemoRSU11pE @1252 DATA
-    _ZTIN5veins16AccessModuleWrapINS_12BaseMobilityEEE @1253 DATA
-    _ZTIN5veins16BaseWorldUtilityE @1254 DATA
-    _ZTIN5veins16BroadcastMessageE @1255 DATA
-    _ZTIN5veins16MacPktDescriptorE @1256 DATA
-    _ZTIN5veins16SampledAntenna1DE @1257 DATA
-    _ZTIN5veins17AckTimeOutMessageE @1258 DATA
-    _ZTIN5veins17AnnotationManager10AnnotationE @1259 DATA
-    _ZTIN5veins17AnnotationManager4LineE @1260 DATA
-    _ZTIN5veins17AnnotationManager5GroupE @1261 DATA
-    _ZTIN5veins17AnnotationManager5PointE @1262 DATA
-    _ZTIN5veins17AnnotationManager7PolygonE @1263 DATA
-    _ZTIN5veins17AnnotationManagerE @1264 DATA
-    _ZTIN5veins17ConnectionManagerE @1265 DATA
-    _ZTIN5veins17DemoBaseApplLayerE @1266 DATA
-    _ZTIN5veins17DemoSafetyMessageE @1267 DATA
-    _ZTIN5veins17MacToPhyInterfaceE @1268 DATA
-    _ZTIN5veins17PhyControlMessageE @1269 DATA
-    _ZTIN5veins18AirFrameDescriptorE @1270 DATA
-    _ZTIN5veins18DeciderResult80211E @1271 DATA
-    _ZTIN5veins18RoadsOsgVisualizerE @1272 DATA
-    _ZTIN5veins19AddressingInterfaceE @1273 DATA
-    _ZTIN5veins19BorderMsgDescriptorE @1274 DATA
-    _ZTIN5veins19PhyToMacControlInfoE @1275 DATA
-    _ZTIN5veins19PoWResultDescriptorE @1276 DATA
-    _ZTIN5veins19SimplePathlossModelE @1277 DATA
-    _ZTIN5veins19TraCIDemo11pMessageE @1278 DATA
-    _ZTIN5veins19TraCIScreenRecorderE @1279 DATA
-    _ZTIN5veins20MacToNetwControlInfoE @1280 DATA
-    _ZTIN5veins20NetwToMacControlInfoE @1281 DATA
-    _ZTIN5veins20PoWPackingPermissionE @1282 DATA
-    _ZTIN5veins20PoWRequestDescriptorE @1283 DATA
-    _ZTIN5veins20TraCIScenarioManagerE @1284 DATA
-    _ZTIN5veins20TraCIVehicleInserterE @1285 DATA
-    _ZTIN5veins21AirFrame11pDescriptorE @1286 DATA
-    _ZTIN5veins21BaseConnectionManagerE @1287 DATA
-    _ZTIN5veins21DeciderToPhyInterfaceE @1288 DATA
-    _ZTIN5veins21Mac80211AckDescriptorE @1289 DATA
-    _ZTIN5veins21Mac80211PktDescriptorE @1290 DATA
-    _ZTIN5veins21PoWResponseDescriptorE @1291 DATA
-    _ZTIN5veins21RoadsCanvasVisualizerE @1292 DATA
-    _ZTIN5veins22MacToPhyControlInfo11pE @1293 DATA
-    _ZTIN5veins22SignalCallbackListenerIbEE @1294 DATA
-    _ZTIN5veins22VehicleObstacleControlE @1295 DATA
-    _ZTIN5veins23BreakpointPathlossModelE @1296 DATA
-    _ZTIN5veins23DemoServiceAdvertismentE @1297 DATA
-    _ZTIN5veins23SimpleObstacleShadowingE @1298 DATA
-    _ZTIN5veins23TwoRayInterferenceModelE @1299 DATA
-    _ZTIN5veins24TraCITrafficLightMessageE @1300 DATA
-    _ZTIN5veins24TrafficLightChangeSourceE @1301 DATA
-    _ZTIN5veins24UnicastMessageDescriptorE @1302 DATA
-    _ZTIN5veins24VehicleObstacleShadowingE @1303 DATA
-    _ZTIN5veins25BaseFrame1609_4DescriptorE @1304 DATA
-    _ZTIN5veins25RSUBasicMessageDescriptorE @1305 DATA
-    _ZTIN5veins25TrafficLightAtrributeTypeE @1306 DATA
-    _ZTIN5veins26BroadcastMessageDescriptorE @1307 DATA
-    _ZTIN5veins26Mac80211pToPhy11pInterfaceE @1308 DATA
-    _ZTIN5veins26TraCIScenarioManagerForkerE @1309 DATA
-    _ZTIN5veins26TraCITrafficLightInterfaceE @1310 DATA
-    _ZTIN5veins27AckTimeOutMessageDescriptorE @1311 DATA
-    _ZTIN5veins27DemoSafetyMessageDescriptorE @1312 DATA
-    _ZTIN5veins27PhyControlMessageDescriptorE @1313 DATA
-    _ZTIN5veins27TraCIScenarioManagerLaunchdE @1314 DATA
-    _ZTIN5veins28TraCITrafficLightSimpleLogicE @1315 DATA
-    _ZTIN5veins29TraCIDemo11pMessageDescriptorE @1316 DATA
-    _ZTIN5veins30PoWPackingPermissionDescriptorE @1317 DATA
-    _ZTIN5veins30TraCITrafficLightAbstractLogicE @1318 DATA
-    _ZTIN5veins33Decider80211pToPhy80211pInterfaceE @1319 DATA
-    _ZTIN5veins33DemoServiceAdvertismentDescriptorE @1320 DATA
-    _ZTIN5veins34TraCITrafficLightMessageDescriptorE @1321 DATA
-    _ZTIN5veins37DemoBaseApplLayerToMac1609_4InterfaceE @1322 DATA
-    _ZTIN5veins3POAE @1323 DATA
-    _ZTIN5veins4MoveE @1324 DATA
-    _ZTIN5veins5BlockE @1325 DATA
-    _ZTIN5veins5CoordE @1326 DATA
-    _ZTIN5veins5RadioE @1327 DATA
-    _ZTIN5veins6MacPktE @1328 DATA
-    _ZTIN5veins6SignalE @1329 DATA
-    _ZTIN5veins7AntennaE @1330 DATA
-    _ZTIN5veins7DeciderE @1331 DATA
-    _ZTIN5veins8AirFrameE @1332 DATA
-    _ZTIN5veins8NicEntryE @1333 DATA
-    _ZTIN5veins8PERModelE @1334 DATA
-    _ZTIN5veins9BaseLayerE @1335 DATA
-    _ZTIN5veins9BorderMsgE @1336 DATA
-    _ZTIN5veins9HostStateE @1337 DATA
-    _ZTIN5veins9Mac1609_4E @1338 DATA
-    _ZTIN5veins9PoWResultE @1339 DATA
-    _ZTIN7omnetpp10cComponentE @1340 DATA
-    _ZTIN7omnetpp10cExceptionE @1341 DATA
-    _ZTIN7omnetpp10cIListenerE @1342 DATA
-    _ZTIN7omnetpp10cSoftOwnerE @1343 DATA
-    _ZTIN7omnetpp11noncopyableE @1344 DATA
-    _ZTIN7omnetpp12cNamedObjectE @1345 DATA
-    _ZTIN7omnetpp12cOwnedObjectE @1346 DATA
-    _ZTIN7omnetpp13cRuntimeErrorE @1347 DATA
-    _ZTIN7omnetpp13cSimpleModuleE @1348 DATA
-    _ZTIN7omnetpp16cClassDescriptorE @1349 DATA
-    _ZTIN7omnetpp23cNoncopyableOwnedObjectE @1350 DATA
-    _ZTIN7omnetpp29cISimulationLifecycleListenerE @1351 DATA
-    _ZTIN7omnetpp6cEventE @1352 DATA
-    _ZTIN7omnetpp7cModuleE @1353 DATA
-    _ZTIN7omnetpp7cObjectE @1354 DATA
-    _ZTIN7omnetpp7cPacketE @1355 DATA
-    _ZTIN7omnetpp8cMessageE @1356 DATA
-    _ZTIN7omnetpp9cListenerE @1357 DATA
-    _ZTIPN5veins10PoWRequestE @1358 DATA
-    _ZTIPN5veins11AirFrame11pE @1359 DATA
-    _ZTIPN5veins11Mac80211AckE @1360 DATA
-    _ZTIPN5veins11Mac80211PktE @1361 DATA
-    _ZTIPN5veins11PoWResponseE @1362 DATA
-    _ZTIPN5veins12BaseMobilityE @1363 DATA
-    _ZTIPN5veins14UnicastMessageE @1364 DATA
-    _ZTIPN5veins15BaseFrame1609_4E @1365 DATA
-    _ZTIPN5veins15RSUBasicMessageE @1366 DATA
-    _ZTIPN5veins16BroadcastMessageE @1367 DATA
-    _ZTIPN5veins17AckTimeOutMessageE @1368 DATA
-    _ZTIPN5veins17DemoSafetyMessageE @1369 DATA
-    _ZTIPN5veins17PhyControlMessageE @1370 DATA
-    _ZTIPN5veins18DeciderResult80211E @1371 DATA
-    _ZTIPN5veins19TraCIDemo11pMessageE @1372 DATA
-    _ZTIPN5veins20PoWPackingPermissionE @1373 DATA
-    _ZTIPN5veins22MacToPhyControlInfo11pE @1374 DATA
-    _ZTIPN5veins23DemoServiceAdvertismentE @1375 DATA
-    _ZTIPN5veins24TraCITrafficLightMessageE @1376 DATA
-    _ZTIPN5veins3POAE @1377 DATA
-    _ZTIPN5veins5BlockE @1378 DATA
-    _ZTIPN5veins6MacPktE @1379 DATA
-    _ZTIPN5veins6SignalE @1380 DATA
-    _ZTIPN5veins8AirFrameE @1381 DATA
-    _ZTIPN5veins9BorderMsgE @1382 DATA
-    _ZTIPN5veins9PoWResultE @1383 DATA
-    _ZTIPN7omnetpp7cModuleE @1384 DATA
-    _ZTIPN7omnetpp7cObjectE @1385 DATA
-    _ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE @1386 DATA
-    _ZTISt11logic_error @1387 DATA
-    _ZTISt12out_of_range @1388 DATA
-    _ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE @1389 DATA
-    _ZTISt23_Sp_counted_ptr_inplaceIN5veins16SampledAntenna1DESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE @1390 DATA
-    _ZTISt23_Sp_counted_ptr_inplaceIN5veins7AntennaESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE @1391 DATA
-    _ZTISt9exception @1392 DATA
-    _ZTTN5veins26TraCIScenarioManagerForkerE @1393 DATA
-    _ZTTN5veins27TraCIScenarioManagerLaunchdE @1394 DATA
-    _ZTVN5veins10BaseModuleE @1395 DATA
-    _ZTVN5veins10DrawAmountE @1396 DATA
-    _ZTVN5veins10MyVeinsAppE @1397 DATA
-    _ZTVN5veins10PoWRequestE @1398 DATA
-    _ZTVN5veins11AirFrame11pE @1399 DATA
-    _ZTVN5veins11BaseBatteryE @1400 DATA
-    _ZTVN5veins11BaseDeciderE @1401 DATA
-    _ZTVN5veins11ChannelInfoE @1402 DATA
-    _ZTVN5veins11Mac80211AckE @1403 DATA
-    _ZTVN5veins11Mac80211PktE @1404 DATA
-    _ZTVN5veins11PoWResponseE @1405 DATA
-    _ZTVN5veins12BaseMacLayerE @1406 DATA
-    _ZTVN5veins12BaseMobilityE @1407 DATA
-    _ZTVN5veins12BasePhyLayerE @1408 DATA
-    _ZTVN5veins12TraCIDemo11pE @1409 DATA
-    _ZTVN5veins13AnalogueModelE @1410 DATA
-    _ZTVN5veins13BaseApplLayerE @1411 DATA
-    _ZTVN5veins13BatteryAccessE @1412 DATA
-    _ZTVN5veins13ChannelAccessE @1413 DATA
-    _ZTVN5veins13Decider80211pE @1414 DATA
-    _ZTVN5veins13DeciderResultE @1415 DATA
-    _ZTVN5veins13NicEntryDebugE @1416 DATA
-    _ZTVN5veins13PassedMessageE @1417 DATA
-    _ZTVN5veins13TraCIMobilityE @1418 DATA
-    _ZTVN5veins14LinearMobilityE @1419 DATA
-    _ZTVN5veins14NakagamiFadingE @1420 DATA
-    _ZTVN5veins14NicEntryDirectE @1421 DATA
-    _ZTVN5veins14PhyLayer80211pE @1422 DATA
-    _ZTVN5veins14UnicastMessageE @1423 DATA
-    _ZTVN5veins15AnnotationDummyE @1424 DATA
-    _ZTVN5veins15BaseFrame1609_4E @1425 DATA
-    _ZTVN5veins15ObstacleControlE @1426 DATA
-    _ZTVN5veins15RSUBasicMessageE @1427 DATA
-    _ZTVN5veins15TraCIDemoRSU11pE @1428 DATA
-    _ZTVN5veins16BaseWorldUtilityE @1429 DATA
-    _ZTVN5veins16BroadcastMessageE @1430 DATA
-    _ZTVN5veins16SampledAntenna1DE @1431 DATA
-    _ZTVN5veins17AckTimeOutMessageE @1432 DATA
-    _ZTVN5veins17AnnotationManager10AnnotationE @1433 DATA
-    _ZTVN5veins17AnnotationManager4LineE @1434 DATA
-    _ZTVN5veins17AnnotationManager5GroupE @1435 DATA
-    _ZTVN5veins17AnnotationManager5PointE @1436 DATA
-    _ZTVN5veins17AnnotationManager7PolygonE @1437 DATA
-    _ZTVN5veins17AnnotationManagerE @1438 DATA
-    _ZTVN5veins17ConnectionManagerE @1439 DATA
-    _ZTVN5veins17DemoBaseApplLayerE @1440 DATA
-    _ZTVN5veins17DemoSafetyMessageE @1441 DATA
-    _ZTVN5veins17MacToPhyInterfaceE @1442 DATA
-    _ZTVN5veins17PhyControlMessageE @1443 DATA
-    _ZTVN5veins18DeciderResult80211E @1444 DATA
-    _ZTVN5veins18RoadsOsgVisualizerE @1445 DATA
-    _ZTVN5veins19AddressingInterfaceE @1446 DATA
-    _ZTVN5veins19PhyToMacControlInfoE @1447 DATA
-    _ZTVN5veins19SimplePathlossModelE @1448 DATA
-    _ZTVN5veins19TraCIDemo11pMessageE @1449 DATA
-    _ZTVN5veins19TraCIScreenRecorderE @1450 DATA
-    _ZTVN5veins20MacToNetwControlInfoE @1451 DATA
-    _ZTVN5veins20NetwToMacControlInfoE @1452 DATA
-    _ZTVN5veins20PoWPackingPermissionE @1453 DATA
-    _ZTVN5veins20TraCIScenarioManagerE @1454 DATA
-    _ZTVN5veins20TraCIVehicleInserterE @1455 DATA
-    _ZTVN5veins21BaseConnectionManagerE @1456 DATA
-    _ZTVN5veins21DeciderToPhyInterfaceE @1457 DATA
-    _ZTVN5veins21RoadsCanvasVisualizerE @1458 DATA
-    _ZTVN5veins22MacToPhyControlInfo11pE @1459 DATA
-    _ZTVN5veins22VehicleObstacleControlE @1460 DATA
-    _ZTVN5veins23BreakpointPathlossModelE @1461 DATA
-    _ZTVN5veins23DemoServiceAdvertismentE @1462 DATA
-    _ZTVN5veins23SimpleObstacleShadowingE @1463 DATA
-    _ZTVN5veins23TwoRayInterferenceModelE @1464 DATA
-    _ZTVN5veins24TraCITrafficLightMessageE @1465 DATA
-    _ZTVN5veins24VehicleObstacleShadowingE @1466 DATA
-    _ZTVN5veins26Mac80211pToPhy11pInterfaceE @1467 DATA
-    _ZTVN5veins26TraCIScenarioManagerForkerE @1468 DATA
-    _ZTVN5veins26TraCITrafficLightInterfaceE @1469 DATA
-    _ZTVN5veins27TraCIScenarioManagerLaunchdE @1470 DATA
-    _ZTVN5veins28TraCITrafficLightSimpleLogicE @1471 DATA
-    _ZTVN5veins30TraCITrafficLightAbstractLogicE @1472 DATA
-    _ZTVN5veins33Decider80211pToPhy80211pInterfaceE @1473 DATA
-    _ZTVN5veins37DemoBaseApplLayerToMac1609_4InterfaceE @1474 DATA
-    _ZTVN5veins3POAE @1475 DATA
-    _ZTVN5veins4MoveE @1476 DATA
-    _ZTVN5veins5BlockE @1477 DATA
-    _ZTVN5veins5CoordE @1478 DATA
-    _ZTVN5veins5RadioE @1479 DATA
-    _ZTVN5veins6MacPktE @1480 DATA
-    _ZTVN5veins7AntennaE @1481 DATA
-    _ZTVN5veins7DeciderE @1482 DATA
-    _ZTVN5veins8AirFrameE @1483 DATA
-    _ZTVN5veins8NicEntryE @1484 DATA
-    _ZTVN5veins8PERModelE @1485 DATA
-    _ZTVN5veins9BaseLayerE @1486 DATA
-    _ZTVN5veins9BorderMsgE @1487 DATA
-    _ZTVN5veins9HostStateE @1488 DATA
-    _ZTVN5veins9Mac1609_4E @1489 DATA
-    _ZTVN5veins9PoWResultE @1490 DATA
-    _ZThn120_N3osg13TemplateArrayINS_5Vec3fELNS_5Array4TypeE28ELi3ELi5126EED0Ev @1491
-    _ZThn120_N3osg13TemplateArrayINS_5Vec3fELNS_5Array4TypeE28ELi3ELi5126EED1Ev @1492
-    _ZThn216_N10ControllerD0Ev @1493
-    _ZThn216_N10ControllerD1Ev @1494
-    _ZThn216_N5veins10BaseModule13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @1495
-    _ZThn216_N5veins10BaseModule6finishEPN7omnetpp10cComponentEi @1496
-    _ZThn216_N5veins10BaseModuleD0Ev @1497
-    _ZThn216_N5veins10BaseModuleD1Ev @1498
-    _ZThn216_N5veins10MyVeinsAppD0Ev @1499
-    _ZThn216_N5veins10MyVeinsAppD1Ev @1500
-    _ZThn216_N5veins11BaseBatteryD0Ev @1501
-    _ZThn216_N5veins11BaseBatteryD1Ev @1502
-    _ZThn216_N5veins12BaseMacLayerD0Ev @1503
-    _ZThn216_N5veins12BaseMacLayerD1Ev @1504
-    _ZThn216_N5veins12BaseMobilityD0Ev @1505
-    _ZThn216_N5veins12BaseMobilityD1Ev @1506
-    _ZThn216_N5veins12BasePhyLayerD0Ev @1507
-    _ZThn216_N5veins12BasePhyLayerD1Ev @1508
-    _ZThn216_N5veins12TraCIDemo11pD0Ev @1509
-    _ZThn216_N5veins12TraCIDemo11pD1Ev @1510
-    _ZThn216_N5veins13BaseApplLayerD0Ev @1511
-    _ZThn216_N5veins13BaseApplLayerD1Ev @1512
-    _ZThn216_N5veins13BatteryAccessD0Ev @1513
-    _ZThn216_N5veins13BatteryAccessD1Ev @1514
-    _ZThn216_N5veins13ChannelAccess13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @1515
-    _ZThn216_N5veins13ChannelAccessD0Ev @1516
-    _ZThn216_N5veins13ChannelAccessD1Ev @1517
-    _ZThn216_N5veins13TraCIMobilityD0Ev @1518
-    _ZThn216_N5veins13TraCIMobilityD1Ev @1519
-    _ZThn216_N5veins14LinearMobilityD0Ev @1520
-    _ZThn216_N5veins14LinearMobilityD1Ev @1521
-    _ZThn216_N5veins14PhyLayer80211pD0Ev @1522
-    _ZThn216_N5veins14PhyLayer80211pD1Ev @1523
-    _ZThn216_N5veins15TraCIDemoRSU11pD0Ev @1524
-    _ZThn216_N5veins15TraCIDemoRSU11pD1Ev @1525
-    _ZThn216_N5veins17DemoBaseApplLayer13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @1526
-    _ZThn216_N5veins17DemoBaseApplLayerD0Ev @1527
-    _ZThn216_N5veins17DemoBaseApplLayerD1Ev @1528
-    _ZThn216_N5veins20TraCIScenarioManager14lifecycleEventEN7omnetpp28SimulationLifecycleEventTypeEPNS1_7cObjectE @1529
-    _ZThn216_N5veins20TraCIScenarioManager15listenerRemovedEv @1530
-    _ZThn216_N5veins20TraCIScenarioManagerD0Ev @1531
-    _ZThn216_N5veins20TraCIScenarioManagerD1Ev @1532
-    _ZThn216_N5veins20TraCIVehicleInserter13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @1533
-    _ZThn216_N5veins20TraCIVehicleInserter13receiveSignalEPN7omnetpp10cComponentEiRKNS1_7SimTimeEPNS1_7cObjectE @1534
-    _ZThn216_N5veins20TraCIVehicleInserter6finishEPN7omnetpp10cComponentEi @1535
-    _ZThn216_N5veins20TraCIVehicleInserterD0Ev @1536
-    _ZThn216_N5veins20TraCIVehicleInserterD1Ev @1537
-    _ZThn216_N5veins9BaseLayerD0Ev @1538
-    _ZThn216_N5veins9BaseLayerD1Ev @1539
-    _ZThn216_N5veins9Mac1609_4D0Ev @1540
-    _ZThn216_N5veins9Mac1609_4D1Ev @1541
-    _ZThn216_N6SwitchD0Ev @1542
-    _ZThn216_N6SwitchD1Ev @1543
-    _ZThn328_N5veins9Mac1609_413getMACAddressEv @1544
-    _ZThn328_N5veins9Mac1609_419isCurrentChannelCCHEv @1545
-    _ZThn328_N5veins9Mac1609_420changeServiceChannelENS_7ChannelE @1546
-    _ZThn328_N5veins9Mac1609_420getSwitchingIntervalEv @1547
-    _ZThn328_N5veins9Mac1609_424isChannelSwitchingActiveEv @1548
-    _ZThn328_N5veins9Mac1609_4D0Ev @1549
-    _ZThn328_N5veins9Mac1609_4D1Ev @1550
-    _ZThn448_N5veins12BasePhyLayer12recordScalarEPKcdS2_ @1551
-    _ZThn448_N5veins12BasePhyLayer14getChannelInfoERKN7omnetpp7SimTimeES4_RNSt7__cxx114listIPNS_8AirFrameESaIS8_EEE @1552
-    _ZThn448_N5veins12BasePhyLayer15getWorldUtilityEv @1553
-    _ZThn448_N5veins12BasePhyLayer18getNoiseFloorValueEv @1554
-    _ZThn448_N5veins12BasePhyLayer19sendControlMsgToMacEPN7omnetpp8cMessageE @1555
-    _ZThn448_N5veins12BasePhyLayer22getCurrentRadioChannelEv @1556
-    _ZThn448_N5veins12BasePhyLayer6sendUpEPNS_8AirFrameEPNS_13DeciderResultE @1557
-    _ZThn448_N5veins12BasePhyLayerD0Ev @1558
-    _ZThn448_N5veins12BasePhyLayerD1Ev @1559
-    _ZThn448_N5veins14PhyLayer80211pD0Ev @1560
-    _ZThn448_N5veins14PhyLayer80211pD1Ev @1561
-    _ZThn456_N5veins12BasePhyLayer13getRadioStateEv @1562
-    _ZThn456_N5veins12BasePhyLayer13setRadioStateEi @1563
-    _ZThn456_N5veins12BasePhyLayer18getNbRadioChannelsEv @1564
-    _ZThn456_N5veins12BasePhyLayer22getCurrentRadioChannelEv @1565
-    _ZThn456_N5veins12BasePhyLayer22setCurrentRadioChannelEi @1566
-    _ZThn456_N5veins12BasePhyLayerD0Ev @1567
-    _ZThn456_N5veins12BasePhyLayerD1Ev @1568
-    _ZThn456_N5veins14PhyLayer80211p13getRadioStateEv @1569
-    _ZThn456_N5veins14PhyLayer80211p13setRadioStateEi @1570
-    _ZThn456_N5veins14PhyLayer80211pD0Ev @1571
-    _ZThn456_N5veins14PhyLayer80211pD1Ev @1572
-    _ZThn808_N5veins14PhyLayer80211p15setCCAThresholdEd @1573
-    _ZThn808_N5veins14PhyLayer80211p21notifyMacAboutRxStartEb @1574
-    _ZThn808_N5veins14PhyLayer80211p22changeListeningChannelENS_7ChannelE @1575
-    _ZThn808_N5veins14PhyLayer80211p26requestChannelStatusIfIdleEv @1576
-    _ZThn808_N5veins14PhyLayer80211pD0Ev @1577
-    _ZThn808_N5veins14PhyLayer80211pD1Ev @1578
-    _ZThn808_NK5veins14PhyLayer80211p16getFrameDurationEiNS_3MCSE @1579
-    _ZThn816_N5veins14PhyLayer80211p13getRadioStateEv @1580
-    _ZThn816_N5veins14PhyLayer80211pD0Ev @1581
-    _ZThn816_N5veins14PhyLayer80211pD1Ev @1582
-    _ZTv0_n1768_N5veins27TraCIScenarioManagerLaunchd10init_traciEv @1583
-    _ZTv0_n1792_NK5veins26TraCIScenarioManagerForker13getPortNumberEv @1584
-    _ZTv0_n328_N5veins26TraCIScenarioManagerForker10initializeEi @1585
-    _ZTv0_n328_N5veins27TraCIScenarioManagerLaunchd10initializeEi @1586
-    _ZTv0_n352_N5veins26TraCIScenarioManagerForker6finishEv @1587
-    _ZTv0_n352_N5veins27TraCIScenarioManagerLaunchd6finishEv @1588
-    _ZTv0_n40_N5veins26TraCIScenarioManagerForkerD0Ev @1589
-    _ZTv0_n40_N5veins26TraCIScenarioManagerForkerD1Ev @1590
-    _ZTv0_n40_N5veins27TraCIScenarioManagerLaunchdD0Ev @1591
-    _ZTv0_n40_N5veins27TraCIScenarioManagerLaunchdD1Ev @1592
-    _ZTvn216_n40_N5veins26TraCIScenarioManagerForkerD0Ev @1593
-    _ZTvn216_n40_N5veins26TraCIScenarioManagerForkerD1Ev @1594
-    _ZTvn216_n40_N5veins27TraCIScenarioManagerLaunchdD0Ev @1595
-    _ZTvn216_n40_N5veins27TraCIScenarioManagerLaunchdD1Ev @1596
+    _ZN5veins20PoWPackingPermission12setBlockDataEPKc @504
+    _ZN5veins20PoWPackingPermission4copyERKS0_ @505
+    _ZN5veins20PoWPackingPermission7setHashEPKc @506
+    _ZN5veins20PoWPackingPermission8setNonceEi @507
+    _ZN5veins20PoWPackingPermission8setRsuIdEi @508
+    _ZN5veins20PoWPackingPermissionC1EPKcs @509
+    _ZN5veins20PoWPackingPermissionC1ERKS0_ @510
+    _ZN5veins20PoWPackingPermissionC2EPKcs @511
+    _ZN5veins20PoWPackingPermissionC2ERKS0_ @512
+    _ZN5veins20PoWPackingPermissionD0Ev @513
+    _ZN5veins20PoWPackingPermissionD1Ev @514
+    _ZN5veins20PoWPackingPermissionD2Ev @515
+    _ZN5veins20PoWPackingPermissionaSERKS0_ @516
+    _ZN5veins20TraCIScenarioManager10init_traciEv @517
+    _ZN5veins20TraCIScenarioManager10initializeEi @518
+    _ZN5veins20TraCIScenarioManager13handleMessageEPN7omnetpp8cMessageE @519
+    _ZN5veins20TraCIScenarioManager13handleSelfMsgEPN7omnetpp8cMessageE @520
+    _ZN5veins20TraCIScenarioManager13parseMappingsENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_b @521
+    _ZN5veins20TraCIScenarioManager14lifecycleEventEN7omnetpp28SimulationLifecycleEventTypeEPNS1_7cObjectE @522
+    _ZN5veins20TraCIScenarioManager15listenerRemovedEv @523
+    _ZN5veins20TraCIScenarioManager16getManagedModuleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @524
+    _ZN5veins20TraCIScenarioManager16parseModuleTypesEv @525
+    _ZN5veins20TraCIScenarioManager16preNetworkFinishEv @526
+    _ZN5veins20TraCIScenarioManager18executeOneTimestepEv @527
+    _ZN5veins20TraCIScenarioManager18isModuleUnequippedENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @528
+    _ZN5veins20TraCIScenarioManager19deleteManagedModuleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @529
+    _ZN5veins20TraCIScenarioManager19preInitializeModuleEPN7omnetpp7cModuleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS_5CoordESB_dNS_7HeadingENS_10EnumBitsetINS_13VehicleSignalEEE @530
+    _ZN5veins20TraCIScenarioManager20updateModulePositionEPN7omnetpp7cModuleERKNS_5CoordERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEdNS_7HeadingENS_10EnumBitsetINS_13VehicleSignalEEE @531
+    _ZN5veins20TraCIScenarioManager22processSimSubscriptionENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERNS_11TraCIBufferE @532
+    _ZN5veins20TraCIScenarioManager22traciInitializedSignalE @533 DATA
+    _ZN5veins20TraCIScenarioManager22traciModuleAddedSignalE @534 DATA
+    _ZN5veins20TraCIScenarioManager22traciTimestepEndSignalE @535 DATA
+    _ZN5veins20TraCIScenarioManager24processSubcriptionResultERNS_11TraCIBufferE @536
+    _ZN5veins20TraCIScenarioManager24traciModulePreInitSignalE @537 DATA
+    _ZN5veins20TraCIScenarioManager24traciModuleRemovedSignalE @538 DATA
+    _ZN5veins20TraCIScenarioManager24traciTimestepBeginSignalE @539 DATA
+    _ZN5veins20TraCIScenarioManager26processVehicleSubscriptionENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERNS_11TraCIBufferE @540
+    _ZN5veins20TraCIScenarioManager27subscribeToVehicleVariablesENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @541
+    _ZN5veins20TraCIScenarioManager31processTrafficLightSubscriptionENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERNS_11TraCIBufferE @542
+    _ZN5veins20TraCIScenarioManager31unsubscribeFromVehicleVariablesENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @543
+    _ZN5veins20TraCIScenarioManager32subscribeToTrafficLightVariablesENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @544
+    _ZN5veins20TraCIScenarioManager36unsubscribeFromTrafficLightVariablesENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @545
+    _ZN5veins20TraCIScenarioManager6finishEv @546
+    _ZN5veins20TraCIScenarioManager9addModuleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_S6_S6_RKNS_5CoordES6_dNS_7HeadingENS_10EnumBitsetINS_13VehicleSignalEEEddd @547
+    _ZN5veins20TraCIScenarioManagerC1Ev @548
+    _ZN5veins20TraCIScenarioManagerC2Ev @549
+    _ZN5veins20TraCIScenarioManagerD0Ev @550
+    _ZN5veins20TraCIScenarioManagerD1Ev @551
+    _ZN5veins20TraCIScenarioManagerD2Ev @552
+    _ZN5veins20TraCIVehicleInserter10initializeEi @553
+    _ZN5veins20TraCIVehicleInserter13handleMessageEPN7omnetpp8cMessageE @554
+    _ZN5veins20TraCIVehicleInserter13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @555
+    _ZN5veins20TraCIVehicleInserter13receiveSignalEPN7omnetpp10cComponentEiRKNS1_7SimTimeEPNS1_7cObjectE @556
+    _ZN5veins20TraCIVehicleInserter14insertVehiclesEv @557
+    _ZN5veins20TraCIVehicleInserter16insertNewVehicleEv @558
+    _ZN5veins20TraCIVehicleInserter6finishEPN7omnetpp10cComponentEi @559
+    _ZN5veins20TraCIVehicleInserter6finishEv @560
+    _ZN5veins20TraCIVehicleInserterC1Ev @561
+    _ZN5veins20TraCIVehicleInserterC2Ev @562
+    _ZN5veins20TraCIVehicleInserterD0Ev @563
+    _ZN5veins20TraCIVehicleInserterD1Ev @564
+    _ZN5veins20TraCIVehicleInserterD2Ev @565
+    _ZN5veins21BaseConnectionManager10initializeEi @566
+    _ZN5veins21BaseConnectionManager11registerNicEPN7omnetpp7cModuleEPNS_13ChannelAccessENS_5CoordENS_7HeadingE @567
+    _ZN5veins21BaseConnectionManager11wrapIfTorusEii @568
+    _ZN5veins21BaseConnectionManager12updateNicPosEiNS_5CoordENS_7HeadingE @569
+    _ZN5veins21BaseConnectionManager13unregisterNicEPN7omnetpp7cModuleE @570
+    _ZN5veins21BaseConnectionManager14getCellEntriesERNS0_9GridCoordE @571
+    _ZN5veins21BaseConnectionManager14registerNicExtEi @572
+    _ZN5veins21BaseConnectionManager17updateConnectionsEiNS_5CoordES1_ @573
+    _ZN5veins21BaseConnectionManager20getCellForCoordinateERKNS_5CoordE @574
+    _ZN5veins21BaseConnectionManager20updateNicConnectionsERSt3mapIiPNS_8NicEntryESt4lessIiESaISt4pairIKiS3_EEES3_ @575
+    _ZN5veins21BaseConnectionManager22fillUnionWithNeighborsERNS0_8CoordSetENS0_9GridCoordE @576
+    _ZN5veins21BaseConnectionManager9checkGridERNS0_9GridCoordES2_i @577
+    _ZN5veins21BaseConnectionManager9isInRangeEPNS_8NicEntryES2_ @578
+    _ZN5veins21BaseConnectionManagerD0Ev @579
+    _ZN5veins21BaseConnectionManagerD1Ev @580
+    _ZN5veins21BaseConnectionManagerD2Ev @581
+    _ZN5veins21RoadsCanvasVisualizer10createLineERKNSt7__cxx114listINS_5CoordESaIS3_EEEN7omnetpp7cFigure5ColorEdb @582
+    _ZN5veins21RoadsCanvasVisualizer10initializeEi @583
+    _ZN5veins21RoadsCanvasVisualizer13handleMessageEPN7omnetpp8cMessageE @584
+    _ZN5veins21RoadsCanvasVisualizer6finishEv @585
+    _ZN5veins21TraCICommandInterface10addPolygonENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_RKNS_10TraCIColorEbiRKNS1_4listINS_5CoordESaISB_EEE @586
+    _ZN5veins21TraCICommandInterface10addVehicleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_S6_N7omnetpp7SimTimeEdda @587
+    _ZN5veins21TraCICommandInterface10getLaneIdsB5cxx11Ev @588
+    _ZN5veins21TraCICommandInterface10getRoadIdsB5cxx11Ev @589
+    _ZN5veins21TraCICommandInterface10getVersionB5cxx11Ev @590
+    _ZN5veins21TraCICommandInterface11getDistanceERKNS_5CoordES3_b @591
+    _ZN5veins21TraCICommandInterface11getRouteIdsB5cxx11Ev @592
+    _ZN5veins21TraCICommandInterface12Trafficlight10setProgramENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @593
+    _ZN5veins21TraCICommandInterface12Trafficlight13setPhaseIndexEi @594
+    _ZN5veins21TraCICommandInterface12Trafficlight16setPhaseDurationEN7omnetpp7SimTimeE @595
+    _ZN5veins21TraCICommandInterface12Trafficlight20setProgramDefinitionENS_24TraCITrafficLightProgram5LogicEi @596
+    _ZN5veins21TraCICommandInterface12Trafficlight8setStateENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @597
+    _ZN5veins21TraCICommandInterface13genericGetIntEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @598
+    _ZN5veins21TraCICommandInterface13getGuiViewIdsB5cxx11Ev @599
+    _ZN5veins21TraCICommandInterface13getPolygonIdsB5cxx11Ev @600
+    _ZN5veins21TraCICommandInterface13getRoadMapPosB5cxx11ERKNS_5CoordE @601
+    _ZN5veins21TraCICommandInterface13setApiVersionEj @602
+    _ZN5veins21TraCICommandInterface14genericGetTimeEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @603
+    _ZN5veins21TraCICommandInterface14getJunctionIdsB5cxx11Ev @604
+    _ZN5veins21TraCICommandInterface14versionConfigsE @605 DATA
+    _ZN5veins21TraCICommandInterface15genericGetCoordEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @606
+    _ZN5veins21TraCICommandInterface16LaneAreaDetector24getLastStepVehicleNumberEv @607
+    _ZN5veins21TraCICommandInterface16genericGetDoubleEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @608
+    _ZN5veins21TraCICommandInterface16genericGetStringEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @609
+    _ZN5veins21TraCICommandInterface16genericSetDoubleEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhd @610
+    _ZN5veins21TraCICommandInterface17getVehicleTypeIdsB5cxx11Ev @611
+    _ZN5veins21TraCICommandInterface18getTrafficlightIdsB5cxx11Ev @612
+    _ZN5veins21TraCICommandInterface19genericGetCoordListEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @613
+    _ZN5veins21TraCICommandInterface20genericGetStringListEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @614
+    _ZN5veins21TraCICommandInterface21initNetworkBoundariesEi @615
+    _ZN5veins21TraCICommandInterface21isIgnoringGuiCommandsEv @616
+    _ZN5veins21TraCICommandInterface22genericGetUnsignedByteEhNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEhhPNS_15TraCIConnection6ResultE @617
+    _ZN5veins21TraCICommandInterface22getLaneAreaDetectorIdsB5cxx11Ev @618
+    _ZN5veins21TraCICommandInterface22getVehicleTypeMaxSpeedENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @619
+    _ZN5veins21TraCICommandInterface22setVehicleTypeMaxSpeedENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEd @620
+    _ZN5veins21TraCICommandInterface3Poi11getPositionEv @621
+    _ZN5veins21TraCICommandInterface3Poi6removeEi @622
+    _ZN5veins21TraCICommandInterface4Lane11getMaxSpeedEv @623
+    _ZN5veins21TraCICommandInterface4Lane12getMeanSpeedEv @624
+    _ZN5veins21TraCICommandInterface4Lane13setDisallowedENSt7__cxx114listINS2_12basic_stringIcSt11char_traitsIcESaIcEEESaIS8_EEE @625
+    _ZN5veins21TraCICommandInterface4Lane8getShapeB5cxx11Ev @626
+    _ZN5veins21TraCICommandInterface4Lane8getWidthEv @627
+    _ZN5veins21TraCICommandInterface4Lane9getLengthEv @628
+    _ZN5veins21TraCICommandInterface4Lane9getRoadIdB5cxx11Ev @629
+    _ZN5veins21TraCICommandInterface4Road12getMeanSpeedEv @630
+    _ZN5veins21TraCICommandInterface4Road20getCurrentTravelTimeEv @631
+    _ZN5veins21TraCICommandInterface4Road7getNameB5cxx11Ev @632
+    _ZN5veins21TraCICommandInterface5Route10getRoadIdsB5cxx11Ev @633
+    _ZN5veins21TraCICommandInterface6addPoiENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_RKNS_10TraCIColorEiRKNS_5CoordE @634
+    _ZN5veins21TraCICommandInterface7GuiView11setBoundaryENS_5CoordES2_ @635
+    _ZN5veins21TraCICommandInterface7GuiView12trackVehicleENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @636
+    _ZN5veins21TraCICommandInterface7GuiView14takeScreenshotENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEii @637
+    _ZN5veins21TraCICommandInterface7GuiView7getZoomEv @638
+    _ZN5veins21TraCICommandInterface7GuiView7setZoomEd @639
+    _ZN5veins21TraCICommandInterface7GuiView9getSchemeB5cxx11Ev @640
+    _ZN5veins21TraCICommandInterface7GuiView9setSchemeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @641
+    _ZN5veins21TraCICommandInterface7Polygon6removeEi @642
+    _ZN5veins21TraCICommandInterface7Polygon8getShapeB5cxx11Ev @643
+    _ZN5veins21TraCICommandInterface7Polygon8setShapeERKNSt7__cxx114listINS_5CoordESaIS4_EEE @644
+    _ZN5veins21TraCICommandInterface7Polygon9getTypeIdB5cxx11Ev @645
+    _ZN5veins21TraCICommandInterface7Vehicle10getNextTlsB5cxx11Ev @646
+    _ZN5veins21TraCICommandInterface7Vehicle10getRouteIdB5cxx11Ev @647
+    _ZN5veins21TraCICommandInterface7Vehicle10setParkingEv @648
+    _ZN5veins21TraCICommandInterface7Vehicle11changeRouteENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEN7omnetpp7SimTimeE @649
+    _ZN5veins21TraCICommandInterface7Vehicle11getMaxSpeedEv @650
+    _ZN5veins21TraCICommandInterface7Vehicle11setMaxSpeedEd @651
+    _ZN5veins21TraCICommandInterface7Vehicle12getLaneIndexEv @652
+    _ZN5veins21TraCICommandInterface7Vehicle12getParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERS7_ @653
+    _ZN5veins21TraCICommandInterface7Vehicle12getParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERd @654
+    _ZN5veins21TraCICommandInterface7Vehicle12getParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERi @655
+    _ZN5veins21TraCICommandInterface7Vehicle12setParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES9_ @656
+    _ZN5veins21TraCICommandInterface7Vehicle12setParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEd @657
+    _ZN5veins21TraCICommandInterface7Vehicle12setParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi @658
+    _ZN5veins21TraCICommandInterface7Vehicle12setSpeedModeEi @659
+    _ZN5veins21TraCICommandInterface7Vehicle15getAccelerationEv @660
+    _ZN5veins21TraCICommandInterface7Vehicle15getLanePositionEv @661
+    _ZN5veins21TraCICommandInterface7Vehicle17getPlannedRoadIdsB5cxx11Ev @662
+    _ZN5veins21TraCICommandInterface7Vehicle18changeVehicleRouteERKNSt7__cxx114listINS2_12basic_stringIcSt11char_traitsIcESaIcEEESaIS8_EEE @663
+    _ZN5veins21TraCICommandInterface7Vehicle20getDistanceTravelledEv @664
+    _ZN5veins21TraCICommandInterface7Vehicle6stopAtENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEdhdN7omnetpp7SimTimeE @665
+    _ZN5veins21TraCICommandInterface7Vehicle8getAccelEv @666
+    _ZN5veins21TraCICommandInterface7Vehicle8getAngleEv @667
+    _ZN5veins21TraCICommandInterface7Vehicle8getColorEv @668
+    _ZN5veins21TraCICommandInterface7Vehicle8getSpeedEv @669
+    _ZN5veins21TraCICommandInterface7Vehicle8getVTypeB5cxx11Ev @670
+    _ZN5veins21TraCICommandInterface7Vehicle8getWidthEv @671
+    _ZN5veins21TraCICommandInterface7Vehicle8newRouteENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @672
+    _ZN5veins21TraCICommandInterface7Vehicle8setColorERKNS_10TraCIColorE @673
+    _ZN5veins21TraCICommandInterface7Vehicle8setSpeedEd @674
+    _ZN5veins21TraCICommandInterface7Vehicle8slowDownEdN7omnetpp7SimTimeE @675
+    _ZN5veins21TraCICommandInterface7Vehicle9getDeccelEv @676
+    _ZN5veins21TraCICommandInterface7Vehicle9getHeightEv @677
+    _ZN5veins21TraCICommandInterface7Vehicle9getLaneIdB5cxx11Ev @678
+    _ZN5veins21TraCICommandInterface7Vehicle9getLeaderB5cxx11Ed @679
+    _ZN5veins21TraCICommandInterface7Vehicle9getLengthEv @680
+    _ZN5veins21TraCICommandInterface7Vehicle9getRoadIdB5cxx11Ev @681
+    _ZN5veins21TraCICommandInterface7Vehicle9getTypeIdB5cxx11Ev @682
+    _ZN5veins21TraCICommandInterface8Junction11getPositionEv @683
+    _ZN5veins21TraCICommandInterface8Junction8getShapeB5cxx11Ev @684
+    _ZN5veins21TraCICommandInterface8addRouteENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS1_4listIS6_SaIS6_EEE @685
+    _ZN5veins21TraCICommandInterface9getLonLatERKNS_5CoordE @686
+    _ZN5veins21TraCICommandInterface9getPoiIdsB5cxx11Ev @687
+    _ZN5veins21TraCICommandInterfaceC1EPN7omnetpp10cComponentERNS_15TraCIConnectionEb @688
+    _ZN5veins21TraCICommandInterfaceC2EPN7omnetpp10cComponentERNS_15TraCIConnectionEb @689
+    _ZN5veins21TraCIRegionOfInterest13addRectanglesERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @690
+    _ZN5veins21TraCIRegionOfInterest5clearEv @691
+    _ZN5veins21TraCIRegionOfInterest8addRoadsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @692
+    _ZN5veins21TraCIRegionOfInterestC1Ev @693
+    _ZN5veins21TraCIRegionOfInterestC2Ev @694
+    _ZN5veins22VehicleObstacleControl10initializeEi @695
+    _ZN5veins22VehicleObstacleControl13handleMessageEPN7omnetpp8cMessageE @696
+    _ZN5veins22VehicleObstacleControl13handleSelfMsgEPN7omnetpp8cMessageE @697
+    _ZN5veins22VehicleObstacleControl23getVehicleAttenuationDZERKSt6vectorISt4pairIddESaIS3_EENS_6SignalE @698
+    _ZN5veins22VehicleObstacleControl27getVehicleAttenuationSingleEdddddNS_6SignalE @699
+    _ZN5veins22VehicleObstacleControl3addENS_18MobileHostObstacleE @700
+    _ZN5veins22VehicleObstacleControl5eraseEPKNS_18MobileHostObstacleE @701
+    _ZN5veins22VehicleObstacleControl6finishEv @702
+    _ZN5veins22VehicleObstacleControlD0Ev @703
+    _ZN5veins22VehicleObstacleControlD1Ev @704
+    _ZN5veins22VehicleObstacleControlD2Ev @705
+    _ZN5veins23BreakpointPathlossModel12filterSignalEPNS_6SignalE @706
+    _ZN5veins23DemoServiceAdvertisment12parsimUnpackEPN7omnetpp11cCommBufferE @707
+    _ZN5veins23DemoServiceAdvertisment16setTargetChannelEi @708
+    _ZN5veins23DemoServiceAdvertisment21setServiceDescriptionEPKc @709
+    _ZN5veins23DemoServiceAdvertisment4copyERKS0_ @710
+    _ZN5veins23DemoServiceAdvertismentC1EPKcs @711
+    _ZN5veins23DemoServiceAdvertismentC1ERKS0_ @712
+    _ZN5veins23DemoServiceAdvertismentC2EPKcs @713
+    _ZN5veins23DemoServiceAdvertismentC2ERKS0_ @714
+    _ZN5veins23DemoServiceAdvertismentD0Ev @715
+    _ZN5veins23DemoServiceAdvertismentD1Ev @716
+    _ZN5veins23DemoServiceAdvertismentD2Ev @717
+    _ZN5veins23DemoServiceAdvertismentaSERKS0_ @718
+    _ZN5veins23SimpleObstacleShadowing12filterSignalEPNS_6SignalE @719
+    _ZN5veins23SimpleObstacleShadowingC1EPN7omnetpp10cComponentERNS_15ObstacleControlEbRKNS_5CoordE @720
+    _ZN5veins23SimpleObstacleShadowingC2EPN7omnetpp10cComponentERNS_15ObstacleControlEbRKNS_5CoordE @721
+    _ZN5veins23TwoRayInterferenceModel12filterSignalEPNS_6SignalE @722
+    _ZN5veins24TraCITrafficLightMessage11setNewValueEPKc @723
+    _ZN5veins24TraCITrafficLightMessage11setOldValueEPKc @724
+    _ZN5veins24TraCITrafficLightMessage12parsimUnpackEPN7omnetpp11cCommBufferE @725
+    _ZN5veins24TraCITrafficLightMessage15setChangeSourceEi @726
+    _ZN5veins24TraCITrafficLightMessage19setChangedAttributeEi @727
+    _ZN5veins24TraCITrafficLightMessage4copyERKS0_ @728
+    _ZN5veins24TraCITrafficLightMessage7setTlIdEPKc @729
+    _ZN5veins24TraCITrafficLightMessageC1EPKcs @730
+    _ZN5veins24TraCITrafficLightMessageC1ERKS0_ @731
+    _ZN5veins24TraCITrafficLightMessageC2EPKcs @732
+    _ZN5veins24TraCITrafficLightMessageC2ERKS0_ @733
+    _ZN5veins24TraCITrafficLightMessageD0Ev @734
+    _ZN5veins24TraCITrafficLightMessageD1Ev @735
+    _ZN5veins24TraCITrafficLightMessageD2Ev @736
+    _ZN5veins24TraCITrafficLightMessageaSERKS0_ @737
+    _ZN5veins24TraCITrafficLightProgram8addLogicERKNS0_5LogicE @738
+    _ZN5veins24TraCITrafficLightProgramC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @739
+    _ZN5veins24TraCITrafficLightProgramC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @740
+    _ZN5veins24VehicleObstacleShadowing12filterSignalEPNS_6SignalE @741
+    _ZN5veins24VehicleObstacleShadowingC1EPN7omnetpp10cComponentERNS_22VehicleObstacleControlEbRKNS_5CoordE @742
+    _ZN5veins24VehicleObstacleShadowingC2EPN7omnetpp10cComponentERNS_22VehicleObstacleControlEbRKNS_5CoordE @743
+    _ZN5veins26TraCIScenarioManagerForker10initializeEi @744
+    _ZN5veins26TraCIScenarioManagerForker10killServerEv @745
+    _ZN5veins26TraCIScenarioManagerForker11startServerEv @746
+    _ZN5veins26TraCIScenarioManagerForker6finishEv @747
+    _ZN5veins26TraCIScenarioManagerForkerC1Ev @748
+    _ZN5veins26TraCIScenarioManagerForkerC2Ev @749
+    _ZN5veins26TraCIScenarioManagerForkerD0Ev @750
+    _ZN5veins26TraCIScenarioManagerForkerD1Ev @751
+    _ZN5veins26TraCIScenarioManagerForkerD2Ev @752
+    _ZN5veins26TraCITrafficLightInterface10initializeEv @753
+    _ZN5veins26TraCITrafficLightInterface13handleMessageEPN7omnetpp8cMessageE @754
+    _ZN5veins26TraCITrafficLightInterface13preInitializeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS_5CoordERKN7omnetpp7SimTimeE @755
+    _ZN5veins26TraCITrafficLightInterface13sendChangeMsgEiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_ @756
+    _ZN5veins26TraCITrafficLightInterface13setNextSwitchERKN7omnetpp7SimTimeEb @757
+    _ZN5veins26TraCITrafficLightInterface15setCurrentStateERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb @758
+    _ZN5veins26TraCITrafficLightInterface18getControlledLinksB5cxx11Ev @759
+    _ZN5veins26TraCITrafficLightInterface18setControlledLinksERKNSt7__cxx114listINS2_INS_21TraCITrafficLightLinkESaIS3_EEESaIS5_EEE @760
+    _ZN5veins26TraCITrafficLightInterface19setCurrentLogicByIdERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb @761
+    _ZN5veins26TraCITrafficLightInterface19setCurrentPhaseByNrEjb @762
+    _ZN5veins26TraCITrafficLightInterface20setProgramDefinitionERKNS_24TraCITrafficLightProgramE @763
+    _ZN5veins26TraCITrafficLightInterface20setRemainingDurationERKN7omnetpp7SimTimeEb @764
+    _ZN5veins26TraCITrafficLightInterface26handleChangeCommandMessageEPN7omnetpp8cMessageE @765
+    _ZN5veins26TraCITrafficLightInterfaceC1Ev @766
+    _ZN5veins26TraCITrafficLightInterfaceC2Ev @767
+    _ZN5veins26TraCITrafficLightInterfaceD0Ev @768
+    _ZN5veins26TraCITrafficLightInterfaceD1Ev @769
+    _ZN5veins26TraCITrafficLightInterfaceD2Ev @770
+    _ZN5veins27TraCIScenarioManagerLaunchd10init_traciEv @771
+    _ZN5veins27TraCIScenarioManagerLaunchd10initializeEi @772
+    _ZN5veins27TraCIScenarioManagerLaunchd6finishEv @773
+    _ZN5veins27TraCIScenarioManagerLaunchdD0Ev @774
+    _ZN5veins27TraCIScenarioManagerLaunchdD1Ev @775
+    _ZN5veins27TraCIScenarioManagerLaunchdD2Ev @776
+    _ZN5veins28TraCITrafficLightSimpleLogic13handleApplMsgEPN7omnetpp8cMessageE @777
+    _ZN5veins28TraCITrafficLightSimpleLogic13handleTlIfMsgEPNS_24TraCITrafficLightMessageE @778
+    _ZN5veins28TraCITrafficLightSimpleLogic20handlePossibleSwitchEv @779
+    _ZN5veins29TraCICoordinateTransformationC1ENS_10TraCICoordES1_f @780
+    _ZN5veins29TraCICoordinateTransformationC2ENS_10TraCICoordES1_f @781
+    _ZN5veins30TraCITrafficLightAbstractLogic10initializeEv @782
+    _ZN5veins30TraCITrafficLightAbstractLogic13handleMessageEPN7omnetpp8cMessageE @783
+    _ZN5veins30TraCITrafficLightAbstractLogic13handleSelfMsgEPN7omnetpp8cMessageE @784
+    _ZN5veins30TraCITrafficLightAbstractLogicC2Ev @785
+    _ZN5veins30TraCITrafficLightAbstractLogicD0Ev @786
+    _ZN5veins30TraCITrafficLightAbstractLogicD1Ev @787
+    _ZN5veins30TraCITrafficLightAbstractLogicD2Ev @788
+    _ZN5veins5Block12parsimUnpackEPN7omnetpp11cCommBufferE @789
+    _ZN5veins5Block12setTimestampEN7omnetpp7SimTimeE @790
+    _ZN5veins5Block18setDifficultyLevelEi @791
+    _ZN5veins5Block18setTransactionDataEPKc @792
+    _ZN5veins5Block20setPreviousBlockHashEPKc @793
+    _ZN5veins5Block4copyERKS0_ @794
+    _ZN5veins5Block8setMinerEPKc @795
+    _ZN5veins5Block8setNonceEi @796
+    _ZN5veins5BlockC1EPKcs @797
+    _ZN5veins5BlockC1ERKS0_ @798
+    _ZN5veins5BlockC2EPKcs @799
+    _ZN5veins5BlockC2ERKS0_ @800
+    _ZN5veins5BlockD0Ev @801
+    _ZN5veins5BlockD1Ev @802
+    _ZN5veins5BlockD2Ev @803
+    _ZN5veins5BlockaSERKS0_ @804
+    _ZN5veins5Coord4ZEROE @805 DATA
+    _ZN5veins5Radio13setSwitchTimeEiiRKN7omnetpp7SimTimeE @806
+    _ZN5veins5Radio8switchToEiRKN7omnetpp7SimTimeE @807
+    _ZN5veins5Radio9endSwitchERKN7omnetpp7SimTimeE @808
+    _ZN5veins5RadioC1Eibiii @809
+    _ZN5veins5RadioC2Eibiii @810
+    _ZN5veins5RadioD0Ev @811
+    _ZN5veins5RadioD1Ev @812
+    _ZN5veins5RadioD2Ev @813
+    _ZN5veins6MacPkt10setSrcAddrERKl @814
+    _ZN5veins6MacPkt11setDestAddrERKl @815
+    _ZN5veins6MacPkt12parsimUnpackEPN7omnetpp11cCommBufferE @816
+    _ZN5veins6MacPkt13setSequenceIdEl @817
+    _ZN5veins6MacPkt4copyERKS0_ @818
+    _ZN5veins6MacPktC1EPKcs @819
+    _ZN5veins6MacPktC1ERKS0_ @820
+    _ZN5veins6MacPktC2EPKcs @821
+    _ZN5veins6MacPktC2ERKS0_ @822
+    _ZN5veins6MacPktD0Ev @823
+    _ZN5veins6MacPktD1Ev @824
+    _ZN5veins6MacPktD2Ev @825
+    _ZN5veins6MacPktaSERKS0_ @826
+    _ZN5veins6Signal10setDataEndEy @827
+    _ZN5veins6Signal11atFrequencyEd @828
+    _ZN5veins6Signal12setDataStartEy @829
+    _ZN5veins6Signal12setSenderPoaERKNS_3POAE @830
+    _ZN5veins6Signal13getDataValuesEv @831
+    _ZN5veins6Signal14setReceiverPoaERKNS_3POAE @832
+    _ZN5veins6Signal16setDataNumValuesEy @833
+    _ZN5veins6Signal18applyAnalogueModelEt @834
+    _ZN5veins6Signal19setPropagationDelayERKN7omnetpp7SimTimeE @835
+    _ZN5veins6Signal20setAnalogueModelListEPSt6vectorISt10unique_ptrINS_13AnalogueModelESt14default_deleteIS3_EESaIS6_EE @836
+    _ZN5veins6Signal22applyAllAnalogueModelsEv @837
+    _ZN5veins6Signal23setCenterFrequencyIndexEy @838
+    _ZN5veins6Signal24greaterAtCenterFrequencyEd @839
+    _ZN5veins6Signal24smallerAtCenterFrequencyEd @840
+    _ZN5veins6Signal2atEy @841
+    _ZN5veins6Signal6dataAtEy @842
+    _ZN5veins6Signal9getValuesEv @843
+    _ZN5veins6Signal9setTimingEN7omnetpp7SimTimeES2_ @844
+    _ZN5veins6SignalC1ENS_8SpectrumE @845
+    _ZN5veins6SignalC1ENS_8SpectrumEN7omnetpp7SimTimeES3_ @846
+    _ZN5veins6SignalC1ERKS0_ @847
+    _ZN5veins6SignalC2ENS_8SpectrumE @848
+    _ZN5veins6SignalC2ENS_8SpectrumEN7omnetpp7SimTimeES3_ @849
+    _ZN5veins6SignalC2ERKS0_ @850
+    _ZN5veins6SignalaSERKS0_ @851
+    _ZN5veins6SignalaSEd @852
+    _ZN5veins6SignaldVERKS0_ @853
+    _ZN5veins6SignaldVEd @854
+    _ZN5veins6SignalmIERKS0_ @855
+    _ZN5veins6SignalmIEd @856
+    _ZN5veins6SignalmLERKS0_ @857
+    _ZN5veins6SignalmLEd @858
+    _ZN5veins6SignalpLERKS0_ @859
+    _ZN5veins6SignalpLEd @860
+    _ZN5veins7Antenna7getGainENS_5CoordES1_S1_ @861
+    _ZN5veins7Decider13processSignalEPNS_8AirFrameE @862
+    _ZN5veins7DeciderC1EPN7omnetpp10cComponentEPNS_21DeciderToPhyInterfaceE @863
+    _ZN5veins7DeciderC2EPN7omnetpp10cComponentEPNS_21DeciderToPhyInterfaceE @864
+    _ZN5veins7Heading3nanE @865 DATA
+    _ZN5veins8AirFrame10setChannelEi @866
+    _ZN5veins8AirFrame11setDurationEN7omnetpp7SimTimeE @867
+    _ZN5veins8AirFrame12parsimUnpackEPN7omnetpp11cCommBufferE @868
+    _ZN5veins8AirFrame13setProtocolIdEi @869
+    _ZN5veins8AirFrame4copyERKS0_ @870
+    _ZN5veins8AirFrame5setIdEl @871
+    _ZN5veins8AirFrame6setMcsEi @872
+    _ZN5veins8AirFrame6setPoaERKNS_3POAE @873
+    _ZN5veins8AirFrame7setTypeEi @874
+    _ZN5veins8AirFrame8setStateEi @875
+    _ZN5veins8AirFrame9setSignalERKNS_6SignalE @876
+    _ZN5veins8AirFrameC1EPKcs @877
+    _ZN5veins8AirFrameC1ERKS0_ @878
+    _ZN5veins8AirFrameC2EPKcs @879
+    _ZN5veins8AirFrameC2ERKS0_ @880
+    _ZN5veins8AirFrameD0Ev @881
+    _ZN5veins8AirFrameD1Ev @882
+    _ZN5veins8AirFrameD2Ev @883
+    _ZN5veins8AirFrameaSERKS0_ @884
+    _ZN5veins8Obstacle8setShapeESt6vectorINS_5CoordESaIS2_EE @885
+    _ZN5veins8ObstacleC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_dd @886
+    _ZN5veins8ObstacleC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_dd @887
+    _ZN5veins8PERModel12filterSignalEPNS_6SignalE @888
+    _ZN5veins8SpectrumC1ESt6vectorIdSaIdEE @889
+    _ZN5veins8SpectrumC2ESt6vectorIdSaIdEE @890
+    _ZN5veins9BaseLayer10initializeEi @891
+    _ZN5veins9BaseLayer12recordPacketENS_13PassedMessage11direction_tENS1_7gates_tEPKN7omnetpp8cMessageE @892
+    _ZN5veins9BaseLayer13handleMessageEPN7omnetpp8cMessageE @893
+    _ZN5veins9BaseLayer13sendControlUpEPN7omnetpp8cMessageE @894
+    _ZN5veins9BaseLayer15catPacketSignalE @895 DATA
+    _ZN5veins9BaseLayer15sendControlDownEPN7omnetpp8cMessageE @896
+    _ZN5veins9BaseLayer18catPassedMsgSignalE @897 DATA
+    _ZN5veins9BaseLayer22catDroppedPacketSignalE @898 DATA
+    _ZN5veins9BaseLayer6finishEv @899
+    _ZN5veins9BaseLayer6sendUpEPN7omnetpp8cMessageE @900
+    _ZN5veins9BaseLayer8sendDownEPN7omnetpp8cMessageE @901
+    _ZN5veins9BaseLayerD0Ev @902
+    _ZN5veins9BaseLayerD1Ev @903
+    _ZN5veins9BaseLayerD2Ev @904
+    _ZN5veins9BorderMsg11setStartPosERKNS_5CoordE @905
+    _ZN5veins9BorderMsg12parsimUnpackEPN7omnetpp11cCommBufferE @906
+    _ZN5veins9BorderMsg12setDirectionERKNS_5CoordE @907
+    _ZN5veins9BorderMsg4copyERKS0_ @908
+    _ZN5veins9BorderMsg9setPolicyEi @909
+    _ZN5veins9BorderMsgC1EPKcs @910
+    _ZN5veins9BorderMsgC1ERKS0_ @911
+    _ZN5veins9BorderMsgC2EPKcs @912
+    _ZN5veins9BorderMsgC2ERKS0_ @913
+    _ZN5veins9BorderMsgD0Ev @914
+    _ZN5veins9BorderMsgD1Ev @915
+    _ZN5veins9BorderMsgD2Ev @916
+    _ZN5veins9BorderMsgaSERKS0_ @917
+    _ZN5veins9Mac1609_410initializeEi @918
+    _ZN5veins9Mac1609_410setTxPowerEd @919
+    _ZN5veins9Mac1609_410sigSentAckE @920 DATA
+    _ZN5veins9Mac1609_411channelBusyEv @921
+    _ZN5veins9Mac1609_411channelIdleEb @922
+    _ZN5veins9Mac1609_412sigCollisionE @923 DATA
+    _ZN5veins9Mac1609_413handleSelfMsgEPN7omnetpp8cMessageE @924
+    _ZN5veins9Mac1609_413handleUnicastElSt10unique_ptrINS_15BaseFrame1609_4ESt14default_deleteIS2_EE @925
+    _ZN5veins9Mac1609_413sigSentPacketE @926 DATA
+    _ZN5veins9Mac1609_414handleLowerMsgEPN7omnetpp8cMessageE @927
+    _ZN5veins9Mac1609_414handleUpperMsgEPN7omnetpp8cMessageE @928
+    _ZN5veins9Mac1609_414sigChannelBusyE @929 DATA
+    _ZN5veins9Mac1609_415channelBusySelfEb @930
+    _ZN5veins9Mac1609_415handleBroadcastEPNS_11Mac80211PktEPNS_18DeciderResult80211E @931
+    _ZN5veins9Mac1609_415mapUserPriorityEi @932
+    _ZN5veins9Mac1609_415setCCAThresholdEd @933
+    _ZN5veins9Mac1609_416handleAckTimeOutEPNS_17AckTimeOutMessageE @934
+    _ZN5veins9Mac1609_416handleRetransmitENS0_17t_access_categoryE @935
+    _ZN5veins9Mac1609_416setActiveChannelENS_11ChannelTypeE @936
+    _ZN5veins9Mac1609_417attachControlInfoEPNS_11Mac80211PktENS_7ChannelENS_3MCSEd @937
+    _ZN5veins9Mac1609_418handleLowerControlEPN7omnetpp8cMessageE @938
+    _ZN5veins9Mac1609_418handleUpperControlEPN7omnetpp8cMessageE @939
+    _ZN5veins9Mac1609_418sigRetriesExceededE @940 DATA
+    _ZN5veins9Mac1609_419isCurrentChannelCCHEv @941
+    _ZN5veins9Mac1609_420changeServiceChannelENS_7ChannelE @942
+    _ZN5veins9Mac1609_420getSwitchingIntervalEv @943
+    _ZN5veins9Mac1609_423setParametersForBitrateEy @944
+    _ZN5veins9Mac1609_424isChannelSwitchingActiveEv @945
+    _ZN5veins9Mac1609_44EDCA11createQueueEiiiNS0_17t_access_categoryE @946
+    _ZN5veins9Mac1609_44EDCA11queuePacketENS0_17t_access_categoryEPNS_15BaseFrame1609_4E @947
+    _ZN5veins9Mac1609_44EDCA11revokeTxOPsEv @948
+    _ZN5veins9Mac1609_44EDCA11stopContentEbb @949
+    _ZN5veins9Mac1609_44EDCA12postTransmitENS0_17t_access_categoryEPNS_15BaseFrame1609_4Eb @950
+    _ZN5veins9Mac1609_44EDCA12startContentEN7omnetpp7SimTimeEb @951
+    _ZN5veins9Mac1609_44EDCA16initiateTransmitEN7omnetpp7SimTimeE @952
+    _ZN5veins9Mac1609_44EDCA7backoffENS0_17t_access_categoryE @953
+    _ZN5veins9Mac1609_44EDCA9EDCAQueueC1EiiiNS0_17t_access_categoryE @954
+    _ZN5veins9Mac1609_44EDCA9EDCAQueueC2EiiiNS0_17t_access_categoryE @955
+    _ZN5veins9Mac1609_44EDCA9EDCAQueueD1Ev @956
+    _ZN5veins9Mac1609_44EDCA9EDCAQueueD2Ev @957
+    _ZN5veins9Mac1609_44EDCAC1EPN7omnetpp13cSimpleModuleENS_11ChannelTypeEi @958
+    _ZN5veins9Mac1609_44EDCAC2EPN7omnetpp13cSimpleModuleENS_11ChannelTypeEi @959
+    _ZN5veins9Mac1609_44EDCAD1Ev @960
+    _ZN5veins9Mac1609_44EDCAD2Ev @961
+    _ZN5veins9Mac1609_46finishEv @962
+    _ZN5veins9Mac1609_46setMCSENS_3MCSE @963
+    _ZN5veins9Mac1609_47sendAckElm @964
+    _ZN5veins9Mac1609_49handleAckEPKNS_11Mac80211AckE @965
+    _ZN5veins9Mac1609_49sendFrameEPNS_11Mac80211PktEN7omnetpp7SimTimeENS_7ChannelENS_3MCSEd @966
+    _ZN5veins9Mac1609_4D0Ev @967
+    _ZN5veins9Mac1609_4D1Ev @968
+    _ZN5veins9Mac1609_4D2Ev @969
+    _ZN5veins9PoWResult12parsimUnpackEPN7omnetpp11cCommBufferE @970
+    _ZN5veins9PoWResult12setBlockDataEPKc @971
+    _ZN5veins9PoWResult4copyERKS0_ @972
+    _ZN5veins9PoWResult7setHashEPKc @973
+    _ZN5veins9PoWResult8setNonceEi @974
+    _ZN5veins9PoWResult8setRsuIdEi @975
+    _ZN5veins9PoWResultC1EPKcs @976
+    _ZN5veins9PoWResultC1ERKS0_ @977
+    _ZN5veins9PoWResultC2EPKcs @978
+    _ZN5veins9PoWResultC2ERKS0_ @979
+    _ZN5veins9PoWResultD0Ev @980
+    _ZN5veins9PoWResultD1Ev @981
+    _ZN5veins9PoWResultD2Ev @982
+    _ZN5veins9PoWResultaSERKS0_ @983
+    _ZN5veinsdvERKNS_6SignalES2_ @984
+    _ZN5veinsdvERKNS_6SignalEd @985
+    _ZN5veinsdvEdRKNS_6SignalE @986
+    _ZN5veinseqERKNS_8SpectrumES2_ @987
+    _ZN5veinslsERSoRKNS_8SpectrumE @988
+    _ZN5veinsmiERKNS_6SignalES2_ @989
+    _ZN5veinsmiERKNS_6SignalEd @990
+    _ZN5veinsmiEdRKNS_6SignalE @991
+    _ZN5veinsmlERKNS_6SignalES2_ @992
+    _ZN5veinsmlERKNS_6SignalEd @993
+    _ZN5veinsmlEdRKNS_6SignalE @994
+    _ZN5veinsplERKNS_6SignalES2_ @995
+    _ZN5veinsplERKNS_6SignalEd @996
+    _ZN5veinsplEdRKNS_6SignalE @997
+    _ZNK5veins10BBoxLookup15findOverlappingENS0_5PointES1_ @998
+    _ZNK5veins10BaseModule7logNameB5cxx11Ev @999
+    _ZNK5veins10BaseModule8findHostEv @1000
+    _ZNK5veins10PoWRequest10parsimPackEPN7omnetpp11cCommBufferE @1001
+    _ZNK5veins10PoWRequest7getDataEv @1002
+    _ZNK5veins11AirFrame11p10parsimPackEPN7omnetpp11cCommBufferE @1003
+    _ZNK5veins11AirFrame11p18getWasTransmittingEv @1004
+    _ZNK5veins11AirFrame11p21getUnderMinPowerLevelEv @1005
+    _ZNK5veins11ChannelInfo12getAirFramesERKN7omnetpp7SimTimeES4_RNSt7__cxx114listIPNS_8AirFrameESaIS8_EEE @1006
+    _ZNK5veins11ChannelInfo14isIntersectingERKSt3mapIN7omnetpp7SimTimeENSt7__cxx114listISt4pairIS3_PNS_8AirFrameEESaIS9_EEESt4lessIS3_ESaIS6_IKS3_SB_EEERSE_SK_ @1007
+    _ZNK5veins11ChannelInfo16getIntersectionsERKSt3mapIN7omnetpp7SimTimeENSt7__cxx114listISt4pairIS3_PNS_8AirFrameEESaIS9_EEESt4lessIS3_ESaIS6_IKS3_SB_EEERSE_SK_RNS5_IS8_SaIS8_EEE @1008
+    _ZNK5veins11HasLogProxy10getThisPtrEv @1009
+    _ZNK5veins11Mac80211Ack10parsimPackEPN7omnetpp11cCommBufferE @1010
+    _ZNK5veins11Mac80211Ack12getMessageIdEv @1011
+    _ZNK5veins11Mac80211Pkt10parsimPackEPN7omnetpp11cCommBufferE @1012
+    _ZNK5veins11Mac80211Pkt11getAddress3Ev @1013
+    _ZNK5veins11Mac80211Pkt11getAddress4Ev @1014
+    _ZNK5veins11Mac80211Pkt11getDurationEv @1015
+    _ZNK5veins11Mac80211Pkt16getFragmentationEv @1016
+    _ZNK5veins11Mac80211Pkt16getInformationDSEv @1017
+    _ZNK5veins11Mac80211Pkt18getSequenceControlEv @1018
+    _ZNK5veins11Mac80211Pkt8getRetryEv @1019
+    _ZNK5veins11PoWResponse10parsimPackEPN7omnetpp11cCommBufferE @1020
+    _ZNK5veins11PoWResponse7getDataEv @1021
+    _ZNK5veins11PoWResponse7getHashEv @1022
+    _ZNK5veins11PoWResponse8getNonceEv @1023
+    _ZNK5veins11TraCIBuffer3eofEv @1024
+    _ZNK5veins11TraCIBuffer3strB5cxx11Ev @1025
+    _ZNK5veins11TraCIBuffer6hexStrB5cxx11Ev @1026
+    _ZNK5veins13DeciderResult15isSignalCorrectEv @1027
+    _ZNK5veins13TraCIMobility20calculateCO2emissionEdd @1028
+    _ZNK5veins13TraCIMobility21calculateHostPositionERKNS_5CoordE @1029
+    _ZNK5veins14PhyLayer80211p16getFrameDurationEiNS_3MCSE @1030
+    _ZNK5veins14UnicastMessage10parsimPackEPN7omnetpp11cCommBufferE @1031
+    _ZNK5veins14UnicastMessage14getTargetRSUIdEv @1032
+    _ZNK5veins14UnicastMessage7getDataEv @1033
+    _ZNK5veins14UnicastMessage9getDescrpEv @1034
+    _ZNK5veins15BaseFrame1609_410parsimPackEPN7omnetpp11cCommBufferE @1035
+    _ZNK5veins15BaseFrame1609_415getUserPriorityEv @1036
+    _ZNK5veins15BaseFrame1609_416getChannelNumberEv @1037
+    _ZNK5veins15BaseFrame1609_419getRecipientAddressEv @1038
+    _ZNK5veins15BaseFrame1609_47getPsidEv @1039
+    _ZNK5veins15ObstacleControl16getIntersectionsERKNS_5CoordES3_ @1040
+    _ZNK5veins15ObstacleControl20calculateAttenuationERKNS_5CoordES3_ @1041
+    _ZNK5veins15RSUBasicMessage10parsimPackEPN7omnetpp11cCommBufferE @1042
+    _ZNK5veins15RSUBasicMessage7getInfoEv @1043
+    _ZNK5veins15TraCIConnection11omnet2traciENS_5CoordE @1044
+    _ZNK5veins15TraCIConnection11omnet2traciERKNSt7__cxx114listINS_5CoordESaIS3_EEE @1045
+    _ZNK5veins15TraCIConnection11traci2omnetENS_10TraCICoordE @1046
+    _ZNK5veins15TraCIConnection11traci2omnetERKNSt7__cxx114listINS_10TraCICoordESaIS3_EEE @1047
+    _ZNK5veins15TraCIConnection18omnet2traciHeadingENS_7HeadingE @1048
+    _ZNK5veins15TraCIConnection18traci2omnetHeadingEd @1049
+    _ZNK5veins16BroadcastMessage10parsimPackEPN7omnetpp11cCommBufferE @1050
+    _ZNK5veins16BroadcastMessage9getDescrpEv @1051
+    _ZNK5veins17AckTimeOutMessage10parsimPackEPN7omnetpp11cCommBufferE @1052
+    _ZNK5veins17AckTimeOutMessage5getAcEv @1053
+    _ZNK5veins17AckTimeOutMessage8getWsmIdEv @1054
+    _ZNK5veins17DemoSafetyMessage10parsimPackEPN7omnetpp11cCommBufferE @1055
+    _ZNK5veins17DemoSafetyMessage12getSenderPosEv @1056
+    _ZNK5veins17DemoSafetyMessage14getSenderSpeedEv @1057
+    _ZNK5veins17PhyControlMessage10parsimPackEPN7omnetpp11cCommBufferE @1058
+    _ZNK5veins17PhyControlMessage13getTxPower_mWEv @1059
+    _ZNK5veins17PhyControlMessage6getMcsEv @1060
+    _ZNK5veins18MobileHostObstacle13maybeInBoundsEddddN7omnetpp7SimTimeE @1061
+    _ZNK5veins18MobileHostObstacle20getIntersectionPointERKNS_5CoordES3_N7omnetpp7SimTimeE @1062
+    _ZNK5veins18MobileHostObstacle8getShapeEN7omnetpp7SimTimeE @1063
+    _ZNK5veins18TimerSpecification14validOccurenceEN7omnetpp7SimTimeE @1064
+    _ZNK5veins19TraCIDemo11pMessage10parsimPackEPN7omnetpp11cCommBufferE @1065
+    _ZNK5veins19TraCIDemo11pMessage11getDemoDataEv @1066
+    _ZNK5veins19TraCIDemo11pMessage16getSenderAddressEv @1067
+    _ZNK5veins19TraCIDemo11pMessage9getSerialEv @1068
+    _ZNK5veins20PoWPackingPermission10parsimPackEPN7omnetpp11cCommBufferE @1069
+    _ZNK5veins20PoWPackingPermission12getBlockDataEv @1070
+    _ZNK5veins20PoWPackingPermission7getHashEv @1071
+    _ZNK5veins20PoWPackingPermission8getNonceEv @1072
+    _ZNK5veins20PoWPackingPermission8getRsuIdEv @1073
+    _ZNK5veins20TraCIScenarioManager13getPortNumberEv @1074
+    _ZNK5veins20TraCIVehicleInserter13numInitStagesEv @1075
+    _ZNK5veins21BaseConnectionManager11getGateListEi @1076
+    _ZNK5veins21BaseConnectionManager12getOutGateToEPKNS_8NicEntryES3_ @1077
+    _ZNK5veins21TraCICommandInterface12Trafficlight15getCurrentStateB5cxx11Ev @1078
+    _ZNK5veins21TraCICommandInterface12Trafficlight18getControlledLanesB5cxx11Ev @1079
+    _ZNK5veins21TraCICommandInterface12Trafficlight18getControlledLinksB5cxx11Ev @1080
+    _ZNK5veins21TraCICommandInterface12Trafficlight19getCurrentProgramIDB5cxx11Ev @1081
+    _ZNK5veins21TraCICommandInterface12Trafficlight20getCurrentPhaseIndexEv @1082
+    _ZNK5veins21TraCICommandInterface12Trafficlight20getProgramDefinitionEv @1083
+    _ZNK5veins21TraCICommandInterface12Trafficlight24getAssumedNextSwitchTimeEv @1084
+    _ZNK5veins21TraCICommandInterface12Trafficlight30getDefaultCurrentPhaseDurationEv @1085
+    _ZNK5veins21TraCICommandInterface7Vehicle12changeTargetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @1086
+    _ZNK5veins21TraCICommandInterface7Vehicle12getStopStateEv @1087
+    _ZNK5veins21TraCICommandInterface7Vehicle13isStopReachedEv @1088
+    _ZNK5veins21TraCICommandInterface7Vehicle14getCOEmissionsEv @1089
+    _ZNK5veins21TraCICommandInterface7Vehicle14getHCEmissionsEv @1090
+    _ZNK5veins21TraCICommandInterface7Vehicle14getWaitingTimeEv @1091
+    _ZNK5veins21TraCICommandInterface7Vehicle15getCO2EmissionsEv @1092
+    _ZNK5veins21TraCICommandInterface7Vehicle15getNOxEmissionsEv @1093
+    _ZNK5veins21TraCICommandInterface7Vehicle15getPMxEmissionsEv @1094
+    _ZNK5veins21TraCICommandInterface7Vehicle16getNoiseEmissionEv @1095
+    _ZNK5veins21TraCICommandInterface7Vehicle18getFuelConsumptionEv @1096
+    _ZNK5veins21TraCICommandInterface7Vehicle25getAccumulatedWaitingTimeEv @1097
+    _ZNK5veins21TraCICommandInterface7Vehicle25getElectricityConsumptionEv @1098
+    _ZNK5veins21TraCIRegionOfInterest11partOfRoadsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @1099
+    _ZNK5veins21TraCIRegionOfInterest13getRectanglesB5cxx11Ev @1100
+    _ZNK5veins21TraCIRegionOfInterest14hasConstraintsEv @1101
+    _ZNK5veins21TraCIRegionOfInterest14onAnyRectangleERKNS_10TraCICoordE @1102
+    _ZNK5veins22VehicleObstacleControl20drawVehicleObstaclesERKN7omnetpp7SimTimeE @1103
+    _ZNK5veins22VehicleObstacleControl21getPotentialObstaclesERKNS_15AntennaPositionES3_RKNS_6SignalE @1104
+    _ZNK5veins23DemoServiceAdvertisment10parsimPackEPN7omnetpp11cCommBufferE @1105
+    _ZNK5veins23DemoServiceAdvertisment16getTargetChannelEv @1106
+    _ZNK5veins23DemoServiceAdvertisment21getServiceDescriptionEv @1107
+    _ZNK5veins24TraCITrafficLightMessage10parsimPackEPN7omnetpp11cCommBufferE @1108
+    _ZNK5veins24TraCITrafficLightMessage11getNewValueEv @1109
+    _ZNK5veins24TraCITrafficLightMessage11getOldValueEv @1110
+    _ZNK5veins24TraCITrafficLightMessage15getChangeSourceEv @1111
+    _ZNK5veins24TraCITrafficLightMessage19getChangedAttributeEv @1112
+    _ZNK5veins24TraCITrafficLightMessage7getTlIdEv @1113
+    _ZNK5veins24TraCITrafficLightProgram8getLogicERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @1114
+    _ZNK5veins24TraCITrafficLightProgram8hasLogicERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @1115
+    _ZNK5veins26TraCIScenarioManagerForker13getPortNumberEv @1116
+    _ZNK5veins26TraCITrafficLightInterface11getPositionEv @1117
+    _ZNK5veins26TraCITrafficLightInterface15getCurrentLogicEv @1118
+    _ZNK5veins26TraCITrafficLightInterface15getCurrentPhaseEv @1119
+    _ZNK5veins26TraCITrafficLightInterface15getCurrentStateB5cxx11Ev @1120
+    _ZNK5veins26TraCITrafficLightInterface17getCurrentLogicIdB5cxx11Ev @1121
+    _ZNK5veins26TraCITrafficLightInterface17getCurrentPhaseIdEv @1122
+    _ZNK5veins26TraCITrafficLightInterface20getAssumedNextSwitchEv @1123
+    _ZNK5veins26TraCITrafficLightInterface20getRemainingDurationEv @1124
+    _ZNK5veins26TraCITrafficLightInterface21isInOnlineSignalStateEv @1125
+    _ZNK5veins29TraCICoordinateTransformation11omnet2traciERKNS_5CoordE @1126
+    _ZNK5veins29TraCICoordinateTransformation11omnet2traciERKNSt7__cxx114listINS_5CoordESaIS3_EEE @1127
+    _ZNK5veins29TraCICoordinateTransformation11traci2omnetERKNS_10TraCICoordE @1128
+    _ZNK5veins29TraCICoordinateTransformation11traci2omnetERKNSt7__cxx114listINS_10TraCICoordESaIS3_EEE @1129
+    _ZNK5veins29TraCICoordinateTransformation18omnet2traciHeadingENS_7HeadingE @1130
+    _ZNK5veins29TraCICoordinateTransformation18traci2omnetHeadingEd @1131
+    _ZNK5veins5Block10parsimPackEPN7omnetpp11cCommBufferE @1132
+    _ZNK5veins5Block12getTimestampEv @1133
+    _ZNK5veins5Block18getDifficultyLevelEv @1134
+    _ZNK5veins5Block18getTransactionDataEv @1135
+    _ZNK5veins5Block20getPreviousBlockHashEv @1136
+    _ZNK5veins5Block8getMinerEv @1137
+    _ZNK5veins5Block8getNonceEv @1138
+    _ZNK5veins5Coord12sqrTorusDistERKS0_S2_ @1139
+    _ZNK5veins5Coord4infoB5cxx11Ev @1140
+    _ZNK5veins6MacPkt10getSrcAddrEv @1141
+    _ZNK5veins6MacPkt10parsimPackEPN7omnetpp11cCommBufferE @1142
+    _ZNK5veins6MacPkt11getDestAddrEv @1143
+    _ZNK5veins6MacPkt13getSequenceIdEv @1144
+    _ZNK5veins6Signal10getDataEndEv @1145
+    _ZNK5veins6Signal10getDataMaxEv @1146
+    _ZNK5veins6Signal10getDataMinEv @1147
+    _ZNK5veins6Signal11atFrequencyEd @1148
+    _ZNK5veins6Signal11getDurationEv @1149
+    _ZNK5veins6Signal11getSpectrumEv @1150
+    _ZNK5veins6Signal12getDataStartEv @1151
+    _ZNK5veins6Signal12getNumValuesEv @1152
+    _ZNK5veins6Signal12getSenderPoaEv @1153
+    _ZNK5veins6Signal13getDataOffsetEv @1154
+    _ZNK5veins6Signal13getMaxInRangeEyy @1155
+    _ZNK5veins6Signal13getMinInRangeEyy @1156
+    _ZNK5veins6Signal13getSendingEndEv @1157
+    _ZNK5veins6Signal14getReceiverPoaEv @1158
+    _ZNK5veins6Signal15getReceptionEndEv @1159
+    _ZNK5veins6Signal15getSendingStartEv @1160
+    _ZNK5veins6Signal16getNumDataValuesEv @1161
+    _ZNK5veins6Signal17getReceptionStartEv @1162
+    _ZNK5veins6Signal19getPropagationDelayEv @1163
+    _ZNK5veins6Signal20getAnalogueModelListEv @1164
+    _ZNK5veins6Signal20getAtCenterFrequencyEv @1165
+    _ZNK5veins6Signal23getCenterFrequencyIndexEv @1166
+    _ZNK5veins6Signal27getNumAnalogueModelsAppliedEv @1167
+    _ZNK5veins6Signal2atEy @1168
+    _ZNK5veins6Signal6dataAtEy @1169
+    _ZNK5veins6Signal6getMaxEv @1170
+    _ZNK5veins6Signal9hasTimingEv @1171
+    _ZNK5veins8AirFrame10getChannelEv @1172
+    _ZNK5veins8AirFrame10parsimPackEPN7omnetpp11cCommBufferE @1173
+    _ZNK5veins8AirFrame11getConstPoaEv @1174
+    _ZNK5veins8AirFrame11getDurationEv @1175
+    _ZNK5veins8AirFrame13getProtocolIdEv @1176
+    _ZNK5veins8AirFrame14getConstSignalEv @1177
+    _ZNK5veins8AirFrame5getIdEv @1178
+    _ZNK5veins8AirFrame6getMcsEv @1179
+    _ZNK5veins8AirFrame7getTypeEv @1180
+    _ZNK5veins8AirFrame8getStateEv @1181
+    _ZNK5veins8Obstacle13containsPointENS_5CoordE @1182
+    _ZNK5veins8Obstacle16getIntersectionsERKNS_5CoordES3_ @1183
+    _ZNK5veins8Obstacle20getAttenuationPerCutEv @1184
+    _ZNK5veins8Obstacle22getAttenuationPerMeterEv @1185
+    _ZNK5veins8Obstacle5getIdB5cxx11Ev @1186
+    _ZNK5veins8Obstacle7getTypeB5cxx11Ev @1187
+    _ZNK5veins8Obstacle8getShapeEv @1188
+    _ZNK5veins8Obstacle9getBboxP1Ev @1189
+    _ZNK5veins8Obstacle9getBboxP2Ev @1190
+    _ZNK5veins8Spectrum11getNumFreqsEv @1191
+    _ZNK5veins8Spectrum6freqAtEy @1192
+    _ZNK5veins8Spectrum7indexOfEd @1193
+    _ZNK5veins8SpectrumixEy @1194
+    _ZNK5veins9BorderMsg10parsimPackEPN7omnetpp11cCommBufferE @1195
+    _ZNK5veins9BorderMsg11getStartPosEv @1196
+    _ZNK5veins9BorderMsg12getDirectionEv @1197
+    _ZNK5veins9BorderMsg9getPolicyEv @1198
+    _ZNK5veins9Mac1609_411guardActiveEv @1199
+    _ZNK5veins9Mac1609_414timeLeftInSlotEv @1200
+    _ZNK5veins9Mac1609_421timeLeftTillGuardOverEv @1201
+    _ZNK5veins9PoWResult10parsimPackEPN7omnetpp11cCommBufferE @1202
+    _ZNK5veins9PoWResult12getBlockDataEv @1203
+    _ZNK5veins9PoWResult7getHashEv @1204
+    _ZNK5veins9PoWResult8getNonceEv @1205
+    _ZNK5veins9PoWResult8getRsuIdEv @1206
+    _ZTI10Controller @1207 DATA
+    _ZTI6Switch @1208 DATA
+    _ZTI9PoWModule @1209 DATA
+    _ZTIN3osg10BufferDataE @1210 DATA
+    _ZTIN3osg10ReferencedE @1211 DATA
+    _ZTIN3osg11MixinVectorINS_5Vec3fEEE @1212 DATA
+    _ZTIN3osg13TemplateArrayINS_5Vec3fELNS_5Array4TypeE28ELi3ELi5126EEE @1213 DATA
+    _ZTIN3osg4NodeE @1214 DATA
+    _ZTIN3osg5ArrayE @1215 DATA
+    _ZTIN3osg5GroupE @1216 DATA
+    _ZTIN3osg6ObjectE @1217 DATA
+    _ZTIN5veins10BaseModuleE @1218 DATA
+    _ZTIN5veins10DrawAmountE @1219 DATA
+    _ZTIN5veins10MyVeinsAppE @1220 DATA
+    _ZTIN5veins10PoWRequestE @1221 DATA
+    _ZTIN5veins11AirFrame11pE @1222 DATA
+    _ZTIN5veins11BaseBatteryE @1223 DATA
+    _ZTIN5veins11BaseDeciderE @1224 DATA
+    _ZTIN5veins11ChannelInfoE @1225 DATA
+    _ZTIN5veins11HasLogProxyE @1226 DATA
+    _ZTIN5veins11Mac80211AckE @1227 DATA
+    _ZTIN5veins11Mac80211PktE @1228 DATA
+    _ZTIN5veins11PoWResponseE @1229 DATA
+    _ZTIN5veins12BaseMacLayerE @1230 DATA
+    _ZTIN5veins12BaseMobilityE @1231 DATA
+    _ZTIN5veins12BasePhyLayerE @1232 DATA
+    _ZTIN5veins12TimerMessageE @1233 DATA
+    _ZTIN5veins12TraCIDemo11pE @1234 DATA
+    _ZTIN5veins13AnalogueModelE @1235 DATA
+    _ZTIN5veins13BaseApplLayerE @1236 DATA
+    _ZTIN5veins13BatteryAccessE @1237 DATA
+    _ZTIN5veins13ChannelAccessE @1238 DATA
+    _ZTIN5veins13Decider80211pE @1239 DATA
+    _ZTIN5veins13DeciderResultE @1240 DATA
+    _ZTIN5veins13NicEntryDebugE @1241 DATA
+    _ZTIN5veins13PassedMessageE @1242 DATA
+    _ZTIN5veins13TraCIMobilityE @1243 DATA
+    _ZTIN5veins14LinearMobilityE @1244 DATA
+    _ZTIN5veins14NakagamiFadingE @1245 DATA
+    _ZTIN5veins14NicEntryDirectE @1246 DATA
+    _ZTIN5veins14PhyLayer80211pE @1247 DATA
+    _ZTIN5veins14UnicastMessageE @1248 DATA
+    _ZTIN5veins15AnnotationDummyE @1249 DATA
+    _ZTIN5veins15BaseFrame1609_4E @1250 DATA
+    _ZTIN5veins15BlockDescriptorE @1251 DATA
+    _ZTIN5veins15ObstacleControlE @1252 DATA
+    _ZTIN5veins15RSUBasicMessageE @1253 DATA
+    _ZTIN5veins15TraCIDemoRSU11pE @1254 DATA
+    _ZTIN5veins16AccessModuleWrapINS_12BaseMobilityEEE @1255 DATA
+    _ZTIN5veins16BaseWorldUtilityE @1256 DATA
+    _ZTIN5veins16BroadcastMessageE @1257 DATA
+    _ZTIN5veins16MacPktDescriptorE @1258 DATA
+    _ZTIN5veins16SampledAntenna1DE @1259 DATA
+    _ZTIN5veins17AckTimeOutMessageE @1260 DATA
+    _ZTIN5veins17AnnotationManager10AnnotationE @1261 DATA
+    _ZTIN5veins17AnnotationManager4LineE @1262 DATA
+    _ZTIN5veins17AnnotationManager5GroupE @1263 DATA
+    _ZTIN5veins17AnnotationManager5PointE @1264 DATA
+    _ZTIN5veins17AnnotationManager7PolygonE @1265 DATA
+    _ZTIN5veins17AnnotationManagerE @1266 DATA
+    _ZTIN5veins17ConnectionManagerE @1267 DATA
+    _ZTIN5veins17DemoBaseApplLayerE @1268 DATA
+    _ZTIN5veins17DemoSafetyMessageE @1269 DATA
+    _ZTIN5veins17MacToPhyInterfaceE @1270 DATA
+    _ZTIN5veins17PhyControlMessageE @1271 DATA
+    _ZTIN5veins18AirFrameDescriptorE @1272 DATA
+    _ZTIN5veins18DeciderResult80211E @1273 DATA
+    _ZTIN5veins18RoadsOsgVisualizerE @1274 DATA
+    _ZTIN5veins19AddressingInterfaceE @1275 DATA
+    _ZTIN5veins19BorderMsgDescriptorE @1276 DATA
+    _ZTIN5veins19PhyToMacControlInfoE @1277 DATA
+    _ZTIN5veins19PoWResultDescriptorE @1278 DATA
+    _ZTIN5veins19SimplePathlossModelE @1279 DATA
+    _ZTIN5veins19TraCIDemo11pMessageE @1280 DATA
+    _ZTIN5veins19TraCIScreenRecorderE @1281 DATA
+    _ZTIN5veins20MacToNetwControlInfoE @1282 DATA
+    _ZTIN5veins20NetwToMacControlInfoE @1283 DATA
+    _ZTIN5veins20PoWPackingPermissionE @1284 DATA
+    _ZTIN5veins20PoWRequestDescriptorE @1285 DATA
+    _ZTIN5veins20TraCIScenarioManagerE @1286 DATA
+    _ZTIN5veins20TraCIVehicleInserterE @1287 DATA
+    _ZTIN5veins21AirFrame11pDescriptorE @1288 DATA
+    _ZTIN5veins21BaseConnectionManagerE @1289 DATA
+    _ZTIN5veins21DeciderToPhyInterfaceE @1290 DATA
+    _ZTIN5veins21Mac80211AckDescriptorE @1291 DATA
+    _ZTIN5veins21Mac80211PktDescriptorE @1292 DATA
+    _ZTIN5veins21PoWResponseDescriptorE @1293 DATA
+    _ZTIN5veins21RoadsCanvasVisualizerE @1294 DATA
+    _ZTIN5veins22MacToPhyControlInfo11pE @1295 DATA
+    _ZTIN5veins22SignalCallbackListenerIbEE @1296 DATA
+    _ZTIN5veins22VehicleObstacleControlE @1297 DATA
+    _ZTIN5veins23BreakpointPathlossModelE @1298 DATA
+    _ZTIN5veins23DemoServiceAdvertismentE @1299 DATA
+    _ZTIN5veins23SimpleObstacleShadowingE @1300 DATA
+    _ZTIN5veins23TwoRayInterferenceModelE @1301 DATA
+    _ZTIN5veins24TraCITrafficLightMessageE @1302 DATA
+    _ZTIN5veins24TrafficLightChangeSourceE @1303 DATA
+    _ZTIN5veins24UnicastMessageDescriptorE @1304 DATA
+    _ZTIN5veins24VehicleObstacleShadowingE @1305 DATA
+    _ZTIN5veins25BaseFrame1609_4DescriptorE @1306 DATA
+    _ZTIN5veins25RSUBasicMessageDescriptorE @1307 DATA
+    _ZTIN5veins25TrafficLightAtrributeTypeE @1308 DATA
+    _ZTIN5veins26BroadcastMessageDescriptorE @1309 DATA
+    _ZTIN5veins26Mac80211pToPhy11pInterfaceE @1310 DATA
+    _ZTIN5veins26TraCIScenarioManagerForkerE @1311 DATA
+    _ZTIN5veins26TraCITrafficLightInterfaceE @1312 DATA
+    _ZTIN5veins27AckTimeOutMessageDescriptorE @1313 DATA
+    _ZTIN5veins27DemoSafetyMessageDescriptorE @1314 DATA
+    _ZTIN5veins27PhyControlMessageDescriptorE @1315 DATA
+    _ZTIN5veins27TraCIScenarioManagerLaunchdE @1316 DATA
+    _ZTIN5veins28TraCITrafficLightSimpleLogicE @1317 DATA
+    _ZTIN5veins29TraCIDemo11pMessageDescriptorE @1318 DATA
+    _ZTIN5veins30PoWPackingPermissionDescriptorE @1319 DATA
+    _ZTIN5veins30TraCITrafficLightAbstractLogicE @1320 DATA
+    _ZTIN5veins33Decider80211pToPhy80211pInterfaceE @1321 DATA
+    _ZTIN5veins33DemoServiceAdvertismentDescriptorE @1322 DATA
+    _ZTIN5veins34TraCITrafficLightMessageDescriptorE @1323 DATA
+    _ZTIN5veins37DemoBaseApplLayerToMac1609_4InterfaceE @1324 DATA
+    _ZTIN5veins3POAE @1325 DATA
+    _ZTIN5veins4MoveE @1326 DATA
+    _ZTIN5veins5BlockE @1327 DATA
+    _ZTIN5veins5CoordE @1328 DATA
+    _ZTIN5veins5RadioE @1329 DATA
+    _ZTIN5veins6MacPktE @1330 DATA
+    _ZTIN5veins6SignalE @1331 DATA
+    _ZTIN5veins7AntennaE @1332 DATA
+    _ZTIN5veins7DeciderE @1333 DATA
+    _ZTIN5veins8AirFrameE @1334 DATA
+    _ZTIN5veins8NicEntryE @1335 DATA
+    _ZTIN5veins8PERModelE @1336 DATA
+    _ZTIN5veins9BaseLayerE @1337 DATA
+    _ZTIN5veins9BorderMsgE @1338 DATA
+    _ZTIN5veins9HostStateE @1339 DATA
+    _ZTIN5veins9Mac1609_4E @1340 DATA
+    _ZTIN5veins9PoWResultE @1341 DATA
+    _ZTIN7omnetpp10cComponentE @1342 DATA
+    _ZTIN7omnetpp10cExceptionE @1343 DATA
+    _ZTIN7omnetpp10cIListenerE @1344 DATA
+    _ZTIN7omnetpp10cSoftOwnerE @1345 DATA
+    _ZTIN7omnetpp11noncopyableE @1346 DATA
+    _ZTIN7omnetpp12cNamedObjectE @1347 DATA
+    _ZTIN7omnetpp12cOwnedObjectE @1348 DATA
+    _ZTIN7omnetpp13cRuntimeErrorE @1349 DATA
+    _ZTIN7omnetpp13cSimpleModuleE @1350 DATA
+    _ZTIN7omnetpp16cClassDescriptorE @1351 DATA
+    _ZTIN7omnetpp23cNoncopyableOwnedObjectE @1352 DATA
+    _ZTIN7omnetpp29cISimulationLifecycleListenerE @1353 DATA
+    _ZTIN7omnetpp6cEventE @1354 DATA
+    _ZTIN7omnetpp7cModuleE @1355 DATA
+    _ZTIN7omnetpp7cObjectE @1356 DATA
+    _ZTIN7omnetpp7cPacketE @1357 DATA
+    _ZTIN7omnetpp8cMessageE @1358 DATA
+    _ZTIN7omnetpp9cListenerE @1359 DATA
+    _ZTIPN5veins10PoWRequestE @1360 DATA
+    _ZTIPN5veins11AirFrame11pE @1361 DATA
+    _ZTIPN5veins11Mac80211AckE @1362 DATA
+    _ZTIPN5veins11Mac80211PktE @1363 DATA
+    _ZTIPN5veins11PoWResponseE @1364 DATA
+    _ZTIPN5veins12BaseMobilityE @1365 DATA
+    _ZTIPN5veins14UnicastMessageE @1366 DATA
+    _ZTIPN5veins15BaseFrame1609_4E @1367 DATA
+    _ZTIPN5veins15RSUBasicMessageE @1368 DATA
+    _ZTIPN5veins16BroadcastMessageE @1369 DATA
+    _ZTIPN5veins17AckTimeOutMessageE @1370 DATA
+    _ZTIPN5veins17DemoSafetyMessageE @1371 DATA
+    _ZTIPN5veins17PhyControlMessageE @1372 DATA
+    _ZTIPN5veins18DeciderResult80211E @1373 DATA
+    _ZTIPN5veins19TraCIDemo11pMessageE @1374 DATA
+    _ZTIPN5veins20PoWPackingPermissionE @1375 DATA
+    _ZTIPN5veins22MacToPhyControlInfo11pE @1376 DATA
+    _ZTIPN5veins23DemoServiceAdvertismentE @1377 DATA
+    _ZTIPN5veins24TraCITrafficLightMessageE @1378 DATA
+    _ZTIPN5veins3POAE @1379 DATA
+    _ZTIPN5veins5BlockE @1380 DATA
+    _ZTIPN5veins6MacPktE @1381 DATA
+    _ZTIPN5veins6SignalE @1382 DATA
+    _ZTIPN5veins8AirFrameE @1383 DATA
+    _ZTIPN5veins9BorderMsgE @1384 DATA
+    _ZTIPN5veins9PoWResultE @1385 DATA
+    _ZTIPN7omnetpp7cModuleE @1386 DATA
+    _ZTIPN7omnetpp7cObjectE @1387 DATA
+    _ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE @1388 DATA
+    _ZTISt11logic_error @1389 DATA
+    _ZTISt12out_of_range @1390 DATA
+    _ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE @1391 DATA
+    _ZTISt23_Sp_counted_ptr_inplaceIN5veins16SampledAntenna1DESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE @1392 DATA
+    _ZTISt23_Sp_counted_ptr_inplaceIN5veins7AntennaESaIS1_ELN9__gnu_cxx12_Lock_policyE2EE @1393 DATA
+    _ZTISt9exception @1394 DATA
+    _ZTTN5veins26TraCIScenarioManagerForkerE @1395 DATA
+    _ZTTN5veins27TraCIScenarioManagerLaunchdE @1396 DATA
+    _ZTVN5veins10BaseModuleE @1397 DATA
+    _ZTVN5veins10DrawAmountE @1398 DATA
+    _ZTVN5veins10MyVeinsAppE @1399 DATA
+    _ZTVN5veins10PoWRequestE @1400 DATA
+    _ZTVN5veins11AirFrame11pE @1401 DATA
+    _ZTVN5veins11BaseBatteryE @1402 DATA
+    _ZTVN5veins11BaseDeciderE @1403 DATA
+    _ZTVN5veins11ChannelInfoE @1404 DATA
+    _ZTVN5veins11Mac80211AckE @1405 DATA
+    _ZTVN5veins11Mac80211PktE @1406 DATA
+    _ZTVN5veins11PoWResponseE @1407 DATA
+    _ZTVN5veins12BaseMacLayerE @1408 DATA
+    _ZTVN5veins12BaseMobilityE @1409 DATA
+    _ZTVN5veins12BasePhyLayerE @1410 DATA
+    _ZTVN5veins12TraCIDemo11pE @1411 DATA
+    _ZTVN5veins13AnalogueModelE @1412 DATA
+    _ZTVN5veins13BaseApplLayerE @1413 DATA
+    _ZTVN5veins13BatteryAccessE @1414 DATA
+    _ZTVN5veins13ChannelAccessE @1415 DATA
+    _ZTVN5veins13Decider80211pE @1416 DATA
+    _ZTVN5veins13DeciderResultE @1417 DATA
+    _ZTVN5veins13NicEntryDebugE @1418 DATA
+    _ZTVN5veins13PassedMessageE @1419 DATA
+    _ZTVN5veins13TraCIMobilityE @1420 DATA
+    _ZTVN5veins14LinearMobilityE @1421 DATA
+    _ZTVN5veins14NakagamiFadingE @1422 DATA
+    _ZTVN5veins14NicEntryDirectE @1423 DATA
+    _ZTVN5veins14PhyLayer80211pE @1424 DATA
+    _ZTVN5veins14UnicastMessageE @1425 DATA
+    _ZTVN5veins15AnnotationDummyE @1426 DATA
+    _ZTVN5veins15BaseFrame1609_4E @1427 DATA
+    _ZTVN5veins15ObstacleControlE @1428 DATA
+    _ZTVN5veins15RSUBasicMessageE @1429 DATA
+    _ZTVN5veins15TraCIDemoRSU11pE @1430 DATA
+    _ZTVN5veins16BaseWorldUtilityE @1431 DATA
+    _ZTVN5veins16BroadcastMessageE @1432 DATA
+    _ZTVN5veins16SampledAntenna1DE @1433 DATA
+    _ZTVN5veins17AckTimeOutMessageE @1434 DATA
+    _ZTVN5veins17AnnotationManager10AnnotationE @1435 DATA
+    _ZTVN5veins17AnnotationManager4LineE @1436 DATA
+    _ZTVN5veins17AnnotationManager5GroupE @1437 DATA
+    _ZTVN5veins17AnnotationManager5PointE @1438 DATA
+    _ZTVN5veins17AnnotationManager7PolygonE @1439 DATA
+    _ZTVN5veins17AnnotationManagerE @1440 DATA
+    _ZTVN5veins17ConnectionManagerE @1441 DATA
+    _ZTVN5veins17DemoBaseApplLayerE @1442 DATA
+    _ZTVN5veins17DemoSafetyMessageE @1443 DATA
+    _ZTVN5veins17MacToPhyInterfaceE @1444 DATA
+    _ZTVN5veins17PhyControlMessageE @1445 DATA
+    _ZTVN5veins18DeciderResult80211E @1446 DATA
+    _ZTVN5veins18RoadsOsgVisualizerE @1447 DATA
+    _ZTVN5veins19AddressingInterfaceE @1448 DATA
+    _ZTVN5veins19PhyToMacControlInfoE @1449 DATA
+    _ZTVN5veins19SimplePathlossModelE @1450 DATA
+    _ZTVN5veins19TraCIDemo11pMessageE @1451 DATA
+    _ZTVN5veins19TraCIScreenRecorderE @1452 DATA
+    _ZTVN5veins20MacToNetwControlInfoE @1453 DATA
+    _ZTVN5veins20NetwToMacControlInfoE @1454 DATA
+    _ZTVN5veins20PoWPackingPermissionE @1455 DATA
+    _ZTVN5veins20TraCIScenarioManagerE @1456 DATA
+    _ZTVN5veins20TraCIVehicleInserterE @1457 DATA
+    _ZTVN5veins21BaseConnectionManagerE @1458 DATA
+    _ZTVN5veins21DeciderToPhyInterfaceE @1459 DATA
+    _ZTVN5veins21RoadsCanvasVisualizerE @1460 DATA
+    _ZTVN5veins22MacToPhyControlInfo11pE @1461 DATA
+    _ZTVN5veins22VehicleObstacleControlE @1462 DATA
+    _ZTVN5veins23BreakpointPathlossModelE @1463 DATA
+    _ZTVN5veins23DemoServiceAdvertismentE @1464 DATA
+    _ZTVN5veins23SimpleObstacleShadowingE @1465 DATA
+    _ZTVN5veins23TwoRayInterferenceModelE @1466 DATA
+    _ZTVN5veins24TraCITrafficLightMessageE @1467 DATA
+    _ZTVN5veins24VehicleObstacleShadowingE @1468 DATA
+    _ZTVN5veins26Mac80211pToPhy11pInterfaceE @1469 DATA
+    _ZTVN5veins26TraCIScenarioManagerForkerE @1470 DATA
+    _ZTVN5veins26TraCITrafficLightInterfaceE @1471 DATA
+    _ZTVN5veins27TraCIScenarioManagerLaunchdE @1472 DATA
+    _ZTVN5veins28TraCITrafficLightSimpleLogicE @1473 DATA
+    _ZTVN5veins30TraCITrafficLightAbstractLogicE @1474 DATA
+    _ZTVN5veins33Decider80211pToPhy80211pInterfaceE @1475 DATA
+    _ZTVN5veins37DemoBaseApplLayerToMac1609_4InterfaceE @1476 DATA
+    _ZTVN5veins3POAE @1477 DATA
+    _ZTVN5veins4MoveE @1478 DATA
+    _ZTVN5veins5BlockE @1479 DATA
+    _ZTVN5veins5CoordE @1480 DATA
+    _ZTVN5veins5RadioE @1481 DATA
+    _ZTVN5veins6MacPktE @1482 DATA
+    _ZTVN5veins7AntennaE @1483 DATA
+    _ZTVN5veins7DeciderE @1484 DATA
+    _ZTVN5veins8AirFrameE @1485 DATA
+    _ZTVN5veins8NicEntryE @1486 DATA
+    _ZTVN5veins8PERModelE @1487 DATA
+    _ZTVN5veins9BaseLayerE @1488 DATA
+    _ZTVN5veins9BorderMsgE @1489 DATA
+    _ZTVN5veins9HostStateE @1490 DATA
+    _ZTVN5veins9Mac1609_4E @1491 DATA
+    _ZTVN5veins9PoWResultE @1492 DATA
+    _ZThn120_N3osg13TemplateArrayINS_5Vec3fELNS_5Array4TypeE28ELi3ELi5126EED0Ev @1493
+    _ZThn120_N3osg13TemplateArrayINS_5Vec3fELNS_5Array4TypeE28ELi3ELi5126EED1Ev @1494
+    _ZThn216_N10ControllerD0Ev @1495
+    _ZThn216_N10ControllerD1Ev @1496
+    _ZThn216_N5veins10BaseModule13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @1497
+    _ZThn216_N5veins10BaseModule6finishEPN7omnetpp10cComponentEi @1498
+    _ZThn216_N5veins10BaseModuleD0Ev @1499
+    _ZThn216_N5veins10BaseModuleD1Ev @1500
+    _ZThn216_N5veins10MyVeinsAppD0Ev @1501
+    _ZThn216_N5veins10MyVeinsAppD1Ev @1502
+    _ZThn216_N5veins11BaseBatteryD0Ev @1503
+    _ZThn216_N5veins11BaseBatteryD1Ev @1504
+    _ZThn216_N5veins12BaseMacLayerD0Ev @1505
+    _ZThn216_N5veins12BaseMacLayerD1Ev @1506
+    _ZThn216_N5veins12BaseMobilityD0Ev @1507
+    _ZThn216_N5veins12BaseMobilityD1Ev @1508
+    _ZThn216_N5veins12BasePhyLayerD0Ev @1509
+    _ZThn216_N5veins12BasePhyLayerD1Ev @1510
+    _ZThn216_N5veins12TraCIDemo11pD0Ev @1511
+    _ZThn216_N5veins12TraCIDemo11pD1Ev @1512
+    _ZThn216_N5veins13BaseApplLayerD0Ev @1513
+    _ZThn216_N5veins13BaseApplLayerD1Ev @1514
+    _ZThn216_N5veins13BatteryAccessD0Ev @1515
+    _ZThn216_N5veins13BatteryAccessD1Ev @1516
+    _ZThn216_N5veins13ChannelAccess13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @1517
+    _ZThn216_N5veins13ChannelAccessD0Ev @1518
+    _ZThn216_N5veins13ChannelAccessD1Ev @1519
+    _ZThn216_N5veins13TraCIMobilityD0Ev @1520
+    _ZThn216_N5veins13TraCIMobilityD1Ev @1521
+    _ZThn216_N5veins14LinearMobilityD0Ev @1522
+    _ZThn216_N5veins14LinearMobilityD1Ev @1523
+    _ZThn216_N5veins14PhyLayer80211pD0Ev @1524
+    _ZThn216_N5veins14PhyLayer80211pD1Ev @1525
+    _ZThn216_N5veins15TraCIDemoRSU11pD0Ev @1526
+    _ZThn216_N5veins15TraCIDemoRSU11pD1Ev @1527
+    _ZThn216_N5veins17DemoBaseApplLayer13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @1528
+    _ZThn216_N5veins17DemoBaseApplLayerD0Ev @1529
+    _ZThn216_N5veins17DemoBaseApplLayerD1Ev @1530
+    _ZThn216_N5veins20TraCIScenarioManager14lifecycleEventEN7omnetpp28SimulationLifecycleEventTypeEPNS1_7cObjectE @1531
+    _ZThn216_N5veins20TraCIScenarioManager15listenerRemovedEv @1532
+    _ZThn216_N5veins20TraCIScenarioManagerD0Ev @1533
+    _ZThn216_N5veins20TraCIScenarioManagerD1Ev @1534
+    _ZThn216_N5veins20TraCIVehicleInserter13receiveSignalEPN7omnetpp10cComponentEiPNS1_7cObjectES5_ @1535
+    _ZThn216_N5veins20TraCIVehicleInserter13receiveSignalEPN7omnetpp10cComponentEiRKNS1_7SimTimeEPNS1_7cObjectE @1536
+    _ZThn216_N5veins20TraCIVehicleInserter6finishEPN7omnetpp10cComponentEi @1537
+    _ZThn216_N5veins20TraCIVehicleInserterD0Ev @1538
+    _ZThn216_N5veins20TraCIVehicleInserterD1Ev @1539
+    _ZThn216_N5veins9BaseLayerD0Ev @1540
+    _ZThn216_N5veins9BaseLayerD1Ev @1541
+    _ZThn216_N5veins9Mac1609_4D0Ev @1542
+    _ZThn216_N5veins9Mac1609_4D1Ev @1543
+    _ZThn216_N6SwitchD0Ev @1544
+    _ZThn216_N6SwitchD1Ev @1545
+    _ZThn328_N5veins9Mac1609_413getMACAddressEv @1546
+    _ZThn328_N5veins9Mac1609_419isCurrentChannelCCHEv @1547
+    _ZThn328_N5veins9Mac1609_420changeServiceChannelENS_7ChannelE @1548
+    _ZThn328_N5veins9Mac1609_420getSwitchingIntervalEv @1549
+    _ZThn328_N5veins9Mac1609_424isChannelSwitchingActiveEv @1550
+    _ZThn328_N5veins9Mac1609_4D0Ev @1551
+    _ZThn328_N5veins9Mac1609_4D1Ev @1552
+    _ZThn448_N5veins12BasePhyLayer12recordScalarEPKcdS2_ @1553
+    _ZThn448_N5veins12BasePhyLayer14getChannelInfoERKN7omnetpp7SimTimeES4_RNSt7__cxx114listIPNS_8AirFrameESaIS8_EEE @1554
+    _ZThn448_N5veins12BasePhyLayer15getWorldUtilityEv @1555
+    _ZThn448_N5veins12BasePhyLayer18getNoiseFloorValueEv @1556
+    _ZThn448_N5veins12BasePhyLayer19sendControlMsgToMacEPN7omnetpp8cMessageE @1557
+    _ZThn448_N5veins12BasePhyLayer22getCurrentRadioChannelEv @1558
+    _ZThn448_N5veins12BasePhyLayer6sendUpEPNS_8AirFrameEPNS_13DeciderResultE @1559
+    _ZThn448_N5veins12BasePhyLayerD0Ev @1560
+    _ZThn448_N5veins12BasePhyLayerD1Ev @1561
+    _ZThn448_N5veins14PhyLayer80211pD0Ev @1562
+    _ZThn448_N5veins14PhyLayer80211pD1Ev @1563
+    _ZThn456_N5veins12BasePhyLayer13getRadioStateEv @1564
+    _ZThn456_N5veins12BasePhyLayer13setRadioStateEi @1565
+    _ZThn456_N5veins12BasePhyLayer18getNbRadioChannelsEv @1566
+    _ZThn456_N5veins12BasePhyLayer22getCurrentRadioChannelEv @1567
+    _ZThn456_N5veins12BasePhyLayer22setCurrentRadioChannelEi @1568
+    _ZThn456_N5veins12BasePhyLayerD0Ev @1569
+    _ZThn456_N5veins12BasePhyLayerD1Ev @1570
+    _ZThn456_N5veins14PhyLayer80211p13getRadioStateEv @1571
+    _ZThn456_N5veins14PhyLayer80211p13setRadioStateEi @1572
+    _ZThn456_N5veins14PhyLayer80211pD0Ev @1573
+    _ZThn456_N5veins14PhyLayer80211pD1Ev @1574
+    _ZThn808_N5veins14PhyLayer80211p15setCCAThresholdEd @1575
+    _ZThn808_N5veins14PhyLayer80211p21notifyMacAboutRxStartEb @1576
+    _ZThn808_N5veins14PhyLayer80211p22changeListeningChannelENS_7ChannelE @1577
+    _ZThn808_N5veins14PhyLayer80211p26requestChannelStatusIfIdleEv @1578
+    _ZThn808_N5veins14PhyLayer80211pD0Ev @1579
+    _ZThn808_N5veins14PhyLayer80211pD1Ev @1580
+    _ZThn808_NK5veins14PhyLayer80211p16getFrameDurationEiNS_3MCSE @1581
+    _ZThn816_N5veins14PhyLayer80211p13getRadioStateEv @1582
+    _ZThn816_N5veins14PhyLayer80211pD0Ev @1583
+    _ZThn816_N5veins14PhyLayer80211pD1Ev @1584
+    _ZTv0_n1768_N5veins27TraCIScenarioManagerLaunchd10init_traciEv @1585
+    _ZTv0_n1792_NK5veins26TraCIScenarioManagerForker13getPortNumberEv @1586
+    _ZTv0_n328_N5veins26TraCIScenarioManagerForker10initializeEi @1587
+    _ZTv0_n328_N5veins27TraCIScenarioManagerLaunchd10initializeEi @1588
+    _ZTv0_n352_N5veins26TraCIScenarioManagerForker6finishEv @1589
+    _ZTv0_n352_N5veins27TraCIScenarioManagerLaunchd6finishEv @1590
+    _ZTv0_n40_N5veins26TraCIScenarioManagerForkerD0Ev @1591
+    _ZTv0_n40_N5veins26TraCIScenarioManagerForkerD1Ev @1592
+    _ZTv0_n40_N5veins27TraCIScenarioManagerLaunchdD0Ev @1593
+    _ZTv0_n40_N5veins27TraCIScenarioManagerLaunchdD1Ev @1594
+    _ZTvn216_n40_N5veins26TraCIScenarioManagerForkerD0Ev @1595
+    _ZTvn216_n40_N5veins26TraCIScenarioManagerForkerD1Ev @1596
+    _ZTvn216_n40_N5veins27TraCIScenarioManagerLaunchdD0Ev @1597
+    _ZTvn216_n40_N5veins27TraCIScenarioManagerLaunchdD1Ev @1598

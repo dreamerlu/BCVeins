@@ -52,24 +52,30 @@ void Switch::handleMessage(cMessage *msg)
     {
         //Perform the unicast communication
         int RSUId = unicastMsg->getTargetRSUId();
-        auto it = rsuIdToGateIndex.find(RSUId);
-        if (it != rsuIdToGateIndex.end())
+        //If RSUId=-1, then it unicast message will be sent to the controller!
+        if (RSUId == -1) {
+            send(msg->dup(),"gateOut",gateSize);
+        } else
         {
-            cGate* gateOut = gate("gateOut", it->second);
-            if (gateOut)
+            auto it = rsuIdToGateIndex.find(RSUId);
+            if (it != rsuIdToGateIndex.end())
             {
-                EV << "Sending to RSU "<<RSUId<<std::endl;
-                send(msg->dup(), gateOut);
+                cGate* gateOut = gate("gateOut", it->second);
+                if (gateOut)
+                {
+                    EV << "Sending to RSU "<<RSUId<<std::endl;
+                    send(msg->dup(), gateOut);
+                }
+            }
+            else
+            {
+                EV_ERROR << "RSU " << RSUId << " not found!" << std::endl;
             }
         }
-        else
-        {
-            EV_ERROR << "RSU " << RSUId << " not found!" << std::endl;
-        }
+
     } else if(BroadcastMessage *broadcastMsg=dynamic_cast<BroadcastMessage *>(msg))
     {
         cGate* arrivalGate = msg->getArrivalGate();
-        int gateSize = getRSUNum();
         for (int i = 0; i < gateSize; ++i)
         {
             cGate* gateOut = gate("gateOut", i);

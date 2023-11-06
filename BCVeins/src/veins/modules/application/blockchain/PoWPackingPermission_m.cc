@@ -213,6 +213,7 @@ void PoWPackingPermission::copy(const PoWPackingPermission& other)
     this->rsuId = other.rsuId;
     this->hash = other.hash;
     this->nonce = other.nonce;
+    this->blockData = other.blockData;
 }
 
 void PoWPackingPermission::parsimPack(omnetpp::cCommBuffer *b) const
@@ -221,6 +222,7 @@ void PoWPackingPermission::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->rsuId);
     doParsimPacking(b,this->hash);
     doParsimPacking(b,this->nonce);
+    doParsimPacking(b,this->blockData);
 }
 
 void PoWPackingPermission::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -229,6 +231,7 @@ void PoWPackingPermission::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->rsuId);
     doParsimUnpacking(b,this->hash);
     doParsimUnpacking(b,this->nonce);
+    doParsimUnpacking(b,this->blockData);
 }
 
 int PoWPackingPermission::getRsuId() const
@@ -261,6 +264,16 @@ void PoWPackingPermission::setNonce(int nonce)
     this->nonce = nonce;
 }
 
+const char * PoWPackingPermission::getBlockData() const
+{
+    return this->blockData.c_str();
+}
+
+void PoWPackingPermission::setBlockData(const char * blockData)
+{
+    this->blockData = blockData;
+}
+
 class PoWPackingPermissionDescriptor : public omnetpp::cClassDescriptor
 {
   private:
@@ -269,6 +282,7 @@ class PoWPackingPermissionDescriptor : public omnetpp::cClassDescriptor
         FIELD_rsuId,
         FIELD_hash,
         FIELD_nonce,
+        FIELD_blockData,
     };
   public:
     PoWPackingPermissionDescriptor();
@@ -335,7 +349,7 @@ const char *PoWPackingPermissionDescriptor::getProperty(const char *propertyName
 int PoWPackingPermissionDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 3+base->getFieldCount() : 3;
+    return base ? 4+base->getFieldCount() : 4;
 }
 
 unsigned int PoWPackingPermissionDescriptor::getFieldTypeFlags(int field) const
@@ -350,8 +364,9 @@ unsigned int PoWPackingPermissionDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_rsuId
         FD_ISEDITABLE,    // FIELD_hash
         FD_ISEDITABLE,    // FIELD_nonce
+        FD_ISEDITABLE,    // FIELD_blockData
     };
-    return (field >= 0 && field < 3) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 4) ? fieldTypeFlags[field] : 0;
 }
 
 const char *PoWPackingPermissionDescriptor::getFieldName(int field) const
@@ -366,8 +381,9 @@ const char *PoWPackingPermissionDescriptor::getFieldName(int field) const
         "rsuId",
         "hash",
         "nonce",
+        "blockData",
     };
-    return (field >= 0 && field < 3) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 4) ? fieldNames[field] : nullptr;
 }
 
 int PoWPackingPermissionDescriptor::findField(const char *fieldName) const
@@ -377,6 +393,7 @@ int PoWPackingPermissionDescriptor::findField(const char *fieldName) const
     if (strcmp(fieldName, "rsuId") == 0) return baseIndex + 0;
     if (strcmp(fieldName, "hash") == 0) return baseIndex + 1;
     if (strcmp(fieldName, "nonce") == 0) return baseIndex + 2;
+    if (strcmp(fieldName, "blockData") == 0) return baseIndex + 3;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -392,8 +409,9 @@ const char *PoWPackingPermissionDescriptor::getFieldTypeString(int field) const
         "int",    // FIELD_rsuId
         "string",    // FIELD_hash
         "int",    // FIELD_nonce
+        "string",    // FIELD_blockData
     };
-    return (field >= 0 && field < 3) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 4) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **PoWPackingPermissionDescriptor::getFieldPropertyNames(int field) const
@@ -479,6 +497,7 @@ std::string PoWPackingPermissionDescriptor::getFieldValueAsString(omnetpp::any_p
         case FIELD_rsuId: return long2string(pp->getRsuId());
         case FIELD_hash: return oppstring2string(pp->getHash());
         case FIELD_nonce: return long2string(pp->getNonce());
+        case FIELD_blockData: return oppstring2string(pp->getBlockData());
         default: return "";
     }
 }
@@ -498,6 +517,7 @@ void PoWPackingPermissionDescriptor::setFieldValueAsString(omnetpp::any_ptr obje
         case FIELD_rsuId: pp->setRsuId(string2long(value)); break;
         case FIELD_hash: pp->setHash((value)); break;
         case FIELD_nonce: pp->setNonce(string2long(value)); break;
+        case FIELD_blockData: pp->setBlockData((value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWPackingPermission'", field);
     }
 }
@@ -515,6 +535,7 @@ omnetpp::cValue PoWPackingPermissionDescriptor::getFieldValue(omnetpp::any_ptr o
         case FIELD_rsuId: return pp->getRsuId();
         case FIELD_hash: return pp->getHash();
         case FIELD_nonce: return pp->getNonce();
+        case FIELD_blockData: return pp->getBlockData();
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'PoWPackingPermission' as cValue -- field index out of range?", field);
     }
 }
@@ -534,6 +555,7 @@ void PoWPackingPermissionDescriptor::setFieldValue(omnetpp::any_ptr object, int 
         case FIELD_rsuId: pp->setRsuId(omnetpp::checked_int_cast<int>(value.intValue())); break;
         case FIELD_hash: pp->setHash(value.stringValue()); break;
         case FIELD_nonce: pp->setNonce(omnetpp::checked_int_cast<int>(value.intValue())); break;
+        case FIELD_blockData: pp->setBlockData(value.stringValue()); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWPackingPermission'", field);
     }
 }

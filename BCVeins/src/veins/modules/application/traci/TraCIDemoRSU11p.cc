@@ -27,6 +27,8 @@
 #include "veins/modules/application/blockchain/Block_m.h"
 #include "veins/modules/application/blockchain/PoWRequest_m.h"
 #include "veins/modules/application/blockchain/PoWModule.h"
+#include "veins/modules/application/blockchain/PoWResult_m.h"
+#include "veins/modules/application/blockchain/PoWPackingPermission_m.h"
 #include "veins/base/modules/UnicastMessage_m.h"
 #include "veins/base/modules/BroadcastMessage_m.h"
 #include <string>
@@ -44,30 +46,6 @@ void TraCIDemoRSU11p::initialize(int stage)
         i2vDelayVector.setName("I2VDelay");
         processDelay= getModuleByPath("rsu[0]")->par("processDelay");
 
-        // just for SHA256 testing
-        SHA256 sha;
-        sha.update("hello world");
-        std::array<uint8_t, 32> digest = sha.digest();
-        EV << "SHA information:"<<SHA256::toString(digest)<<std::endl;
-        // end
-        // just for direct communications between RSUs
-        // Sending direct message to all other RSUs
-        /*Block *blockMsg= new Block();
-        blockMsg->setMiner("test miner");
-        int numOutGates = gateSize("gateOut");
-        for (int i = 0; i < numOutGates; ++i) {
-            // create a copy of the message for each gate
-            EV << "Transmitting "<< i <<std::endl;
-            Block *copy = blockMsg->dup();
-            send(copy, "gateOut", i);
-        }
-        // delete the original message
-        delete blockMsg;*/
-        BroadcastMessage *broadMsg = new BroadcastMessage();
-        send(broadMsg,"gateOut",0);
-        UnicastMessage *uniMsg = new UnicastMessage();
-        uniMsg->setTargetRSUId(1);
-        send(uniMsg,"gateOut",0);
         //test PoW
         powModule = getParentModule()->getSubmodule("powModule");
         if (!powModule) {
@@ -76,6 +54,9 @@ void TraCIDemoRSU11p::initialize(int stage)
             PoWRequest* req = new PoWRequest();
             req->setData("hello");
             send(req, "outToBC");
+            req = new PoWRequest();
+            req->setData("aloha");
+            sendDelayed(req, 0.00001, "outToBC");
         }
     }
 }
@@ -100,7 +81,6 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
         rsuMsg->setRecipientAddress(wsm->getSenderAddress());
         rsuMsg->setTimestamp(simTime());
         sendDelayedDown(rsuMsg,processDelay);
-
     }
 
 }
@@ -111,11 +91,23 @@ void TraCIDemoRSU11p::handleMessage(cMessage *msg)
         EV <<"Arriving! From gate: "<< blockMsg->getArrivalGate() << ", miner message: " << blockMsg->getMiner() << std::endl;
         delete msg;
     } else if (PoWResponse* resp = dynamic_cast<PoWResponse*>(msg)) {
-        // Handle PoWResponse
+        // Herein RSU receives the valid nonce from its PoWModule, so it can send the encapsulated unicast message to the controller.
         EV <<"Current time: "<< simTime() << ", Received PoWResponse: data=" << resp->getData() <<", nonce=" << resp->getNonce() << std::endl;
-
+        PoWResult *res= new PoWResult();
+        res->setRsuId(this->getParentModule()->getIndex());
+        res->setBlockData(resp->getData());
+        res->setHash(resp->getHash());
+        res->setNonce(resp->getNonce());
+        UnicastMessage *umsg= new UnicastMessage();
+        umsg->setTargetRSUId(-1);
+        umsg->setData(res);
+        send(res,"gateOut",0);
         delete msg;
-    } else {
+    } else if (PoWPackingPermission * ppp = dynamic_cast<PoWPackingPermission *>(msg)) {
+        // Herein RSU receives the "valid" block
+        EV << "I am receiving the PoWPackingPermission message" <<std::endl;
+    }
+    else {
         //do nothing currently
     }
 }
@@ -139,8 +131,48 @@ int TraCIDemoRSU11p::getRSUNum()
     return numberOfRSUs;
 }
 
+/*
+ * This method is only used for testing my design.
+ * My notes:
+ * 1. Unicast/Broadcast communications have been tested.
+ * */
 void TraCIDemoRSU11p::testMethods() {
-
+    // just for SHA256 testing
+    SHA256 sha;
+    sha.update("hello world");
+    std::array<uint8_t, 32> digest = sha.digest();
+    EV << "SHA information:"<<SHA256::toString(digest)<<std::endl;
+    // end
+    // just for direct communications between RSUs
+    // Sending direct message to all other RSUs
+    /*Block *blockMsg= new Block();
+    blockMsg->setMiner("test miner");
+    int numOutGates = gateSize("gateOut");
+    for (int i = 0; i < numOutGates; ++i) {
+        // create a copy of the message for each gate
+        EV << "Transmitting "<< i <<std::endl;
+        Block *copy = blockMsg->dup();
+        send(copy, "gateOut", i);
+    }
+    // delete the original message
+    delete blockMsg;*/
+    BroadcastMessage *broadMsg = new BroadcastMessage();
+    send(broadMsg,"gateOut",0);
+    Block *blockMsg= new Block();
+    blockMsg->setMiner("test miner");
+    UnicastMessage *uniMsg = new UnicastMessage();
+    uniMsg->setTargetRSUId(1);
+    uniMsg->setData(blockMsg);
+    send(uniMsg,"gateOut",0);
+    //test PoW
+    powModule = getParentModule()->getSubmodule("powModule");
+    if (!powModule) {
+        EV << "Error: No PoWModule found";
+    } else {
+        PoWRequest* req = new PoWRequest();
+        req->setData("hello");
+        send(req, "outToBC");
+    }
 }
 
 void TraCIDemoRSU11p::finish() {

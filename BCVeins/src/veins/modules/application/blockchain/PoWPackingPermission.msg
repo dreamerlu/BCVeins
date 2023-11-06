@@ -18,4 +18,5 @@ message PoWPackingPermission
     int rsuId;    // The ID of the RSU that is allowed to pack the block
     string hash;  // The hash for packing
     int nonce;    // The nonce for packing
+    string blockData; //The blockdata for storing the data of the block
 }

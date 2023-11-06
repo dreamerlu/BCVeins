@@ -17,14 +17,20 @@
 这个模块目前实现了多个路边单元关于PoW竞争最终结果的确定机制。其涉及到的消息包括：
 > 1. PoWPackingPermission：控制器认定PoWResult有效的消息
 
-## Gates连接情况
+### Gates连接情况
 > RSU Appl：
 > >rsu.gateIn[0] <-- switch.gateOut[0]<br>
-> >rsu.gateOut[0] --> switch.gateIn[0]
+> >rsu.gateOut[0] --> switch.gateIn[0]<br>
+> \<parent>.gateIn[0] --> appl.gateIn[0];<br>
+> appl.gateOut[0] --> \<parent>.gateOut[0];<br>
 > 
 > Switch：
 > >前0~n-1个gateIn/Out与rsu相连接<br>
-> >第n个gateIn/Out与controller的唯一gateIn/Out相连接
+> >第n（也就是说0~n-1个gate被占用了）个gateIn/Out与controller的唯一gateIn/Out相连接
 > > 
 > Controller：
 > >与Switch的第n个gateIn/Out相连接
+
+## 核心逻辑关系
+核心逻辑：RSU的应用程序模块TraCIDemoRSU11p通过生成PoWRequest消息，将该消息发送给其子模块PoWModule后，PoWModule会不断触发PoW计算最终找到合法的nonce。在该过程中，如果有新的PoWRequest到来，会将其放入到队列中，从而避免上次未完成的PoW计算被打断。PoW计算过程中如果合法的nonce被找到，那此时PoWModule会发送PoWResponse消息给TraCIDemoRSU11p，而TraCIDemoRSU11p会将PoWResponse封装成PoWResult消息后再封装成UnicastMessage消息（接收方设置为-1以标明发送给Controller）后发送给Switch，Switch收到后会将该消息转发给Controller。由于Controller会收到多个RSU的封装后的PoWResult，因此会将第一个（通过set容器存储Block data）收到的PoWResult认定是有效的，会将其封装成PoWPackingPermission消息以标明这个消息的发送方拥有这个区块的打包权，而对非第一个出现的PoWResult则不会进行处理。当TraCIDemoRSU11p收到PoWPackingPermission消息后，将其链接成区块链。。。
+
