@@ -2,8 +2,8 @@
 // Generated file, do not edit! Created by nedtool 6.0 from veins/base/modules/BroadcastMessage.msg.
 //
 
-#ifndef __VEINS_BROADCASTMESSAGE_M_H
-#define __VEINS_BROADCASTMESSAGE_M_H
+#ifndef __VEINS_VEINS_BASE_MODULES_BROADCASTMESSAGE_M_H
+#define __VEINS_VEINS_BASE_MODULES_BROADCASTMESSAGE_M_H
 
 #if defined(__clang__)
 #  pragma clang diagnostic ignored "-Wreserved-id-macro"
@@ -37,11 +37,12 @@ class BroadcastMessage;
 namespace veins {
 
 /**
- * Class generated from <tt>veins/base/modules/BroadcastMessage.msg:16</tt> by nedtool.
+ * Class generated from <tt>veins\base\modules\BroadcastMessage.msg:16</tt> by nedtool.
  * <pre>
  * message BroadcastMessage
  * {
  *     string descrp = "Broadcast message signal";
+ *     omnetpp::cMessage *data;
  * }
  * </pre>
  */
@@ -49,6 +50,7 @@ class VEINS_API BroadcastMessage : public ::omnetpp::cMessage
 {
   protected:
     omnetpp::opp_string descrp = "Broadcast message signal";
+    omnetpp::cMessage * data = nullptr;
 
   private:
     void copy(const BroadcastMessage& other);
@@ -68,6 +70,9 @@ class VEINS_API BroadcastMessage : public ::omnetpp::cMessage
     // field getter/setter methods
     virtual const char * getDescrp() const;
     virtual void setDescrp(const char * descrp);
+    virtual const omnetpp::cMessage * getData() const;
+    virtual omnetpp::cMessage * getDataForUpdate() { return const_cast<omnetpp::cMessage *>(const_cast<BroadcastMessage*>(this)->getData());}
+    virtual void setData(omnetpp::cMessage * data);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const BroadcastMessage& obj) {obj.parsimPack(b);}
@@ -81,5 +86,5 @@ namespace omnetpp {
 template<> inline veins::BroadcastMessage *fromAnyPtr(any_ptr ptr) { return check_and_cast<veins::BroadcastMessage*>(ptr.get<cObject>()); }
 }  // namespace omnetpp
 
-#endif // ifndef __VEINS_BROADCASTMESSAGE_M_H
+#endif // ifndef __VEINS_VEINS_BASE_MODULES_BROADCASTMESSAGE_M_H
 

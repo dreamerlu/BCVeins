@@ -50,11 +50,18 @@ void Switch::handleMessage(cMessage *msg)
     //Determine whether the message is unicast or broadcast message
     if (UnicastMessage *unicastMsg= dynamic_cast<UnicastMessage *>(msg))
     {
+        EV << "Unicast message coming!!!\n";
         //Perform the unicast communication
         int RSUId = unicastMsg->getTargetRSUId();
+        //Get the data form UnicastMessage
+        const cMessage *data=unicastMsg->getData();
+        if (data == nullptr) {
+            EV_ERROR << "Data is nullptr." << std::endl;
+            return;
+        }
         //If RSUId=-1, then it unicast message will be sent to the controller!
         if (RSUId == -1) {
-            send(msg->dup(),"gateOut",gateSize);
+            send(data->dup(),"gateOut",gateSize);
         } else
         {
             auto it = rsuIdToGateIndex.find(RSUId);
@@ -75,13 +82,15 @@ void Switch::handleMessage(cMessage *msg)
 
     } else if(BroadcastMessage *broadcastMsg=dynamic_cast<BroadcastMessage *>(msg))
     {
+        EV << "Broadcast message coming!!!\n";
         cGate* arrivalGate = msg->getArrivalGate();
+        const cMessage *data=broadcastMsg->getData();
         for (int i = 0; i < gateSize; ++i)
         {
             cGate* gateOut = gate("gateOut", i);
             if (gateOut && gateOut->getPathEndGate()->getOwnerModule() != arrivalGate->getOwnerModule())
             {
-                send(msg->dup(), gateOut);
+                send(data->dup(), gateOut);
             }
         }
         EV << "Switching!" << std::endl;

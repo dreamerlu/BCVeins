@@ -1,7 +1,7 @@
 /*
  * SHA256.cc
  *
- *  Created on: 2023Äê10ÔÂ30ÈÕ
+ *  Created on: 2023ï¿½ï¿½10ï¿½ï¿½30ï¿½ï¿½
  *      Author: Administrator
  */
 
@@ -151,20 +151,30 @@ void SHA256::revert(std::array<uint8_t, 32> & hash) {
 
 
 std::string SHA256::toString(const std::array<uint8_t, 32> & digest) {
-    /*std::stringstream s;
+    std::stringstream s;
     s << std::setfill('0') << std::hex;
 
     for(uint8_t i = 0 ; i < 32 ; i++) {
         s << std::setw(2) << (unsigned int) digest[i];
     }
 
-    return s.str();*/
-    // return the binary stream instead
-    std::stringstream s;
-    for(uint8_t i = 0; i < 32; i++) {
-        s << std::bitset<8>(digest[i]);
-    }
     return s.str();
+}
+
+std::string SHA256::HexToBinary(const std::string & hex) {
+    const std::string hex_char_to_bin[16] = {
+            "0000", "0001", "0010", "0011",
+            "0100", "0101", "0110", "0111",
+            "1000", "1001", "1010", "1011",
+            "1100", "1101", "1110", "1111"
+        };
+
+    std::string binary;
+    for (size_t i = 0; i < hex.length(); ++i) {
+        uint8_t val = std::stoul(hex.substr(i, 1), nullptr, 16);
+        binary += hex_char_to_bin[val];
+    }
+    return binary;
 }
 
 

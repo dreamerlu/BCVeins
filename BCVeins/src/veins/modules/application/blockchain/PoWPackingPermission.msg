@@ -19,4 +19,6 @@ message PoWPackingPermission
     string hash;  // The hash for packing
     int nonce;    // The nonce for packing
     string blockData; //The blockdata for storing the data of the block
+    simtime_t timestamp;       
+    int difficultyLevel; 
 }

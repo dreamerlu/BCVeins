@@ -28,7 +28,7 @@
 #include <sstream>
 #include <memory>
 #include <type_traits>
-#include "BroadcastMessage_m.h"
+#include "veins\base\modules\BroadcastMessage_m.h"
 
 namespace omnetpp {
 
@@ -211,18 +211,21 @@ BroadcastMessage& BroadcastMessage::operator=(const BroadcastMessage& other)
 void BroadcastMessage::copy(const BroadcastMessage& other)
 {
     this->descrp = other.descrp;
+    this->data = other.data;
 }
 
 void BroadcastMessage::parsimPack(omnetpp::cCommBuffer *b) const
 {
     ::omnetpp::cMessage::parsimPack(b);
     doParsimPacking(b,this->descrp);
+    doParsimPacking(b,this->data);
 }
 
 void BroadcastMessage::parsimUnpack(omnetpp::cCommBuffer *b)
 {
     ::omnetpp::cMessage::parsimUnpack(b);
     doParsimUnpacking(b,this->descrp);
+    doParsimUnpacking(b,this->data);
 }
 
 const char * BroadcastMessage::getDescrp() const
@@ -235,12 +238,23 @@ void BroadcastMessage::setDescrp(const char * descrp)
     this->descrp = descrp;
 }
 
+const omnetpp::cMessage * BroadcastMessage::getData() const
+{
+    return this->data;
+}
+
+void BroadcastMessage::setData(omnetpp::cMessage * data)
+{
+    this->data = data;
+}
+
 class BroadcastMessageDescriptor : public omnetpp::cClassDescriptor
 {
   private:
     mutable const char **propertyNames;
     enum FieldConstants {
         FIELD_descrp,
+        FIELD_data,
     };
   public:
     BroadcastMessageDescriptor();
@@ -307,7 +321,7 @@ const char *BroadcastMessageDescriptor::getProperty(const char *propertyName) co
 int BroadcastMessageDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 1+base->getFieldCount() : 1;
+    return base ? 2+base->getFieldCount() : 2;
 }
 
 unsigned int BroadcastMessageDescriptor::getFieldTypeFlags(int field) const
@@ -320,8 +334,9 @@ unsigned int BroadcastMessageDescriptor::getFieldTypeFlags(int field) const
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,    // FIELD_descrp
+        FD_ISCOMPOUND | FD_ISPOINTER | FD_ISCOBJECT | FD_ISCOWNEDOBJECT | FD_ISREPLACEABLE,    // FIELD_data
     };
-    return (field >= 0 && field < 1) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 2) ? fieldTypeFlags[field] : 0;
 }
 
 const char *BroadcastMessageDescriptor::getFieldName(int field) const
@@ -334,8 +349,9 @@ const char *BroadcastMessageDescriptor::getFieldName(int field) const
     }
     static const char *fieldNames[] = {
         "descrp",
+        "data",
     };
-    return (field >= 0 && field < 1) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 2) ? fieldNames[field] : nullptr;
 }
 
 int BroadcastMessageDescriptor::findField(const char *fieldName) const
@@ -343,6 +359,7 @@ int BroadcastMessageDescriptor::findField(const char *fieldName) const
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     int baseIndex = base ? base->getFieldCount() : 0;
     if (strcmp(fieldName, "descrp") == 0) return baseIndex + 0;
+    if (strcmp(fieldName, "data") == 0) return baseIndex + 1;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -356,8 +373,9 @@ const char *BroadcastMessageDescriptor::getFieldTypeString(int field) const
     }
     static const char *fieldTypeStrings[] = {
         "string",    // FIELD_descrp
+        "omnetpp::cMessage",    // FIELD_data
     };
-    return (field >= 0 && field < 1) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 2) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **BroadcastMessageDescriptor::getFieldPropertyNames(int field) const
@@ -426,6 +444,7 @@ const char *BroadcastMessageDescriptor::getFieldDynamicTypeString(omnetpp::any_p
     }
     BroadcastMessage *pp = omnetpp::fromAnyPtr<BroadcastMessage>(object); (void)pp;
     switch (field) {
+        case FIELD_data: { const omnetpp::cMessage * value = pp->getData(); return omnetpp::opp_typename(typeid(*value)); }
         default: return nullptr;
     }
 }
@@ -441,6 +460,7 @@ std::string BroadcastMessageDescriptor::getFieldValueAsString(omnetpp::any_ptr o
     BroadcastMessage *pp = omnetpp::fromAnyPtr<BroadcastMessage>(object); (void)pp;
     switch (field) {
         case FIELD_descrp: return oppstring2string(pp->getDescrp());
+        case FIELD_data: {std::stringstream out; out << pp->getData(); return out.str();}
         default: return "";
     }
 }
@@ -473,6 +493,7 @@ omnetpp::cValue BroadcastMessageDescriptor::getFieldValue(omnetpp::any_ptr objec
     BroadcastMessage *pp = omnetpp::fromAnyPtr<BroadcastMessage>(object); (void)pp;
     switch (field) {
         case FIELD_descrp: return pp->getDescrp();
+        case FIELD_data: return omnetpp::toAnyPtr(pp->getData()); break;
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'BroadcastMessage' as cValue -- field index out of range?", field);
     }
 }
@@ -490,6 +511,7 @@ void BroadcastMessageDescriptor::setFieldValue(omnetpp::any_ptr object, int fiel
     BroadcastMessage *pp = omnetpp::fromAnyPtr<BroadcastMessage>(object); (void)pp;
     switch (field) {
         case FIELD_descrp: pp->setDescrp(value.stringValue()); break;
+        case FIELD_data: pp->setData(omnetpp::fromAnyPtr<omnetpp::cMessage>(value.pointerValue())); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'BroadcastMessage'", field);
     }
 }
@@ -503,6 +525,7 @@ const char *BroadcastMessageDescriptor::getFieldStructName(int field) const
         field -= base->getFieldCount();
     }
     switch (field) {
+        case FIELD_data: return omnetpp::opp_typename(typeid(omnetpp::cMessage));
         default: return nullptr;
     };
 }
@@ -517,6 +540,7 @@ omnetpp::any_ptr BroadcastMessageDescriptor::getFieldStructValuePointer(omnetpp:
     }
     BroadcastMessage *pp = omnetpp::fromAnyPtr<BroadcastMessage>(object); (void)pp;
     switch (field) {
+        case FIELD_data: return omnetpp::toAnyPtr(pp->getData()); break;
         default: return omnetpp::any_ptr(nullptr);
     }
 }
@@ -533,6 +557,7 @@ void BroadcastMessageDescriptor::setFieldStructValuePointer(omnetpp::any_ptr obj
     }
     BroadcastMessage *pp = omnetpp::fromAnyPtr<BroadcastMessage>(object); (void)pp;
     switch (field) {
+        case FIELD_data: pp->setData(omnetpp::fromAnyPtr<omnetpp::cMessage>(ptr)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'BroadcastMessage'", field);
     }
 }

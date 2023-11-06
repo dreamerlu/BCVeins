@@ -57,6 +57,9 @@ void TraCIDemoRSU11p::initialize(int stage)
             req = new PoWRequest();
             req->setData("aloha");
             sendDelayed(req, 0.00001, "outToBC");
+            req = new PoWRequest();
+            req->setData("hahaha");
+            sendDelayed(req, 0.00002, "outToBC");
         }
     }
 }
@@ -101,11 +104,12 @@ void TraCIDemoRSU11p::handleMessage(cMessage *msg)
         UnicastMessage *umsg= new UnicastMessage();
         umsg->setTargetRSUId(-1);
         umsg->setData(res);
-        send(res,"gateOut",0);
+        send(umsg,"gateOut",0);
         delete msg;
     } else if (PoWPackingPermission * ppp = dynamic_cast<PoWPackingPermission *>(msg)) {
         // Herein RSU receives the "valid" block
         EV << "I am receiving the PoWPackingPermission message" <<std::endl;
+        send(ppp,"outToBC");
     }
     else {
         //do nothing currently

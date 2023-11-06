@@ -50,8 +50,8 @@ namespace veins {
  *     int difficultyLevel;
  *     string miner;
  *     int nonce;
- * 
  *     string transactionData;
+ *     string hash; //hash of the block
  * }
  * </pre>
  */
@@ -64,6 +64,7 @@ class VEINS_API Block : public ::veins::BaseFrame1609_4
     omnetpp::opp_string miner;
     int nonce = 0;
     omnetpp::opp_string transactionData;
+    omnetpp::opp_string hash;
 
   private:
     void copy(const Block& other);
@@ -93,6 +94,8 @@ class VEINS_API Block : public ::veins::BaseFrame1609_4
     virtual void setNonce(int nonce);
     virtual const char * getTransactionData() const;
     virtual void setTransactionData(const char * transactionData);
+    virtual const char * getHash() const;
+    virtual void setHash(const char * hash);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const Block& obj) {obj.parsimPack(b);}

@@ -32,7 +32,10 @@ void Controller::handleMessage(cMessage *msg)
             permission->setHash(result->getHash());
             permission->setNonce(result->getNonce());
             permission->setBlockData(result->getBlockData());
-            send(permission, "out");
+            permission->setTimestamp(result->getTimestamp());
+            BroadcastMessage *broadcastMsg= new BroadcastMessage();
+            broadcastMsg->setData(permission);
+            send(broadcastMsg, "out");
             EV << "New valid block will be recorded into the chain. Processing...\n";
         } else {
             // Herein we can see that the PoWResult corresponding to "data" is not the first one.

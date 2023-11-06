@@ -22,6 +22,6 @@ packet Block extends BaseFrame1609_4
     int difficultyLevel;       
     string miner;              
     int nonce;                 
-
-    string transactionData;   
+    string transactionData;
+    string hash; //hash of the block
 }

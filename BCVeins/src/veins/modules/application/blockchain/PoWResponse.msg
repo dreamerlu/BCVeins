@@ -17,4 +17,6 @@ message PoWResponse {
     string data;
     string hash;
     int nonce;
+    simtime_t timestamp;       
+    int difficultyLevel;  
 }

@@ -11,7 +11,10 @@
 #include <omnetpp.h>
 #include "PoWRequest_m.h"
 #include "PoWResponse_m.h"
+#include "Block_m.h"
 #include <queue>
+#include <vector>
+#include <fstream>
 
 using namespace omnetpp;
 using namespace veins;
@@ -26,6 +29,8 @@ class PoWModule : public cSimpleModule
     bool isProcessing;
     // Queue for PoW requests
     std::queue<PoWRequest *> requestQueue;
+    //Vector for storing the chain of all blocks
+    std::vector<Block *> blockchain;
 
   public:
     virtual void initialize() override;

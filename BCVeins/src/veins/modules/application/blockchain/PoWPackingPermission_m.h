@@ -45,6 +45,8 @@ namespace veins {
  *     string hash;  // The hash for packing
  *     int nonce;    // The nonce for packing
  *     string blockData; //The blockdata for storing the data of the block
+ *     simtime_t timestamp;
+ *     int difficultyLevel;
  * }
  * </pre>
  */
@@ -55,6 +57,8 @@ class VEINS_API PoWPackingPermission : public ::omnetpp::cMessage
     omnetpp::opp_string hash;
     int nonce = 0;
     omnetpp::opp_string blockData;
+    omnetpp::simtime_t timestamp = SIMTIME_ZERO;
+    int difficultyLevel = 0;
 
   private:
     void copy(const PoWPackingPermission& other);
@@ -80,6 +84,10 @@ class VEINS_API PoWPackingPermission : public ::omnetpp::cMessage
     virtual void setNonce(int nonce);
     virtual const char * getBlockData() const;
     virtual void setBlockData(const char * blockData);
+    virtual omnetpp::simtime_t getTimestamp() const;
+    virtual void setTimestamp(omnetpp::simtime_t timestamp);
+    virtual int getDifficultyLevel() const;
+    virtual void setDifficultyLevel(int difficultyLevel);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const PoWPackingPermission& obj) {obj.parsimPack(b);}

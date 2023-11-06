@@ -251,12 +251,12 @@ void UnicastMessage::setDescrp(const char * descrp)
     this->descrp = descrp;
 }
 
-const omnetpp::cObject * UnicastMessage::getData() const
+const omnetpp::cMessage * UnicastMessage::getData() const
 {
     return this->data;
 }
 
-void UnicastMessage::setData(omnetpp::cObject * data)
+void UnicastMessage::setData(omnetpp::cMessage * data)
 {
     this->data = data;
 }
@@ -349,7 +349,7 @@ unsigned int UnicastMessageDescriptor::getFieldTypeFlags(int field) const
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,    // FIELD_targetRSUId
         FD_ISEDITABLE,    // FIELD_descrp
-        FD_ISCOMPOUND | FD_ISPOINTER | FD_ISCOBJECT | FD_ISREPLACEABLE,    // FIELD_data
+        FD_ISCOMPOUND | FD_ISPOINTER | FD_ISCOBJECT | FD_ISCOWNEDOBJECT | FD_ISREPLACEABLE,    // FIELD_data
     };
     return (field >= 0 && field < 3) ? fieldTypeFlags[field] : 0;
 }
@@ -391,7 +391,7 @@ const char *UnicastMessageDescriptor::getFieldTypeString(int field) const
     static const char *fieldTypeStrings[] = {
         "int",    // FIELD_targetRSUId
         "string",    // FIELD_descrp
-        "omnetpp::cObject",    // FIELD_data
+        "omnetpp::cMessage",    // FIELD_data
     };
     return (field >= 0 && field < 3) ? fieldTypeStrings[field] : nullptr;
 }
@@ -462,7 +462,7 @@ const char *UnicastMessageDescriptor::getFieldDynamicTypeString(omnetpp::any_ptr
     }
     UnicastMessage *pp = omnetpp::fromAnyPtr<UnicastMessage>(object); (void)pp;
     switch (field) {
-        case FIELD_data: { const omnetpp::cObject * value = pp->getData(); return omnetpp::opp_typename(typeid(*value)); }
+        case FIELD_data: { const omnetpp::cMessage * value = pp->getData(); return omnetpp::opp_typename(typeid(*value)); }
         default: return nullptr;
     }
 }
@@ -533,7 +533,7 @@ void UnicastMessageDescriptor::setFieldValue(omnetpp::any_ptr object, int field,
     switch (field) {
         case FIELD_targetRSUId: pp->setTargetRSUId(omnetpp::checked_int_cast<int>(value.intValue())); break;
         case FIELD_descrp: pp->setDescrp(value.stringValue()); break;
-        case FIELD_data: pp->setData(omnetpp::fromAnyPtr<omnetpp::cObject>(value.pointerValue())); break;
+        case FIELD_data: pp->setData(omnetpp::fromAnyPtr<omnetpp::cMessage>(value.pointerValue())); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'UnicastMessage'", field);
     }
 }
@@ -547,7 +547,7 @@ const char *UnicastMessageDescriptor::getFieldStructName(int field) const
         field -= base->getFieldCount();
     }
     switch (field) {
-        case FIELD_data: return omnetpp::opp_typename(typeid(omnetpp::cObject));
+        case FIELD_data: return omnetpp::opp_typename(typeid(omnetpp::cMessage));
         default: return nullptr;
     };
 }
@@ -579,7 +579,7 @@ void UnicastMessageDescriptor::setFieldStructValuePointer(omnetpp::any_ptr objec
     }
     UnicastMessage *pp = omnetpp::fromAnyPtr<UnicastMessage>(object); (void)pp;
     switch (field) {
-        case FIELD_data: pp->setData(omnetpp::fromAnyPtr<omnetpp::cObject>(ptr)); break;
+        case FIELD_data: pp->setData(omnetpp::fromAnyPtr<omnetpp::cMessage>(ptr)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'UnicastMessage'", field);
     }
 }

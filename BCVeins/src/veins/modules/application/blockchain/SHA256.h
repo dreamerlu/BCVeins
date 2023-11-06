@@ -1,7 +1,7 @@
 /*
  * SHA256.h
  *
- *  Created on: 2023Äê10ÔÂ30ÈÕ
+ *  Created on: 2023ï¿½ï¿½10ï¿½ï¿½30ï¿½ï¿½
  *      Author: Administrator
  */
 
@@ -20,6 +20,7 @@ public:
     std::array<uint8_t, 32> digest();
 
     static std::string toString(const std::array<uint8_t, 32> & digest);
+    static std::string HexToBinary(const std::string & binary);
 
 private:
     uint8_t  m_data[64];

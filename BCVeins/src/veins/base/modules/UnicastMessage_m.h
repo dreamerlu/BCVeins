@@ -43,7 +43,7 @@ namespace veins {
  * {
  *     int targetRSUId = -1;
  *     string descrp = "Broadcast message signal";
- *     omnetpp::cObject *data;
+ *     omnetpp::cMessage *data;
  * }
  * </pre>
  */
@@ -52,7 +52,7 @@ class VEINS_API UnicastMessage : public ::omnetpp::cMessage
   protected:
     int targetRSUId = -1;
     omnetpp::opp_string descrp = "Broadcast message signal";
-    omnetpp::cObject * data = nullptr;
+    omnetpp::cMessage * data = nullptr;
 
   private:
     void copy(const UnicastMessage& other);
@@ -74,9 +74,9 @@ class VEINS_API UnicastMessage : public ::omnetpp::cMessage
     virtual void setTargetRSUId(int targetRSUId);
     virtual const char * getDescrp() const;
     virtual void setDescrp(const char * descrp);
-    virtual const omnetpp::cObject * getData() const;
-    virtual omnetpp::cObject * getDataForUpdate() { return const_cast<omnetpp::cObject *>(const_cast<UnicastMessage*>(this)->getData());}
-    virtual void setData(omnetpp::cObject * data);
+    virtual const omnetpp::cMessage * getData() const;
+    virtual omnetpp::cMessage * getDataForUpdate() { return const_cast<omnetpp::cMessage *>(const_cast<UnicastMessage*>(this)->getData());}
+    virtual void setData(omnetpp::cMessage * data);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const UnicastMessage& obj) {obj.parsimPack(b);}

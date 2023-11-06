@@ -16,5 +16,5 @@ namespace veins;
 message UnicastMessage {
     int targetRSUId=-1;
 	string descrp = "Broadcast message signal";
-	omnetpp::cObject* data;
+	omnetpp::cMessage* data;
 }

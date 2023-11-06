@@ -1,7 +1,7 @@
 /*
  * Controller.h
  *
- *  Created on: 2023Äê11ÔÂ1ÈÕ
+ *  Created on: 2023ï¿½ï¿½11ï¿½ï¿½1ï¿½ï¿½
  *      Author: Administrator
  */
 
@@ -12,6 +12,7 @@
 #include <veins/base/modules/BaseModule.h>
 #include "PoWResult_m.h"
 #include "PoWPackingPermission_m.h"
+#include "veins/base/modules/BroadcastMessage_m.h"
 
 using namespace omnetpp;
 using namespace veins;

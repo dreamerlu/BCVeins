@@ -20,4 +20,6 @@ message PoWResult extends UnicastMessage
     string blockData;
     string hash;  // The hash that was found
     int nonce;    // The nonce that was found
+    simtime_t timestamp;       
+    int difficultyLevel; 
 }

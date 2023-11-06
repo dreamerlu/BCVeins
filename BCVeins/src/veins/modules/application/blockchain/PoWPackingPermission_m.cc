@@ -214,6 +214,8 @@ void PoWPackingPermission::copy(const PoWPackingPermission& other)
     this->hash = other.hash;
     this->nonce = other.nonce;
     this->blockData = other.blockData;
+    this->timestamp = other.timestamp;
+    this->difficultyLevel = other.difficultyLevel;
 }
 
 void PoWPackingPermission::parsimPack(omnetpp::cCommBuffer *b) const
@@ -223,6 +225,8 @@ void PoWPackingPermission::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->hash);
     doParsimPacking(b,this->nonce);
     doParsimPacking(b,this->blockData);
+    doParsimPacking(b,this->timestamp);
+    doParsimPacking(b,this->difficultyLevel);
 }
 
 void PoWPackingPermission::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -232,6 +236,8 @@ void PoWPackingPermission::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->hash);
     doParsimUnpacking(b,this->nonce);
     doParsimUnpacking(b,this->blockData);
+    doParsimUnpacking(b,this->timestamp);
+    doParsimUnpacking(b,this->difficultyLevel);
 }
 
 int PoWPackingPermission::getRsuId() const
@@ -274,6 +280,26 @@ void PoWPackingPermission::setBlockData(const char * blockData)
     this->blockData = blockData;
 }
 
+omnetpp::simtime_t PoWPackingPermission::getTimestamp() const
+{
+    return this->timestamp;
+}
+
+void PoWPackingPermission::setTimestamp(omnetpp::simtime_t timestamp)
+{
+    this->timestamp = timestamp;
+}
+
+int PoWPackingPermission::getDifficultyLevel() const
+{
+    return this->difficultyLevel;
+}
+
+void PoWPackingPermission::setDifficultyLevel(int difficultyLevel)
+{
+    this->difficultyLevel = difficultyLevel;
+}
+
 class PoWPackingPermissionDescriptor : public omnetpp::cClassDescriptor
 {
   private:
@@ -283,6 +309,8 @@ class PoWPackingPermissionDescriptor : public omnetpp::cClassDescriptor
         FIELD_hash,
         FIELD_nonce,
         FIELD_blockData,
+        FIELD_timestamp,
+        FIELD_difficultyLevel,
     };
   public:
     PoWPackingPermissionDescriptor();
@@ -349,7 +377,7 @@ const char *PoWPackingPermissionDescriptor::getProperty(const char *propertyName
 int PoWPackingPermissionDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 4+base->getFieldCount() : 4;
+    return base ? 6+base->getFieldCount() : 6;
 }
 
 unsigned int PoWPackingPermissionDescriptor::getFieldTypeFlags(int field) const
@@ -365,8 +393,10 @@ unsigned int PoWPackingPermissionDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_hash
         FD_ISEDITABLE,    // FIELD_nonce
         FD_ISEDITABLE,    // FIELD_blockData
+        FD_ISEDITABLE,    // FIELD_timestamp
+        FD_ISEDITABLE,    // FIELD_difficultyLevel
     };
-    return (field >= 0 && field < 4) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 6) ? fieldTypeFlags[field] : 0;
 }
 
 const char *PoWPackingPermissionDescriptor::getFieldName(int field) const
@@ -382,8 +412,10 @@ const char *PoWPackingPermissionDescriptor::getFieldName(int field) const
         "hash",
         "nonce",
         "blockData",
+        "timestamp",
+        "difficultyLevel",
     };
-    return (field >= 0 && field < 4) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 6) ? fieldNames[field] : nullptr;
 }
 
 int PoWPackingPermissionDescriptor::findField(const char *fieldName) const
@@ -394,6 +426,8 @@ int PoWPackingPermissionDescriptor::findField(const char *fieldName) const
     if (strcmp(fieldName, "hash") == 0) return baseIndex + 1;
     if (strcmp(fieldName, "nonce") == 0) return baseIndex + 2;
     if (strcmp(fieldName, "blockData") == 0) return baseIndex + 3;
+    if (strcmp(fieldName, "timestamp") == 0) return baseIndex + 4;
+    if (strcmp(fieldName, "difficultyLevel") == 0) return baseIndex + 5;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -410,8 +444,10 @@ const char *PoWPackingPermissionDescriptor::getFieldTypeString(int field) const
         "string",    // FIELD_hash
         "int",    // FIELD_nonce
         "string",    // FIELD_blockData
+        "omnetpp::simtime_t",    // FIELD_timestamp
+        "int",    // FIELD_difficultyLevel
     };
-    return (field >= 0 && field < 4) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 6) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **PoWPackingPermissionDescriptor::getFieldPropertyNames(int field) const
@@ -498,6 +534,8 @@ std::string PoWPackingPermissionDescriptor::getFieldValueAsString(omnetpp::any_p
         case FIELD_hash: return oppstring2string(pp->getHash());
         case FIELD_nonce: return long2string(pp->getNonce());
         case FIELD_blockData: return oppstring2string(pp->getBlockData());
+        case FIELD_timestamp: return simtime2string(pp->getTimestamp());
+        case FIELD_difficultyLevel: return long2string(pp->getDifficultyLevel());
         default: return "";
     }
 }
@@ -518,6 +556,8 @@ void PoWPackingPermissionDescriptor::setFieldValueAsString(omnetpp::any_ptr obje
         case FIELD_hash: pp->setHash((value)); break;
         case FIELD_nonce: pp->setNonce(string2long(value)); break;
         case FIELD_blockData: pp->setBlockData((value)); break;
+        case FIELD_timestamp: pp->setTimestamp(string2simtime(value)); break;
+        case FIELD_difficultyLevel: pp->setDifficultyLevel(string2long(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWPackingPermission'", field);
     }
 }
@@ -536,6 +576,8 @@ omnetpp::cValue PoWPackingPermissionDescriptor::getFieldValue(omnetpp::any_ptr o
         case FIELD_hash: return pp->getHash();
         case FIELD_nonce: return pp->getNonce();
         case FIELD_blockData: return pp->getBlockData();
+        case FIELD_timestamp: return pp->getTimestamp().dbl();
+        case FIELD_difficultyLevel: return pp->getDifficultyLevel();
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'PoWPackingPermission' as cValue -- field index out of range?", field);
     }
 }
@@ -556,6 +598,8 @@ void PoWPackingPermissionDescriptor::setFieldValue(omnetpp::any_ptr object, int 
         case FIELD_hash: pp->setHash(value.stringValue()); break;
         case FIELD_nonce: pp->setNonce(omnetpp::checked_int_cast<int>(value.intValue())); break;
         case FIELD_blockData: pp->setBlockData(value.stringValue()); break;
+        case FIELD_timestamp: pp->setTimestamp(value.doubleValue()); break;
+        case FIELD_difficultyLevel: pp->setDifficultyLevel(omnetpp::checked_int_cast<int>(value.intValue())); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWPackingPermission'", field);
     }
 }

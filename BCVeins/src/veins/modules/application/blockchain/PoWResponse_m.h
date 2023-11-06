@@ -44,6 +44,8 @@ namespace veins {
  *     string data;
  *     string hash;
  *     int nonce;
+ *     simtime_t timestamp;
+ *     int difficultyLevel;
  * }
  * </pre>
  */
@@ -53,6 +55,8 @@ class VEINS_API PoWResponse : public ::omnetpp::cMessage
     omnetpp::opp_string data;
     omnetpp::opp_string hash;
     int nonce = 0;
+    omnetpp::simtime_t timestamp = SIMTIME_ZERO;
+    int difficultyLevel = 0;
 
   private:
     void copy(const PoWResponse& other);
@@ -76,6 +80,10 @@ class VEINS_API PoWResponse : public ::omnetpp::cMessage
     virtual void setHash(const char * hash);
     virtual int getNonce() const;
     virtual void setNonce(int nonce);
+    virtual omnetpp::simtime_t getTimestamp() const;
+    virtual void setTimestamp(omnetpp::simtime_t timestamp);
+    virtual int getDifficultyLevel() const;
+    virtual void setDifficultyLevel(int difficultyLevel);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const PoWResponse& obj) {obj.parsimPack(b);}

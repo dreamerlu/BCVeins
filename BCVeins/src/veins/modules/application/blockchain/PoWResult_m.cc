@@ -214,6 +214,8 @@ void PoWResult::copy(const PoWResult& other)
     this->blockData = other.blockData;
     this->hash = other.hash;
     this->nonce = other.nonce;
+    this->timestamp = other.timestamp;
+    this->difficultyLevel = other.difficultyLevel;
 }
 
 void PoWResult::parsimPack(omnetpp::cCommBuffer *b) const
@@ -223,6 +225,8 @@ void PoWResult::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->blockData);
     doParsimPacking(b,this->hash);
     doParsimPacking(b,this->nonce);
+    doParsimPacking(b,this->timestamp);
+    doParsimPacking(b,this->difficultyLevel);
 }
 
 void PoWResult::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -232,6 +236,8 @@ void PoWResult::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->blockData);
     doParsimUnpacking(b,this->hash);
     doParsimUnpacking(b,this->nonce);
+    doParsimUnpacking(b,this->timestamp);
+    doParsimUnpacking(b,this->difficultyLevel);
 }
 
 int PoWResult::getRsuId() const
@@ -274,6 +280,26 @@ void PoWResult::setNonce(int nonce)
     this->nonce = nonce;
 }
 
+omnetpp::simtime_t PoWResult::getTimestamp() const
+{
+    return this->timestamp;
+}
+
+void PoWResult::setTimestamp(omnetpp::simtime_t timestamp)
+{
+    this->timestamp = timestamp;
+}
+
+int PoWResult::getDifficultyLevel() const
+{
+    return this->difficultyLevel;
+}
+
+void PoWResult::setDifficultyLevel(int difficultyLevel)
+{
+    this->difficultyLevel = difficultyLevel;
+}
+
 class PoWResultDescriptor : public omnetpp::cClassDescriptor
 {
   private:
@@ -283,6 +309,8 @@ class PoWResultDescriptor : public omnetpp::cClassDescriptor
         FIELD_blockData,
         FIELD_hash,
         FIELD_nonce,
+        FIELD_timestamp,
+        FIELD_difficultyLevel,
     };
   public:
     PoWResultDescriptor();
@@ -349,7 +377,7 @@ const char *PoWResultDescriptor::getProperty(const char *propertyName) const
 int PoWResultDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 4+base->getFieldCount() : 4;
+    return base ? 6+base->getFieldCount() : 6;
 }
 
 unsigned int PoWResultDescriptor::getFieldTypeFlags(int field) const
@@ -365,8 +393,10 @@ unsigned int PoWResultDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_blockData
         FD_ISEDITABLE,    // FIELD_hash
         FD_ISEDITABLE,    // FIELD_nonce
+        FD_ISEDITABLE,    // FIELD_timestamp
+        FD_ISEDITABLE,    // FIELD_difficultyLevel
     };
-    return (field >= 0 && field < 4) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 6) ? fieldTypeFlags[field] : 0;
 }
 
 const char *PoWResultDescriptor::getFieldName(int field) const
@@ -382,8 +412,10 @@ const char *PoWResultDescriptor::getFieldName(int field) const
         "blockData",
         "hash",
         "nonce",
+        "timestamp",
+        "difficultyLevel",
     };
-    return (field >= 0 && field < 4) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 6) ? fieldNames[field] : nullptr;
 }
 
 int PoWResultDescriptor::findField(const char *fieldName) const
@@ -394,6 +426,8 @@ int PoWResultDescriptor::findField(const char *fieldName) const
     if (strcmp(fieldName, "blockData") == 0) return baseIndex + 1;
     if (strcmp(fieldName, "hash") == 0) return baseIndex + 2;
     if (strcmp(fieldName, "nonce") == 0) return baseIndex + 3;
+    if (strcmp(fieldName, "timestamp") == 0) return baseIndex + 4;
+    if (strcmp(fieldName, "difficultyLevel") == 0) return baseIndex + 5;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -410,8 +444,10 @@ const char *PoWResultDescriptor::getFieldTypeString(int field) const
         "string",    // FIELD_blockData
         "string",    // FIELD_hash
         "int",    // FIELD_nonce
+        "omnetpp::simtime_t",    // FIELD_timestamp
+        "int",    // FIELD_difficultyLevel
     };
-    return (field >= 0 && field < 4) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 6) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **PoWResultDescriptor::getFieldPropertyNames(int field) const
@@ -498,6 +534,8 @@ std::string PoWResultDescriptor::getFieldValueAsString(omnetpp::any_ptr object, 
         case FIELD_blockData: return oppstring2string(pp->getBlockData());
         case FIELD_hash: return oppstring2string(pp->getHash());
         case FIELD_nonce: return long2string(pp->getNonce());
+        case FIELD_timestamp: return simtime2string(pp->getTimestamp());
+        case FIELD_difficultyLevel: return long2string(pp->getDifficultyLevel());
         default: return "";
     }
 }
@@ -518,6 +556,8 @@ void PoWResultDescriptor::setFieldValueAsString(omnetpp::any_ptr object, int fie
         case FIELD_blockData: pp->setBlockData((value)); break;
         case FIELD_hash: pp->setHash((value)); break;
         case FIELD_nonce: pp->setNonce(string2long(value)); break;
+        case FIELD_timestamp: pp->setTimestamp(string2simtime(value)); break;
+        case FIELD_difficultyLevel: pp->setDifficultyLevel(string2long(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWResult'", field);
     }
 }
@@ -536,6 +576,8 @@ omnetpp::cValue PoWResultDescriptor::getFieldValue(omnetpp::any_ptr object, int 
         case FIELD_blockData: return pp->getBlockData();
         case FIELD_hash: return pp->getHash();
         case FIELD_nonce: return pp->getNonce();
+        case FIELD_timestamp: return pp->getTimestamp().dbl();
+        case FIELD_difficultyLevel: return pp->getDifficultyLevel();
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'PoWResult' as cValue -- field index out of range?", field);
     }
 }
@@ -556,6 +598,8 @@ void PoWResultDescriptor::setFieldValue(omnetpp::any_ptr object, int field, int 
         case FIELD_blockData: pp->setBlockData(value.stringValue()); break;
         case FIELD_hash: pp->setHash(value.stringValue()); break;
         case FIELD_nonce: pp->setNonce(omnetpp::checked_int_cast<int>(value.intValue())); break;
+        case FIELD_timestamp: pp->setTimestamp(value.doubleValue()); break;
+        case FIELD_difficultyLevel: pp->setDifficultyLevel(omnetpp::checked_int_cast<int>(value.intValue())); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWResult'", field);
     }
 }

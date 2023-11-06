@@ -216,6 +216,7 @@ void Block::copy(const Block& other)
     this->miner = other.miner;
     this->nonce = other.nonce;
     this->transactionData = other.transactionData;
+    this->hash = other.hash;
 }
 
 void Block::parsimPack(omnetpp::cCommBuffer *b) const
@@ -227,6 +228,7 @@ void Block::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->miner);
     doParsimPacking(b,this->nonce);
     doParsimPacking(b,this->transactionData);
+    doParsimPacking(b,this->hash);
 }
 
 void Block::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -238,6 +240,7 @@ void Block::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->miner);
     doParsimUnpacking(b,this->nonce);
     doParsimUnpacking(b,this->transactionData);
+    doParsimUnpacking(b,this->hash);
 }
 
 const char * Block::getPreviousBlockHash() const
@@ -300,6 +303,16 @@ void Block::setTransactionData(const char * transactionData)
     this->transactionData = transactionData;
 }
 
+const char * Block::getHash() const
+{
+    return this->hash.c_str();
+}
+
+void Block::setHash(const char * hash)
+{
+    this->hash = hash;
+}
+
 class BlockDescriptor : public omnetpp::cClassDescriptor
 {
   private:
@@ -311,6 +324,7 @@ class BlockDescriptor : public omnetpp::cClassDescriptor
         FIELD_miner,
         FIELD_nonce,
         FIELD_transactionData,
+        FIELD_hash,
     };
   public:
     BlockDescriptor();
@@ -377,7 +391,7 @@ const char *BlockDescriptor::getProperty(const char *propertyName) const
 int BlockDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 6+base->getFieldCount() : 6;
+    return base ? 7+base->getFieldCount() : 7;
 }
 
 unsigned int BlockDescriptor::getFieldTypeFlags(int field) const
@@ -395,8 +409,9 @@ unsigned int BlockDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_miner
         FD_ISEDITABLE,    // FIELD_nonce
         FD_ISEDITABLE,    // FIELD_transactionData
+        FD_ISEDITABLE,    // FIELD_hash
     };
-    return (field >= 0 && field < 6) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 7) ? fieldTypeFlags[field] : 0;
 }
 
 const char *BlockDescriptor::getFieldName(int field) const
@@ -414,8 +429,9 @@ const char *BlockDescriptor::getFieldName(int field) const
         "miner",
         "nonce",
         "transactionData",
+        "hash",
     };
-    return (field >= 0 && field < 6) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 7) ? fieldNames[field] : nullptr;
 }
 
 int BlockDescriptor::findField(const char *fieldName) const
@@ -428,6 +444,7 @@ int BlockDescriptor::findField(const char *fieldName) const
     if (strcmp(fieldName, "miner") == 0) return baseIndex + 3;
     if (strcmp(fieldName, "nonce") == 0) return baseIndex + 4;
     if (strcmp(fieldName, "transactionData") == 0) return baseIndex + 5;
+    if (strcmp(fieldName, "hash") == 0) return baseIndex + 6;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -446,8 +463,9 @@ const char *BlockDescriptor::getFieldTypeString(int field) const
         "string",    // FIELD_miner
         "int",    // FIELD_nonce
         "string",    // FIELD_transactionData
+        "string",    // FIELD_hash
     };
-    return (field >= 0 && field < 6) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 7) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **BlockDescriptor::getFieldPropertyNames(int field) const
@@ -536,6 +554,7 @@ std::string BlockDescriptor::getFieldValueAsString(omnetpp::any_ptr object, int 
         case FIELD_miner: return oppstring2string(pp->getMiner());
         case FIELD_nonce: return long2string(pp->getNonce());
         case FIELD_transactionData: return oppstring2string(pp->getTransactionData());
+        case FIELD_hash: return oppstring2string(pp->getHash());
         default: return "";
     }
 }
@@ -558,6 +577,7 @@ void BlockDescriptor::setFieldValueAsString(omnetpp::any_ptr object, int field, 
         case FIELD_miner: pp->setMiner((value)); break;
         case FIELD_nonce: pp->setNonce(string2long(value)); break;
         case FIELD_transactionData: pp->setTransactionData((value)); break;
+        case FIELD_hash: pp->setHash((value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'Block'", field);
     }
 }
@@ -578,6 +598,7 @@ omnetpp::cValue BlockDescriptor::getFieldValue(omnetpp::any_ptr object, int fiel
         case FIELD_miner: return pp->getMiner();
         case FIELD_nonce: return pp->getNonce();
         case FIELD_transactionData: return pp->getTransactionData();
+        case FIELD_hash: return pp->getHash();
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'Block' as cValue -- field index out of range?", field);
     }
 }
@@ -600,6 +621,7 @@ void BlockDescriptor::setFieldValue(omnetpp::any_ptr object, int field, int i, c
         case FIELD_miner: pp->setMiner(value.stringValue()); break;
         case FIELD_nonce: pp->setNonce(omnetpp::checked_int_cast<int>(value.intValue())); break;
         case FIELD_transactionData: pp->setTransactionData(value.stringValue()); break;
+        case FIELD_hash: pp->setHash(value.stringValue()); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'Block'", field);
     }
 }

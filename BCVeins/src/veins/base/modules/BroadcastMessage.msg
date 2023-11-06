@@ -15,4 +15,5 @@
 namespace veins;
 message BroadcastMessage {
 	string descrp = "Broadcast message signal";
+	omnetpp::cMessage* data;
 }
