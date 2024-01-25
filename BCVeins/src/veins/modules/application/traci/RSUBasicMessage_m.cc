@@ -28,7 +28,7 @@
 #include <sstream>
 #include <memory>
 #include <type_traits>
-#include "RSUBasicMessage_m.h"
+#include "veins\modules\application\traci\RSUBasicMessage_m.h"
 
 namespace omnetpp {
 
@@ -211,18 +211,21 @@ RSUBasicMessage& RSUBasicMessage::operator=(const RSUBasicMessage& other)
 void RSUBasicMessage::copy(const RSUBasicMessage& other)
 {
     this->info = other.info;
+    this->data = other.data;
 }
 
 void RSUBasicMessage::parsimPack(omnetpp::cCommBuffer *b) const
 {
     ::veins::BaseFrame1609_4::parsimPack(b);
     doParsimPacking(b,this->info);
+    doParsimPacking(b,this->data);
 }
 
 void RSUBasicMessage::parsimUnpack(omnetpp::cCommBuffer *b)
 {
     ::veins::BaseFrame1609_4::parsimUnpack(b);
     doParsimUnpacking(b,this->info);
+    doParsimUnpacking(b,this->data);
 }
 
 const char * RSUBasicMessage::getInfo() const
@@ -235,12 +238,23 @@ void RSUBasicMessage::setInfo(const char * info)
     this->info = info;
 }
 
+const omnetpp::cMessage * RSUBasicMessage::getData() const
+{
+    return this->data;
+}
+
+void RSUBasicMessage::setData(omnetpp::cMessage * data)
+{
+    this->data = data;
+}
+
 class RSUBasicMessageDescriptor : public omnetpp::cClassDescriptor
 {
   private:
     mutable const char **propertyNames;
     enum FieldConstants {
         FIELD_info,
+        FIELD_data,
     };
   public:
     RSUBasicMessageDescriptor();
@@ -307,7 +321,7 @@ const char *RSUBasicMessageDescriptor::getProperty(const char *propertyName) con
 int RSUBasicMessageDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 1+base->getFieldCount() : 1;
+    return base ? 2+base->getFieldCount() : 2;
 }
 
 unsigned int RSUBasicMessageDescriptor::getFieldTypeFlags(int field) const
@@ -320,8 +334,9 @@ unsigned int RSUBasicMessageDescriptor::getFieldTypeFlags(int field) const
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,    // FIELD_info
+        FD_ISCOMPOUND | FD_ISPOINTER | FD_ISCOBJECT | FD_ISCOWNEDOBJECT | FD_ISREPLACEABLE,    // FIELD_data
     };
-    return (field >= 0 && field < 1) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 2) ? fieldTypeFlags[field] : 0;
 }
 
 const char *RSUBasicMessageDescriptor::getFieldName(int field) const
@@ -334,8 +349,9 @@ const char *RSUBasicMessageDescriptor::getFieldName(int field) const
     }
     static const char *fieldNames[] = {
         "info",
+        "data",
     };
-    return (field >= 0 && field < 1) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 2) ? fieldNames[field] : nullptr;
 }
 
 int RSUBasicMessageDescriptor::findField(const char *fieldName) const
@@ -343,6 +359,7 @@ int RSUBasicMessageDescriptor::findField(const char *fieldName) const
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     int baseIndex = base ? base->getFieldCount() : 0;
     if (strcmp(fieldName, "info") == 0) return baseIndex + 0;
+    if (strcmp(fieldName, "data") == 0) return baseIndex + 1;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -356,8 +373,9 @@ const char *RSUBasicMessageDescriptor::getFieldTypeString(int field) const
     }
     static const char *fieldTypeStrings[] = {
         "string",    // FIELD_info
+        "omnetpp::cMessage",    // FIELD_data
     };
-    return (field >= 0 && field < 1) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 2) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **RSUBasicMessageDescriptor::getFieldPropertyNames(int field) const
@@ -426,6 +444,7 @@ const char *RSUBasicMessageDescriptor::getFieldDynamicTypeString(omnetpp::any_pt
     }
     RSUBasicMessage *pp = omnetpp::fromAnyPtr<RSUBasicMessage>(object); (void)pp;
     switch (field) {
+        case FIELD_data: { const omnetpp::cMessage * value = pp->getData(); return omnetpp::opp_typename(typeid(*value)); }
         default: return nullptr;
     }
 }
@@ -441,6 +460,7 @@ std::string RSUBasicMessageDescriptor::getFieldValueAsString(omnetpp::any_ptr ob
     RSUBasicMessage *pp = omnetpp::fromAnyPtr<RSUBasicMessage>(object); (void)pp;
     switch (field) {
         case FIELD_info: return oppstring2string(pp->getInfo());
+        case FIELD_data: {std::stringstream out; out << pp->getData(); return out.str();}
         default: return "";
     }
 }
@@ -473,6 +493,7 @@ omnetpp::cValue RSUBasicMessageDescriptor::getFieldValue(omnetpp::any_ptr object
     RSUBasicMessage *pp = omnetpp::fromAnyPtr<RSUBasicMessage>(object); (void)pp;
     switch (field) {
         case FIELD_info: return pp->getInfo();
+        case FIELD_data: return omnetpp::toAnyPtr(pp->getData()); break;
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'RSUBasicMessage' as cValue -- field index out of range?", field);
     }
 }
@@ -490,6 +511,7 @@ void RSUBasicMessageDescriptor::setFieldValue(omnetpp::any_ptr object, int field
     RSUBasicMessage *pp = omnetpp::fromAnyPtr<RSUBasicMessage>(object); (void)pp;
     switch (field) {
         case FIELD_info: pp->setInfo(value.stringValue()); break;
+        case FIELD_data: pp->setData(omnetpp::fromAnyPtr<omnetpp::cMessage>(value.pointerValue())); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'RSUBasicMessage'", field);
     }
 }
@@ -503,6 +525,7 @@ const char *RSUBasicMessageDescriptor::getFieldStructName(int field) const
         field -= base->getFieldCount();
     }
     switch (field) {
+        case FIELD_data: return omnetpp::opp_typename(typeid(omnetpp::cMessage));
         default: return nullptr;
     };
 }
@@ -517,6 +540,7 @@ omnetpp::any_ptr RSUBasicMessageDescriptor::getFieldStructValuePointer(omnetpp::
     }
     RSUBasicMessage *pp = omnetpp::fromAnyPtr<RSUBasicMessage>(object); (void)pp;
     switch (field) {
+        case FIELD_data: return omnetpp::toAnyPtr(pp->getData()); break;
         default: return omnetpp::any_ptr(nullptr);
     }
 }
@@ -533,6 +557,7 @@ void RSUBasicMessageDescriptor::setFieldStructValuePointer(omnetpp::any_ptr obje
     }
     RSUBasicMessage *pp = omnetpp::fromAnyPtr<RSUBasicMessage>(object); (void)pp;
     switch (field) {
+        case FIELD_data: pp->setData(omnetpp::fromAnyPtr<omnetpp::cMessage>(ptr)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'RSUBasicMessage'", field);
     }
 }

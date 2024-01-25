@@ -9,13 +9,8 @@
 > 1. PoWRequest: PoW请求信号
 > 2. PoWResponse: PoW回复信号
 > 3. PoWResult: RSU应用层根据PoWModule的执行结果向控制器发送的消息
-### 一级模块：交换机/Switch
-这个模块模拟路边单元之间的网络通信，以交换机的形式作为RSU之间的传输介质，目前实现了单播和广播这两种功能。其涉及到的消息包括：
-> 1. UnicastMessage: 单播信号
-> 2. BroadcastMessage：广播信号
-### 一级模块：控制器/Controller
-这个模块目前实现了多个路边单元关于PoW竞争最终结果的确定机制。其涉及到的消息包括：
-> 1. PoWPackingPermission：控制器认定PoWResult有效的消息
+
+需要注意的是：目前PoWModule仅针对车辆发送的数据域data本身寻找合适的nonce，严格而言应该针对更多的字段
 
 ### Gates连接情况
 > RSU Appl：
@@ -31,6 +26,30 @@
 > Controller：
 > >与Switch的第n个gateIn/Out相连接
 
-## 核心逻辑关系
-核心逻辑：RSU的应用程序模块TraCIDemoRSU11p通过生成PoWRequest消息，将该消息发送给其子模块PoWModule后，PoWModule会不断触发PoW计算最终找到合法的nonce。在该过程中，如果有新的PoWRequest到来，会将其放入到队列中，从而避免上次未完成的PoW计算被打断。PoW计算过程中如果合法的nonce被找到，那此时PoWModule会发送PoWResponse消息给TraCIDemoRSU11p，而TraCIDemoRSU11p会将PoWResponse封装成PoWResult消息后再封装成UnicastMessage消息（接收方设置为-1以标明发送给Controller）后发送给Switch，Switch收到后会将该消息转发给Controller。由于Controller会收到多个RSU的封装后的PoWResult，因此会将第一个（通过set容器存储Block data）收到的PoWResult认定是有效的，会将其封装成PoWPackingPermission消息以标明这个消息的发送方拥有这个区块的打包权，而对非第一个出现的PoWResult则不会进行处理。当TraCIDemoRSU11p收到PoWPackingPermission消息后，将其链接成区块链。。。
+### 核心逻辑关系
+核心逻辑：RSU的应用程序模块TraCIDemoRSU11p通过生成PoWRequest消息，将该消息发送给其子模块PoWModule后，PoWModule会不断触发PoW计算最终找到合法的nonce。在该过程中，如果有新的PoWRequest到来，会将其放入到队列中，从而避免上次未完成的PoW计算被打断。PoW计算过程中如果合法的nonce被找到，那此时PoWModule会发送PoWResponse消息给TraCIDemoRSU11p，而TraCIDemoRSU11p会将PoWResponse封装成PoWResult消息后再封装成UnicastMessage消息（接收方设置为-1以标明发送给Controller）后发送给Switch，Switch收到后会将该消息转发给Controller。由于Controller会收到多个RSU的封装后的PoWResult，因此会将第一个（通过set容器存储Block data）收到的PoWResult认定是有效的，会将其封装成PoWPackingPermission消息以标明这个消息的发送方拥有这个区块的打包权，而对非第一个出现的PoWResult则不会进行处理。当TraCIDemoRSU11p收到PoWPackingPermission消息后，将其链接成区块链。
+
+### 主要函数逻辑
+> handleMessage:
+> > 收到来自于其子模块PoWModule发送的PoWResponse消息后，通过gate向交换机发送单播消息；
+> > 收到来自于Controller发送的PoWPackingPermission消息后，通过gate向其子模块PoWModule转发，其会将其插入至blockchain（vector结构）中。
+
+## Vehicle模块
+### 一级模块：MyVeinsApp
+此模块为车辆应用层模块，基本逻辑为：初始化阶段通过发送sendPeriodicMsgEventByVehicle信号消息触发handleSelfMsg模块执行，而handleSelfMsg模块收到该信号后生成TraCIDemo11pMessage（注意该消息继承BaseFrame1609_4，因此会被识别位WSM）。
+
+## 交换机/Switch
+这个模块模拟路边单元之间的网络通信，以交换机的形式作为RSU之间的传输介质，目前实现了单播和广播这两种功能。其涉及到的消息包括：
+> 1. UnicastMessage: 单播信号
+> 2. BroadcastMessage：广播信号
+
+### 实现逻辑
+> 1). 向switch发送的消息需要注明是广播消息还是单播消息（通过封装成UnicastMessage或BroadcastMessage），如果是广播消息则全网（遍历除接收端之外的所有gates）广播，如果是单播消息则根据指定地址进行单播。<br>
+> 2). 从switch接收的消息不需要从UnicastMessage或BroadcastMessage中拆解，因为switch已经将其中的cMessage拎出来发出去了。
+
+## 控制器/Controller
+这个模块目前实现了多个路边单元关于PoW竞争最终结果的确定机制。其涉及到的消息包括：
+> 1. PoWPackingPermission：控制器认定PoWResult有效的消息，会通过广播全网发送。
+>
+> PowMOdule中的data计算hash方法有误，缺少block其它字段
 

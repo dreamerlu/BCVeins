@@ -20,4 +20,5 @@ namespace veins;
 
 packet RSUBasicMessage extends BaseFrame1609_4 {
     string info;
+    omnetpp::cMessage *data;
 }

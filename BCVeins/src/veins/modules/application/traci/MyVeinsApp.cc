@@ -84,12 +84,12 @@ void MyVeinsApp::handleSelfMsg(cMessage* msg)
         populateWSM(wsm);
         // set the content of your message here
         msgGenTime=simTime();
-        wsm->setSenderAddress(myId);
+        // So the demodata field is used for stroing the vehicle index.
+        wsm->setDemoData(std::to_string(this->getParentModule()->getIndex()).c_str());
         wsm->setTimestamp(simTime());
         sendDown(wsm);
         // schedule new message
-        simtime_t randInterval = uniform(0.002, 0.003);
-//        simtime_t randInterval = uniform(0.05, 0.08);
+        simtime_t randInterval = uniform(0.5, 1);
 //        simtime_t randInterval = 0;
         scheduleAt(simTime() + par("beaconInterval").doubleValue()+ randInterval, sendPeriodicMsgEventByVehicle);
     }

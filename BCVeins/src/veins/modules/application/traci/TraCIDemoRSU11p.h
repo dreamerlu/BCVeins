@@ -47,6 +47,7 @@ protected:
     void testMethods();//only for tests
 private:
     cModule* powModule;
+    const char * Info4ForwardingVehicleMessage = "Forwarding the packet from vehicle";
 };
 
 } // namespace veins

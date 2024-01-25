@@ -24,6 +24,7 @@
 #include "veins/modules/application/traci/TraCIDemoRSU11p.h"
 
 #include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include "veins/modules/application/traci/RSUBasicMessage_m.h"
 #include "veins/modules/application/blockchain/Block_m.h"
 #include "veins/modules/application/blockchain/PoWRequest_m.h"
 #include "veins/modules/application/blockchain/PoWModule.h"
@@ -50,7 +51,9 @@ void TraCIDemoRSU11p::initialize(int stage)
         powModule = getParentModule()->getSubmodule("powModule");
         if (!powModule) {
             EV << "Error: No PoWModule found";
-        } else {
+        } /*
+        // The following codes are only for testing the PoWModule via self-generated requests by RSU
+        else {
             PoWRequest* req = new PoWRequest();
             req->setData("hello");
             send(req, "outToBC");
@@ -61,6 +64,7 @@ void TraCIDemoRSU11p::initialize(int stage)
             req->setData("hahaha");
             sendDelayed(req, 0.00002, "outToBC");
         }
+        */
     }
 }
 
@@ -78,12 +82,29 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
         i2vDelayVector.record(delay);
         EV << "Get sender id: " <<wsm->getSenderAddress()<<std::endl;
         senderAddresses.record(wsm->getSenderAddress());
-        //triggering unicast to the sender vehicle
-        RSUBasicMessage *rsuMsg =new RSUBasicMessage();
-        populateWSM(rsuMsg);
-        rsuMsg->setRecipientAddress(wsm->getSenderAddress());
-        rsuMsg->setTimestamp(simTime());
-        sendDelayedDown(rsuMsg,processDelay);
+
+        //Upon receiving message from the vehicle in the proximity, broadcast it (a.k.a, forward to other RSUs)!
+        BroadcastMessage *bm = new BroadcastMessage();
+        RSUBasicMessage *rbm = new RSUBasicMessage();
+        rbm->setInfo(Info4ForwardingVehicleMessage);
+        rbm->setData(wsm->dup());
+        bm->setData(rbm);
+        send(bm,"gateOut",0);
+        //Upon receiving messages from vehicles, RSU should be triggered to generate the PoWRequest message.
+        PoWRequest* req = new PoWRequest();
+        std::string message = "Message from vehicle[" + std::string(wsm->getDemoData()) + "], at: " + simTime().str();
+        req->setData(message.c_str());
+        send(req, "outToBC");
+    } else if (RSUBasicMessage *rbm = dynamic_cast<RSUBasicMessage*>(frame)) {
+        //Receiving the message encapsulated from RSU, in which the contained message is actually the TraCIDemo11pMessage.
+        //Upon receiving messages from vehicles, RSU should be triggered to generate the PoWRequest message.
+        if (const TraCIDemo11pMessage* wsm = dynamic_cast<const TraCIDemo11pMessage*>(rbm->getData())) {
+            PoWRequest* req = new PoWRequest();
+            std::string message = "Message from vehicle[" + std::string(wsm->getDemoData()) + "], at: " + simTime().str();
+            req->setData(message.c_str());
+            send(req, "outToBC");
+        }
+
     }
 
 }
@@ -110,6 +131,9 @@ void TraCIDemoRSU11p::handleMessage(cMessage *msg)
         // Herein RSU receives the "valid" block
         EV << "I am receiving the PoWPackingPermission message" <<std::endl;
         send(ppp,"outToBC");
+    } else if (BaseFrame1609_4* frame = dynamic_cast<BaseFrame1609_4*>(msg)) {
+        // If receiving BaseFrame1609_4 message, sends it to the onWSM module
+        onWSM(frame);
     }
     else {
         //do nothing currently

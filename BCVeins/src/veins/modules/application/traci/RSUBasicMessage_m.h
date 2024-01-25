@@ -2,8 +2,8 @@
 // Generated file, do not edit! Created by nedtool 6.0 from veins/modules/application/traci/RSUBasicMessage.msg.
 //
 
-#ifndef __VEINS_RSUBASICMESSAGE_M_H
-#define __VEINS_RSUBASICMESSAGE_M_H
+#ifndef __VEINS_VEINS_MODULES_APPLICATION_TRACI_RSUBASICMESSAGE_M_H
+#define __VEINS_VEINS_MODULES_APPLICATION_TRACI_RSUBASICMESSAGE_M_H
 
 #if defined(__clang__)
 #  pragma clang diagnostic ignored "-Wreserved-id-macro"
@@ -43,11 +43,12 @@ class RSUBasicMessage;
 namespace veins {
 
 /**
- * Class generated from <tt>veins/modules/application/traci/RSUBasicMessage.msg:21</tt> by nedtool.
+ * Class generated from <tt>veins\modules\application\traci\RSUBasicMessage.msg:21</tt> by nedtool.
  * <pre>
  * packet RSUBasicMessage extends BaseFrame1609_4
  * {
  *     string info;
+ *     omnetpp::cMessage *data;
  * }
  * </pre>
  */
@@ -55,6 +56,7 @@ class VEINS_API RSUBasicMessage : public ::veins::BaseFrame1609_4
 {
   protected:
     omnetpp::opp_string info;
+    omnetpp::cMessage * data = nullptr;
 
   private:
     void copy(const RSUBasicMessage& other);
@@ -74,6 +76,9 @@ class VEINS_API RSUBasicMessage : public ::veins::BaseFrame1609_4
     // field getter/setter methods
     virtual const char * getInfo() const;
     virtual void setInfo(const char * info);
+    virtual const omnetpp::cMessage * getData() const;
+    virtual omnetpp::cMessage * getDataForUpdate() { return const_cast<omnetpp::cMessage *>(const_cast<RSUBasicMessage*>(this)->getData());}
+    virtual void setData(omnetpp::cMessage * data);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const RSUBasicMessage& obj) {obj.parsimPack(b);}
@@ -87,5 +92,5 @@ namespace omnetpp {
 template<> inline veins::RSUBasicMessage *fromAnyPtr(any_ptr ptr) { return check_and_cast<veins::RSUBasicMessage*>(ptr.get<cObject>()); }
 }  // namespace omnetpp
 
-#endif // ifndef __VEINS_RSUBASICMESSAGE_M_H
+#endif // ifndef __VEINS_VEINS_MODULES_APPLICATION_TRACI_RSUBASICMESSAGE_M_H
 

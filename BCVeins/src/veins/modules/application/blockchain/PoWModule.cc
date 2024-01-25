@@ -111,23 +111,25 @@ bool PoWModule::isHashValid(const std::string& hash)
 PoWModule::~PoWModule()
 {
     cancelAndDelete(continueSignal);
-    // print my interest of info
-    try {
-        std::string filePath = "./results/blockchain"+std::to_string(this->getParentModule()->getIndex())+".log";
-        std::ofstream file(filePath);
-        for (int i=0; i<blockchain.size();i++) {
-            file << "Block: " << i << '\n';
-            file << "Data: " << blockchain[i]->getTransactionData() << '\n';
-            file << "Nonce: " << blockchain[i]->getNonce() << '\n';
-            file << "Previous Hash: " << blockchain[i]->getPreviousBlockHash() << '\n';
-            file << "Current Hash: " << blockchain[i]->getHash()<< '\n';
-            file << "Miner: " << blockchain[i]->getMiner() << '\n';
-            file << '\n';
+    // Print my interest of info. Only one record is required.
+    if (this->getParentModule()->getIndex() == 0) {
+        try {
+            std::string filePath = "./results/blockchain.log";
+            std::ofstream file(filePath);
+            for (int i=0; i<blockchain.size();i++) {
+                file << "Block: " << i << '\n';
+                file << "Data: " << blockchain[i]->getTransactionData() << '\n';
+                file << "Nonce: " << blockchain[i]->getNonce() << '\n';
+                file << "Previous Hash: " << blockchain[i]->getPreviousBlockHash() << '\n';
+                file << "Current Hash: " << blockchain[i]->getHash()<< '\n';
+                file << "Miner: " << blockchain[i]->getMiner() << '\n';
+                file << '\n';
+            }
+            file.close();
+        } catch (const std::exception& e) {
+            // Print the error information.
+            std::cerr << "Error writing blockchain to file: " << e.what() << std::endl;
         }
-        file.close();
-    } catch (const std::exception& e) {
-        // 输出错误信息并安全地结束程序
-        std::cerr << "Error writing blockchain to file: " << e.what() << std::endl;
     }
 }
 
