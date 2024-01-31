@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for $(LIB_PREFIX)veins
 #
 # This file was generated with the command:
-#  opp_makemake --make-so -f --deep -o veins -O out -pVEINS -I. -I.
+#  opp_makemake --make-so -f --deep -o veins -O out -pVEINS -KINET_PROJ=D:/Project/OmNet++/inet-4.3.5-src/inet4.3 -DINET_IMPORT -I. -I. -L$$\(INET_PROJ\)/src -lINET$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -20,7 +20,7 @@ INCLUDE_PATH = -I. -I.
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS =
+LIBS = $(LDFLAG_LIBPATH)$(INET_PROJ)/src  -lINET$(D)
 
 # Output directory
 PROJECT_OUTPUT_DIR = ../out
@@ -165,6 +165,9 @@ MSGFILES = \
 # SM files
 SMFILES =
 
+# Other makefile variables (-K)
+INET_PROJ=D:/Project/OmNet++/inet-4.3.5-src/inet4.3
+
 #------------------------------------------------------------------------------
 
 # Pull in OMNeT++ configuration (Makefile.inc)
@@ -183,8 +186,11 @@ include $(CONFIGFILE)
 
 # Simulation kernel and user interface libraries
 OMNETPP_LIBS = -loppenvir$D $(KERNEL_LIBS) $(SYS_LIBS)
+ifneq ($(PLATFORM),win32.x86_64)
+LIBS += -Wl,-rpath,$(abspath $(INET_PROJ)/src)
+endif
 
-COPTS = $(CFLAGS) $(IMPORT_DEFINES) -DVEINS_EXPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
+COPTS = $(CFLAGS) $(IMPORT_DEFINES) -DINET_IMPORT -DVEINS_EXPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
 MSGCOPTS = $(INCLUDE_PATH) -PVEINS_API
 SMCOPTS =
 

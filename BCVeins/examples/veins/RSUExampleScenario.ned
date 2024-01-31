@@ -25,12 +25,16 @@ import org.car2x.veins.nodes.Scenario;
 import org.car2x.veins.base.modules.Switch;
 import org.car2x.veins.modules.application.blockchain.Controller;
 
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 
 network RSUExampleScenario extends Scenario
 {
     submodules:
         rsu[3]: RSU {
             @display("p=150,140;i=veins/sign/yellowdiamond;is=vs");
+        }
+        configurator: Ipv4NetworkConfigurator {
+            // Configurator specific parameters
         }
         switch: Switch;
         controller: Controller;

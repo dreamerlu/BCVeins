@@ -26,12 +26,17 @@ import org.car2x.veins.base.modules.*;
 import org.car2x.veins.modules.nic.Nic80211p;
 import org.car2x.veins.modules.application.blockchain.PoWModule;
 
-module RSU
+import inet.node.inet.StandardHost;
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+
+module RSU extends StandardHost
 {
     parameters:
         string applType; //type of the application layer
         string nicType = default("Nic80211p"); // type of network interface card
         double processDelay= default(0s) @unit(s);
+        
+        
     gates:
         input veinsradioIn; // gate for sendDirect
         // Weilu: add the gats for the direct connections between RSUs
@@ -48,8 +53,9 @@ module RSU
             parameters:
                 @display("p=60,166");
         }
-
-        mobility: BaseMobility {
+        
+        //original "mobility" has been replaced with "rsuMobility" since the enherited StandardHost module has the "mobility" module!
+        rsuMobility: BaseMobility {
             parameters:
                 @display("p=130,172;i=block/cogwheel");
         }
