@@ -31,7 +31,7 @@ void MyVeinsApp::initialize(int stage)
     DemoBaseApplLayer::initialize(stage);
     if (stage == 0) {
         sendPeriodicMsgEventByVehicle = new cMessage("sendPeriodicMsgEventByVehicle");
-        scheduleAt(simTime() + par("beaconInterval").doubleValue(), sendPeriodicMsgEventByVehicle);
+        scheduleAt(simTime(), sendPeriodicMsgEventByVehicle);
         //for statistic
         v2vDelayVector.setName("V2VDelay");
         v2iDelayVector.setName("V2IDelay");
@@ -82,14 +82,20 @@ void MyVeinsApp::handleSelfMsg(cMessage* msg)
     if (msg == sendPeriodicMsgEventByVehicle) {
         TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
         populateWSM(wsm);
-        // set the content of your message here
-        msgGenTime=simTime();
-        // So the demodata field is used for stroing the vehicle index.
+        // So the demodata field is used for storing the vehicle index.
         wsm->setDemoData(std::to_string(this->getParentModule()->getIndex()).c_str());
         wsm->setTimestamp(simTime());
-        sendDown(wsm);
+        wsm->setByteLength(par("beaconLengthBits").intValue()/8);
+
+        int schChannels[] = {174, 176, 178, 180};
+        int randomIndex = intuniform(0, sizeof(schChannels)/sizeof(schChannels[0]) - 1);
+        int selectedChannel = schChannels[randomIndex];
+        wsm->setChannelNumber(selectedChannel);
+        EV << "Sending message on Service Channel: " << selectedChannel << endl;
+//        sendDown(wsm);
+        sendDelayedDown(wsm, uniform(0.001, 0.005));
         // schedule new message
-        simtime_t randInterval = uniform(0.5, 1);
+        simtime_t randInterval = uniform(0.001, 0.002);
 //        simtime_t randInterval = 0;
         scheduleAt(simTime() + par("beaconInterval").doubleValue()+ randInterval, sendPeriodicMsgEventByVehicle);
     }

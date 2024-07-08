@@ -49,6 +49,7 @@ namespace veins {
  *     int nonce;    // The nonce that was found
  *     simtime_t timestamp;
  *     int difficultyLevel;
+ *     int byteLength;
  * }
  * </pre>
  */
@@ -61,6 +62,7 @@ class VEINS_API PoWResult : public ::veins::UnicastMessage
     int nonce = 0;
     omnetpp::simtime_t timestamp = SIMTIME_ZERO;
     int difficultyLevel = 0;
+    int byteLength = 0;
 
   private:
     void copy(const PoWResult& other);
@@ -90,6 +92,8 @@ class VEINS_API PoWResult : public ::veins::UnicastMessage
     virtual void setTimestamp(omnetpp::simtime_t timestamp);
     virtual int getDifficultyLevel() const;
     virtual void setDifficultyLevel(int difficultyLevel);
+    virtual int getByteLength() const;
+    virtual void setByteLength(int byteLength);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const PoWResult& obj) {obj.parsimPack(b);}

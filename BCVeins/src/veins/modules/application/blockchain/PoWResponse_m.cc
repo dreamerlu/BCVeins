@@ -215,6 +215,7 @@ void PoWResponse::copy(const PoWResponse& other)
     this->nonce = other.nonce;
     this->timestamp = other.timestamp;
     this->difficultyLevel = other.difficultyLevel;
+    this->byteLength = other.byteLength;
 }
 
 void PoWResponse::parsimPack(omnetpp::cCommBuffer *b) const
@@ -225,6 +226,7 @@ void PoWResponse::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->nonce);
     doParsimPacking(b,this->timestamp);
     doParsimPacking(b,this->difficultyLevel);
+    doParsimPacking(b,this->byteLength);
 }
 
 void PoWResponse::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -235,6 +237,7 @@ void PoWResponse::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->nonce);
     doParsimUnpacking(b,this->timestamp);
     doParsimUnpacking(b,this->difficultyLevel);
+    doParsimUnpacking(b,this->byteLength);
 }
 
 const char * PoWResponse::getData() const
@@ -287,6 +290,16 @@ void PoWResponse::setDifficultyLevel(int difficultyLevel)
     this->difficultyLevel = difficultyLevel;
 }
 
+int PoWResponse::getByteLength() const
+{
+    return this->byteLength;
+}
+
+void PoWResponse::setByteLength(int byteLength)
+{
+    this->byteLength = byteLength;
+}
+
 class PoWResponseDescriptor : public omnetpp::cClassDescriptor
 {
   private:
@@ -297,6 +310,7 @@ class PoWResponseDescriptor : public omnetpp::cClassDescriptor
         FIELD_nonce,
         FIELD_timestamp,
         FIELD_difficultyLevel,
+        FIELD_byteLength,
     };
   public:
     PoWResponseDescriptor();
@@ -363,7 +377,7 @@ const char *PoWResponseDescriptor::getProperty(const char *propertyName) const
 int PoWResponseDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 5+base->getFieldCount() : 5;
+    return base ? 6+base->getFieldCount() : 6;
 }
 
 unsigned int PoWResponseDescriptor::getFieldTypeFlags(int field) const
@@ -380,8 +394,9 @@ unsigned int PoWResponseDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_nonce
         FD_ISEDITABLE,    // FIELD_timestamp
         FD_ISEDITABLE,    // FIELD_difficultyLevel
+        FD_ISEDITABLE,    // FIELD_byteLength
     };
-    return (field >= 0 && field < 5) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 6) ? fieldTypeFlags[field] : 0;
 }
 
 const char *PoWResponseDescriptor::getFieldName(int field) const
@@ -398,8 +413,9 @@ const char *PoWResponseDescriptor::getFieldName(int field) const
         "nonce",
         "timestamp",
         "difficultyLevel",
+        "byteLength",
     };
-    return (field >= 0 && field < 5) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 6) ? fieldNames[field] : nullptr;
 }
 
 int PoWResponseDescriptor::findField(const char *fieldName) const
@@ -411,6 +427,7 @@ int PoWResponseDescriptor::findField(const char *fieldName) const
     if (strcmp(fieldName, "nonce") == 0) return baseIndex + 2;
     if (strcmp(fieldName, "timestamp") == 0) return baseIndex + 3;
     if (strcmp(fieldName, "difficultyLevel") == 0) return baseIndex + 4;
+    if (strcmp(fieldName, "byteLength") == 0) return baseIndex + 5;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -428,8 +445,9 @@ const char *PoWResponseDescriptor::getFieldTypeString(int field) const
         "int",    // FIELD_nonce
         "omnetpp::simtime_t",    // FIELD_timestamp
         "int",    // FIELD_difficultyLevel
+        "int",    // FIELD_byteLength
     };
-    return (field >= 0 && field < 5) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 6) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **PoWResponseDescriptor::getFieldPropertyNames(int field) const
@@ -517,6 +535,7 @@ std::string PoWResponseDescriptor::getFieldValueAsString(omnetpp::any_ptr object
         case FIELD_nonce: return long2string(pp->getNonce());
         case FIELD_timestamp: return simtime2string(pp->getTimestamp());
         case FIELD_difficultyLevel: return long2string(pp->getDifficultyLevel());
+        case FIELD_byteLength: return long2string(pp->getByteLength());
         default: return "";
     }
 }
@@ -538,6 +557,7 @@ void PoWResponseDescriptor::setFieldValueAsString(omnetpp::any_ptr object, int f
         case FIELD_nonce: pp->setNonce(string2long(value)); break;
         case FIELD_timestamp: pp->setTimestamp(string2simtime(value)); break;
         case FIELD_difficultyLevel: pp->setDifficultyLevel(string2long(value)); break;
+        case FIELD_byteLength: pp->setByteLength(string2long(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWResponse'", field);
     }
 }
@@ -557,6 +577,7 @@ omnetpp::cValue PoWResponseDescriptor::getFieldValue(omnetpp::any_ptr object, in
         case FIELD_nonce: return pp->getNonce();
         case FIELD_timestamp: return pp->getTimestamp().dbl();
         case FIELD_difficultyLevel: return pp->getDifficultyLevel();
+        case FIELD_byteLength: return pp->getByteLength();
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'PoWResponse' as cValue -- field index out of range?", field);
     }
 }
@@ -578,6 +599,7 @@ void PoWResponseDescriptor::setFieldValue(omnetpp::any_ptr object, int field, in
         case FIELD_nonce: pp->setNonce(omnetpp::checked_int_cast<int>(value.intValue())); break;
         case FIELD_timestamp: pp->setTimestamp(value.doubleValue()); break;
         case FIELD_difficultyLevel: pp->setDifficultyLevel(omnetpp::checked_int_cast<int>(value.intValue())); break;
+        case FIELD_byteLength: pp->setByteLength(omnetpp::checked_int_cast<int>(value.intValue())); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWResponse'", field);
     }
 }

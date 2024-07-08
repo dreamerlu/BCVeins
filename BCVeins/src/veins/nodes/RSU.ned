@@ -26,10 +26,7 @@ import org.car2x.veins.base.modules.*;
 import org.car2x.veins.modules.nic.Nic80211p;
 import org.car2x.veins.modules.application.blockchain.PoWModule;
 
-import inet.node.inet.StandardHost;
-import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
-
-module RSU extends StandardHost
+module RSU
 {
     parameters:
         string applType; //type of the application layer

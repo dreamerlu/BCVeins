@@ -19,6 +19,7 @@ simple PoWModule {
         //blockchain-related parameters
         double PoWInterval = default(0.001ms) @unit(ms);
         int PoWDifficulty = default(2);
+        int maxBytesPerBlock = default(1024);
     gates:
         input inFromAppl;  
         output outToAppl;  

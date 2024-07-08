@@ -13,7 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 namespace veins;
-message PoWPackingPermission
+packet PoWPackingPermission
 {
     int rsuId;    // The ID of the RSU that is allowed to pack the block
     string hash;  // The hash for packing

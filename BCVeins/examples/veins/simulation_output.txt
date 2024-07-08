@@ -1,0 +1,8 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2021 Andras Varga, OpenSim Ltd.
+Version: 6.0pre14, build: 211112-f7595067bc, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+
+End.
+
+<!> Error: Cannot load library '../src//libveins.dll': �Ҳ���ָ����ģ��

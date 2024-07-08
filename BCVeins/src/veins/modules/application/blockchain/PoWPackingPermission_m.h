@@ -39,7 +39,7 @@ namespace veins {
 /**
  * Class generated from <tt>veins\modules\application\blockchain\PoWPackingPermission.msg:17</tt> by nedtool.
  * <pre>
- * message PoWPackingPermission
+ * packet PoWPackingPermission
  * {
  *     int rsuId;    // The ID of the RSU that is allowed to pack the block
  *     string hash;  // The hash for packing
@@ -50,7 +50,7 @@ namespace veins {
  * }
  * </pre>
  */
-class VEINS_API PoWPackingPermission : public ::omnetpp::cMessage
+class VEINS_API PoWPackingPermission : public ::omnetpp::cPacket
 {
   protected:
     int rsuId = 0;

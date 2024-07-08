@@ -19,4 +19,5 @@ message PoWResponse {
     int nonce;
     simtime_t timestamp;       
     int difficultyLevel;  
+    int byteLength;
 }

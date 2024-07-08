@@ -22,4 +22,5 @@ message PoWResult extends UnicastMessage
     int nonce;    // The nonce that was found
     simtime_t timestamp;       
     int difficultyLevel; 
+    int byteLength;
 }

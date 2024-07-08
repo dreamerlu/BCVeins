@@ -12,9 +12,11 @@
 #include "PoWRequest_m.h"
 #include "PoWResponse_m.h"
 #include "Block_m.h"
-#include <queue>
+#include "PoWRequestQueue.h"
 #include <vector>
 #include <fstream>
+#include "SHA256.h"
+#include "PoWPackingPermission_m.h"
 
 using namespace omnetpp;
 using namespace veins;
@@ -26,11 +28,14 @@ class PoWModule : public cSimpleModule
     uint64_t nonce;
     cMessage * startSignal;
     cMessage * continueSignal;
+    uint16_t maxBytesPerBlock;
     bool isProcessing;
+    uint16_t currentBlockSize;
     // Queue for PoW requests
-    std::queue<PoWRequest *> requestQueue;
+    PoWRequestQueue requestQueue;
     //Vector for storing the chain of all blocks
     std::vector<Block *> blockchain;
+    uint16_t realBlockByteSize;
 
   public:
     virtual void initialize() override;

@@ -187,11 +187,11 @@ inline std::ostream& operator<<(std::ostream& out, const std::vector<T,A>& vec)
 
 Register_Class(PoWPackingPermission)
 
-PoWPackingPermission::PoWPackingPermission(const char *name, short kind) : ::omnetpp::cMessage(name, kind)
+PoWPackingPermission::PoWPackingPermission(const char *name, short kind) : ::omnetpp::cPacket(name, kind)
 {
 }
 
-PoWPackingPermission::PoWPackingPermission(const PoWPackingPermission& other) : ::omnetpp::cMessage(other)
+PoWPackingPermission::PoWPackingPermission(const PoWPackingPermission& other) : ::omnetpp::cPacket(other)
 {
     copy(other);
 }
@@ -203,7 +203,7 @@ PoWPackingPermission::~PoWPackingPermission()
 PoWPackingPermission& PoWPackingPermission::operator=(const PoWPackingPermission& other)
 {
     if (this == &other) return *this;
-    ::omnetpp::cMessage::operator=(other);
+    ::omnetpp::cPacket::operator=(other);
     copy(other);
     return *this;
 }
@@ -220,7 +220,7 @@ void PoWPackingPermission::copy(const PoWPackingPermission& other)
 
 void PoWPackingPermission::parsimPack(omnetpp::cCommBuffer *b) const
 {
-    ::omnetpp::cMessage::parsimPack(b);
+    ::omnetpp::cPacket::parsimPack(b);
     doParsimPacking(b,this->rsuId);
     doParsimPacking(b,this->hash);
     doParsimPacking(b,this->nonce);
@@ -231,7 +231,7 @@ void PoWPackingPermission::parsimPack(omnetpp::cCommBuffer *b) const
 
 void PoWPackingPermission::parsimUnpack(omnetpp::cCommBuffer *b)
 {
-    ::omnetpp::cMessage::parsimUnpack(b);
+    ::omnetpp::cPacket::parsimUnpack(b);
     doParsimUnpacking(b,this->rsuId);
     doParsimUnpacking(b,this->hash);
     doParsimUnpacking(b,this->nonce);
@@ -342,7 +342,7 @@ class PoWPackingPermissionDescriptor : public omnetpp::cClassDescriptor
 
 Register_ClassDescriptor(PoWPackingPermissionDescriptor)
 
-PoWPackingPermissionDescriptor::PoWPackingPermissionDescriptor() : omnetpp::cClassDescriptor(omnetpp::opp_typename(typeid(veins::PoWPackingPermission)), "omnetpp::cMessage")
+PoWPackingPermissionDescriptor::PoWPackingPermissionDescriptor() : omnetpp::cClassDescriptor(omnetpp::opp_typename(typeid(veins::PoWPackingPermission)), "omnetpp::cPacket")
 {
     propertyNames = nullptr;
 }

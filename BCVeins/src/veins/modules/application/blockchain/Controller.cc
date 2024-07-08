@@ -33,6 +33,7 @@ void Controller::handleMessage(cMessage *msg)
             permission->setNonce(result->getNonce());
             permission->setBlockData(result->getBlockData());
             permission->setTimestamp(result->getTimestamp());
+            permission->setByteLength(result->getByteLength());
             BroadcastMessage *broadcastMsg= new BroadcastMessage();
             broadcastMsg->setData(permission);
             send(broadcastMsg, "out");

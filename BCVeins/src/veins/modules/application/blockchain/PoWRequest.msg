@@ -15,5 +15,6 @@
 namespace veins;
 message PoWRequest {
     string data;
+    int byteLength;
 }
 

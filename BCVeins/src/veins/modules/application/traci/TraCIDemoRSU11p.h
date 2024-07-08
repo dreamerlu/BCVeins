@@ -24,6 +24,7 @@
 
 #include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
 #include "veins/modules/application/traci/RSUBasicMessage_m.h"
+#include <set>
 
 namespace veins {
 
@@ -47,6 +48,7 @@ protected:
     void testMethods();//only for tests
 private:
     cModule* powModule;
+    std::set<std::pair<int, simtime_t>> processedMessages;
     const char * Info4ForwardingVehicleMessage = "Forwarding the packet from vehicle";
 };
 

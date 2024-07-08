@@ -4,14 +4,12 @@
  *  Created on: 2023.11.1
  *      Author: Administrator
  *      In the version@2023.11.6, multiple PoWRequests are supported.
+ *      Modified in 2024.07.07
+ *      In this version, a block will consists of enough TXs.
  */
 
 // PoWModule.cc
 #include "PoWModule.h"
-#include "SHA256.h"
-#include "PoWRequest_m.h"
-#include "PoWResponse_m.h"
-#include "PoWPackingPermission_m.h"
 
 Define_Module(PoWModule);
 using namespace veins;
@@ -20,7 +18,11 @@ void PoWModule::initialize()
 {
     isProcessing = false;
     nonce = 0;
+    data.clear();
     continueSignal = new cMessage("continue");
+    maxBytesPerBlock = par("maxBytesPerBlock").intValue();
+    currentBlockSize = 0;
+    realBlockByteSize = 0;
 }
 
 void PoWModule::handleMessage(cMessage *msg)
@@ -44,13 +46,19 @@ void PoWModule::handleMessage(cMessage *msg)
             block->setPreviousBlockHash(blockchain.back()->getHash());
         }
         blockchain.push_back(block);
-        EV << "The current blockchain size:"<<blockchain.size()<<std::endl;
-        EV << "The current inserted block hash" << block->getHash();
+        //
+        if (continueSignal->isScheduled()) {
+            cancelEvent(continueSignal);
+            isProcessing = false;
+        }
+        if (!isProcessing && ( requestQueue.getCurrentBlockSize() > maxBytesPerBlock)) {
+            startNextPoW();
+        }
     }
     else if (PoWRequest* req = dynamic_cast<PoWRequest*>(msg)) {
         EV << "receving PoWRequest"<<std::endl;
         requestQueue.push(req);
-        if (!isProcessing) {
+        if (!isProcessing && ( requestQueue.getCurrentBlockSize() > maxBytesPerBlock)) {
             startNextPoW();
         }
     }
@@ -59,13 +67,25 @@ void PoWModule::handleMessage(cMessage *msg)
 //startNextPow() and startPow() will call each other, which is actually the recursion idea.
 void PoWModule::startNextPoW()
 {
-    // Start the PoW for the request at the front of the queue
+    // Start the PoW for the first "maxTXsPerBlock" pow requests
     if (!requestQueue.empty()) {
         isProcessing = true;
-        PoWRequest* req = requestQueue.front();
-        requestQueue.pop();
-        data = req->getData();
+        data="";
+        currentBlockSize=0;
+        EV << "test here!";
+        uint16_t curTXSize=0;
+        while(!requestQueue.empty()) {
+            PoWRequest* req = requestQueue.pop();
+            data += std::string(req->getData()) + "\n";
+            curTXSize += req->getByteLength();
+            if (curTXSize > maxBytesPerBlock) {
+                realBlockByteSize = curTXSize - req->getByteLength();
+                break;
+            }
+            delete req;
+        }
         nonce = 0;
+        EV << "Starting PoW!!!!!!!!!!!!!!!!!!!!!!!";
         startPoW();
     } else {
         isProcessing = false;
@@ -85,8 +105,12 @@ void PoWModule::startPoW()
         resp->setNonce(nonce);
         resp->setTimestamp(simTime());
         resp->setDifficultyLevel(par("PoWDifficulty").intValue());
+        resp->setByteLength(realBlockByteSize);
         send(resp, "outToAppl");
-        startNextPoW();
+        data.clear();//reset
+        currentBlockSize = 0;//reset
+        isProcessing = false; // reset
+        //startNextPoW();
     } else {
         nonce=intuniform(0,INT32_MAX);
         if (continueSignal->isScheduled()) {

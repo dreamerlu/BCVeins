@@ -211,18 +211,21 @@ PoWRequest& PoWRequest::operator=(const PoWRequest& other)
 void PoWRequest::copy(const PoWRequest& other)
 {
     this->data = other.data;
+    this->byteLength = other.byteLength;
 }
 
 void PoWRequest::parsimPack(omnetpp::cCommBuffer *b) const
 {
     ::omnetpp::cMessage::parsimPack(b);
     doParsimPacking(b,this->data);
+    doParsimPacking(b,this->byteLength);
 }
 
 void PoWRequest::parsimUnpack(omnetpp::cCommBuffer *b)
 {
     ::omnetpp::cMessage::parsimUnpack(b);
     doParsimUnpacking(b,this->data);
+    doParsimUnpacking(b,this->byteLength);
 }
 
 const char * PoWRequest::getData() const
@@ -235,12 +238,23 @@ void PoWRequest::setData(const char * data)
     this->data = data;
 }
 
+int PoWRequest::getByteLength() const
+{
+    return this->byteLength;
+}
+
+void PoWRequest::setByteLength(int byteLength)
+{
+    this->byteLength = byteLength;
+}
+
 class PoWRequestDescriptor : public omnetpp::cClassDescriptor
 {
   private:
     mutable const char **propertyNames;
     enum FieldConstants {
         FIELD_data,
+        FIELD_byteLength,
     };
   public:
     PoWRequestDescriptor();
@@ -307,7 +321,7 @@ const char *PoWRequestDescriptor::getProperty(const char *propertyName) const
 int PoWRequestDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
-    return base ? 1+base->getFieldCount() : 1;
+    return base ? 2+base->getFieldCount() : 2;
 }
 
 unsigned int PoWRequestDescriptor::getFieldTypeFlags(int field) const
@@ -320,8 +334,9 @@ unsigned int PoWRequestDescriptor::getFieldTypeFlags(int field) const
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,    // FIELD_data
+        FD_ISEDITABLE,    // FIELD_byteLength
     };
-    return (field >= 0 && field < 1) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 2) ? fieldTypeFlags[field] : 0;
 }
 
 const char *PoWRequestDescriptor::getFieldName(int field) const
@@ -334,8 +349,9 @@ const char *PoWRequestDescriptor::getFieldName(int field) const
     }
     static const char *fieldNames[] = {
         "data",
+        "byteLength",
     };
-    return (field >= 0 && field < 1) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 2) ? fieldNames[field] : nullptr;
 }
 
 int PoWRequestDescriptor::findField(const char *fieldName) const
@@ -343,6 +359,7 @@ int PoWRequestDescriptor::findField(const char *fieldName) const
     omnetpp::cClassDescriptor *base = getBaseClassDescriptor();
     int baseIndex = base ? base->getFieldCount() : 0;
     if (strcmp(fieldName, "data") == 0) return baseIndex + 0;
+    if (strcmp(fieldName, "byteLength") == 0) return baseIndex + 1;
     return base ? base->findField(fieldName) : -1;
 }
 
@@ -356,8 +373,9 @@ const char *PoWRequestDescriptor::getFieldTypeString(int field) const
     }
     static const char *fieldTypeStrings[] = {
         "string",    // FIELD_data
+        "int",    // FIELD_byteLength
     };
-    return (field >= 0 && field < 1) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 2) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **PoWRequestDescriptor::getFieldPropertyNames(int field) const
@@ -441,6 +459,7 @@ std::string PoWRequestDescriptor::getFieldValueAsString(omnetpp::any_ptr object,
     PoWRequest *pp = omnetpp::fromAnyPtr<PoWRequest>(object); (void)pp;
     switch (field) {
         case FIELD_data: return oppstring2string(pp->getData());
+        case FIELD_byteLength: return long2string(pp->getByteLength());
         default: return "";
     }
 }
@@ -458,6 +477,7 @@ void PoWRequestDescriptor::setFieldValueAsString(omnetpp::any_ptr object, int fi
     PoWRequest *pp = omnetpp::fromAnyPtr<PoWRequest>(object); (void)pp;
     switch (field) {
         case FIELD_data: pp->setData((value)); break;
+        case FIELD_byteLength: pp->setByteLength(string2long(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWRequest'", field);
     }
 }
@@ -473,6 +493,7 @@ omnetpp::cValue PoWRequestDescriptor::getFieldValue(omnetpp::any_ptr object, int
     PoWRequest *pp = omnetpp::fromAnyPtr<PoWRequest>(object); (void)pp;
     switch (field) {
         case FIELD_data: return pp->getData();
+        case FIELD_byteLength: return pp->getByteLength();
         default: throw omnetpp::cRuntimeError("Cannot return field %d of class 'PoWRequest' as cValue -- field index out of range?", field);
     }
 }
@@ -490,6 +511,7 @@ void PoWRequestDescriptor::setFieldValue(omnetpp::any_ptr object, int field, int
     PoWRequest *pp = omnetpp::fromAnyPtr<PoWRequest>(object); (void)pp;
     switch (field) {
         case FIELD_data: pp->setData(value.stringValue()); break;
+        case FIELD_byteLength: pp->setByteLength(omnetpp::checked_int_cast<int>(value.intValue())); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PoWRequest'", field);
     }
 }

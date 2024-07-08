@@ -83,26 +83,45 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
         EV << "Get sender id: " <<wsm->getSenderAddress()<<std::endl;
         senderAddresses.record(wsm->getSenderAddress());
 
+        // Create a unique identifier for the message
+        auto messageId = std::make_pair(wsm->getSenderAddress(), wsm->getTimestamp());
+
         //Upon receiving message from the vehicle in the proximity, broadcast it (a.k.a, forward to other RSUs)!
-        BroadcastMessage *bm = new BroadcastMessage();
-        RSUBasicMessage *rbm = new RSUBasicMessage();
-        rbm->setInfo(Info4ForwardingVehicleMessage);
-        rbm->setData(wsm->dup());
-        bm->setData(rbm);
-        send(bm,"gateOut",0);
-        //Upon receiving messages from vehicles, RSU should be triggered to generate the PoWRequest message.
-        PoWRequest* req = new PoWRequest();
-        std::string message = "Message from vehicle[" + std::string(wsm->getDemoData()) + "], at: " + simTime().str();
-        req->setData(message.c_str());
-        send(req, "outToBC");
+        //Note that duplication should be avoided!
+        if (processedMessages.find(messageId)==processedMessages.end()) {
+            // Mark the message as processed
+            processedMessages.insert(messageId);
+            BroadcastMessage *bm = new BroadcastMessage();
+            RSUBasicMessage *rbm = new RSUBasicMessage();
+            rbm->setInfo(Info4ForwardingVehicleMessage);
+            rbm->setData(wsm->dup());
+            bm->setData(rbm);
+            send(bm,"gateOut",0);
+            //Upon receiving messages from vehicles, RSU should be triggered to generate the PoWRequest message.
+            PoWRequest* req = new PoWRequest();
+            std::string message = "Message from vehicle[" + std::string(wsm->getDemoData()) + "], at: " + wsm->getTimestamp().str();
+            EV << "PoW Message:"<<message;
+            req->setData(message.c_str());
+            req->setByteLength(wsm->getByteLength());
+            send(req, "outToBC");
+        }
     } else if (RSUBasicMessage *rbm = dynamic_cast<RSUBasicMessage*>(frame)) {
         //Receiving the message encapsulated from RSU, in which the contained message is actually the TraCIDemo11pMessage.
         //Upon receiving messages from vehicles, RSU should be triggered to generate the PoWRequest message.
         if (const TraCIDemo11pMessage* wsm = dynamic_cast<const TraCIDemo11pMessage*>(rbm->getData())) {
-            PoWRequest* req = new PoWRequest();
-            std::string message = "Message from vehicle[" + std::string(wsm->getDemoData()) + "], at: " + simTime().str();
-            req->setData(message.c_str());
-            send(req, "outToBC");
+            // Create a unique identifier for the message
+            auto messageId = std::make_pair(wsm->getSenderAddress(), wsm->getTimestamp());
+            // Check if the message has already been processed
+            if (processedMessages.find(messageId)==processedMessages.end()) {
+                // Mark the message as processed
+                processedMessages.insert(messageId);
+                PoWRequest* req = new PoWRequest();
+                std::string message = "Message from vehicle[" + std::string(wsm->getDemoData()) + "], at: " + wsm->getTimestamp().str();
+                EV << "PoW Message:"<<message;
+                req->setData(message.c_str());
+                req->setByteLength(wsm->getByteLength());
+                send(req, "outToBC");
+            }
         }
 
     }
@@ -122,6 +141,7 @@ void TraCIDemoRSU11p::handleMessage(cMessage *msg)
         res->setBlockData(resp->getData());
         res->setHash(resp->getHash());
         res->setNonce(resp->getNonce());
+        res->setByteLength(resp->getByteLength());
         UnicastMessage *umsg= new UnicastMessage();
         umsg->setTargetRSUId(-1);
         umsg->setData(res);

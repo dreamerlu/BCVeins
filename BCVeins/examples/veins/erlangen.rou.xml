@@ -46,7 +46,7 @@
    <route id="route2" edges="23570844#1 23570844#2 -23570844#2 -23570844#1 23570844#1 -23570844#1"/>
    <route id="route3" edges="4400949 31982182#0"/>
    <flow id="flow0" type="vtype0" route="route0" begin="0" period="2" number="5"/>
-   <flow id="flow2" type="vtype1" route="route2" begin="0" period="2" number="5"/>
-   <flow id="flow3" type="vtype1" route="route3" begin="10" period="2" number="5"/>
+   <flow id="flow2" type="vtype1" route="route2" begin="1" period="2" number="5"/>
+   <flow id="flow3" type="vtype1" route="route3" begin="2" period="2" number="5"/>
    
 </routes>

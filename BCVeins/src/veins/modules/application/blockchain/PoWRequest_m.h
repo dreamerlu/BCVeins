@@ -42,6 +42,7 @@ namespace veins {
  * message PoWRequest
  * {
  *     string data;
+ *     int byteLength;
  * }
  * </pre>
  */
@@ -49,6 +50,7 @@ class VEINS_API PoWRequest : public ::omnetpp::cMessage
 {
   protected:
     omnetpp::opp_string data;
+    int byteLength = 0;
 
   private:
     void copy(const PoWRequest& other);
@@ -68,6 +70,8 @@ class VEINS_API PoWRequest : public ::omnetpp::cMessage
     // field getter/setter methods
     virtual const char * getData() const;
     virtual void setData(const char * data);
+    virtual int getByteLength() const;
+    virtual void setByteLength(int byteLength);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const PoWRequest& obj) {obj.parsimPack(b);}
