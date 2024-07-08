@@ -1,5 +1,7 @@
 # BCVeins
 A modified Veins that support blockchain simulation based on Veins V5.2
+# 2024年7月8日：
+实现了一个Block能够容纳多个事务，修复了一些bug；并且实现了批量运行demo。
 # 2024年1月25日：
 实现了RSU收到车辆发送的消息后，进行打包上链。
 # 2023年11月6日：
